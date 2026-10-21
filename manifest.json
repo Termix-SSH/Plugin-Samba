@@ -9,6 +9,7 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/Termix-SSH/Plugin-Samba",
   "docs": "https://docs.termix.site/plugins/samba",
+  "video": "https://www.youtube.com/watch?v=eplAs0N9I60",
   "category": "Networking",
   "icon": "Share2",
   "features": [
