@@ -1,27 +1,185 @@
 {
   "plugin": {
-    "name": "Hello World",
-    "description": "A minimal Termix plugin: one tab, one route, one setting and one table."
+    "name": "Samba Shares",
+    "description": "Create and manage Samba (SMB) file shares, users and permissions on your hosts from one tab."
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back",
+    "delete": "Delete"
+  },
+  "settings": {
+    "host": {
+      "enable": {
+        "label": "Samba shares",
+        "description": "Show the Samba Shares tab for this host in its menu."
+      }
+    }
   },
   "tab": {
-    "title": "Hello World",
-    "empty": "No notes yet.",
-    "placeholder": "Write a note",
-    "add": "Add",
-    "error": "Could not load or save notes."
+    "title": "Samba Shares",
+    "noHost": "Open Samba Shares from a host.",
+    "error": "Could not load Samba from this host.",
+    "sudo": "This host needs a root login or passwordless sudo to manage Samba.",
+    "running": "Running",
+    "stopped": "Stopped",
+    "notInstalled": "Not installed",
+    "refresh": "Refresh",
+    "viewShares": "Shares",
+    "viewUsers": "Users",
+    "viewSessions": "Sessions",
+    "viewConfig": "Config",
+    "viewLogs": "Logs",
+    "viewService": "Service"
+  },
+  "install": {
+    "title": "Install Samba",
+    "desc": "This installs Samba and the ACL tools with the host's package manager and starts the service.",
+    "confirm": "Install",
+    "done": "Samba is installed.",
+    "failed": "Could not install Samba.",
+    "empty": "Samba is not installed on this host",
+    "noManager": "No supported package manager was found. Install Samba by hand.",
+    "hint": "Install it on {{os}} to share folders over SMB.",
+    "thisHost": "this host",
+    "button": "Install Samba",
+    "working": "Installing..."
+  },
+  "shares": {
+    "add": "Add share",
+    "addTitle": "Add share",
+    "search": "Search shares",
+    "empty": "No shares yet.",
+    "loadFailed": "Could not load the shares.",
+    "saveFailed": "Could not save the share.",
+    "deleteFailed": "Could not delete the share.",
+    "deleteTitle": "Delete {{name}}?",
+    "deleteDesc": "The share is removed from the config. The folder and its files stay on the host.",
+    "readOnly": "Read only",
+    "readWrite": "Read and write",
+    "guest": "Guest access",
+    "external": "From smb.conf",
+    "externalNote": "This share is defined in smb.conf. Change it there.",
+    "browseable": "Visible in network browsing",
+    "browseableDesc": "When off, people must type the share name to open it.",
+    "readOnlyDesc": "Nobody can change files, except users in the write list.",
+    "guestDesc": "Let people connect without a password.",
+    "sectionGeneral": "General",
+    "sectionAccess": "Access",
+    "sectionPermissions": "Folder permissions",
+    "name": "Share name",
+    "path": "Folder on the host",
+    "comment": "Comment",
+    "makeFolder": "Create the folder",
+    "makeFolderDesc": "Make the folder if it does not exist and set who owns it.",
+    "owner": "Owner",
+    "group": "Group",
+    "mode": "Mode",
+    "validUsers": "Allowed users",
+    "listHint": "Names separated by spaces. Put @ before a group. Empty means everyone allowed.",
+    "writeList": "Users who can write",
+    "writeListHint": "These users can change files even when the share is read only.",
+    "forceUser": "Force user",
+    "forceGroup": "Force group",
+    "createMask": "Create mask",
+    "directoryMask": "Directory mask",
+    "inherit": "Inherit permissions",
+    "inheritDesc": "New files copy the permissions of the folder they are in.",
+    "hideDot": "Hide dot files",
+    "recycle": "Recycle bin",
+    "recycleDesc": "Deleted files move to a .recycle folder in the share."
   },
   "permissions": {
     "use": {
-      "title": "Use Hello World",
-      "description": "Open the Hello World tab and keep notes in it."
-    }
+      "title": "Use Samba Shares",
+      "description": "Manage Samba shares, users and permissions on hosts you can edit."
+    },
+    "loadFailed": "Could not read the folder permissions.",
+    "missing": "The folder {{path}} does not exist on the host.",
+    "saved": "Permissions saved.",
+    "saveFailed": "Could not save the permissions.",
+    "recursive": "Apply to everything inside",
+    "recursiveDesc": "Owner, mode and ACL changes also apply to all files and folders below.",
+    "acl": "Access control list",
+    "noAcl": "The ACL tools are not installed on this host.",
+    "noEntries": "No extra entries.",
+    "type": "Type",
+    "user": "User",
+    "group": "Group",
+    "name": "Name",
+    "access": "Access",
+    "addEntry": "Add entry"
   },
-  "settings": {
-    "admin": {
-      "greeting": {
-        "label": "Greeting",
-        "description": "Shown at the top of the Hello World tab."
-      }
-    }
+  "users": {
+    "loadFailed": "Could not load the users.",
+    "name": "User name",
+    "existsHint": "A Linux user with this name exists. It will get a Samba password.",
+    "password": "Password",
+    "createSystem": "Create the Linux user",
+    "createSystemDesc": "Makes a Linux user without a login shell for this account.",
+    "passwordFor": "New Samba password for {{name}}",
+    "groupName": "Group name",
+    "removeMember": "Remove from group",
+    "noMembers": "No members",
+    "addMember": "Add a member",
+    "pickUser": "Pick a user",
+    "addMemberButton": "Add to group",
+    "deleteTitle": "Remove {{name}}?",
+    "deleteDesc": "The Samba account is removed. The Linux user stays on the host.",
+    "deleteFailed": "Could not remove the user.",
+    "saveFailed": "Could not save the change.",
+    "add": "Add user",
+    "addGroup": "Add group",
+    "title": "Samba users",
+    "empty": "No Samba users yet.",
+    "disabled": "Disabled",
+    "setPassword": "Set password",
+    "enable": "Enable",
+    "disable": "Disable",
+    "groups": "Groups",
+    "noGroups": "No groups."
+  },
+  "sessions": {
+    "loadFailed": "Could not read the connections.",
+    "disconnectTitle": "Disconnect {{name}}?",
+    "disconnectDesc": "The client loses its connection. It can connect again.",
+    "disconnect": "Disconnect",
+    "disconnectFailed": "Could not disconnect the session.",
+    "none": "Nobody is connected.",
+    "users": "Connected users",
+    "shares": "Share connections",
+    "files": "Open files",
+    "noFiles": "No open files."
+  },
+  "config": {
+    "loadFailed": "Could not read the config.",
+    "saved": "Config saved.",
+    "saveFailed": "Could not save the config.",
+    "testFailed": "Could not run the test.",
+    "managed": "Managed shares file",
+    "managedHint": "This file holds the shares made here. It is tested before it is used.",
+    "test": "Test config",
+    "testOk": "The config is valid.",
+    "testBad": "The config has problems.",
+    "main": "smb.conf",
+    "mainHint": "Read only. The managed file is included at the end."
+  },
+  "logs": {
+    "loadFailed": "Could not read the logs.",
+    "lines": "{{count}} lines",
+    "empty": "No log lines."
+  },
+  "service": {
+    "failed": "The service action failed.",
+    "start": "Start",
+    "stop": "Stop",
+    "restart": "Restart",
+    "reload": "Reload config",
+    "autostart": "Start at boot",
+    "autostartDesc": "Start Samba when the host starts.",
+    "notIncluded": "smb.conf does not include the managed file yet. It is added the first time you save a share.",
+    "firewall": "Open the firewall for Samba:",
+    "selinux": "SELinux is on. To let Samba share any folder:"
   }
 }
