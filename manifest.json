@@ -22,7 +22,7 @@
   ],
   "env": [],
   "engine": {
-    "termix": ">=26.10.3",
+    "termix": ">=26.11.1-0",
     "api": "^1.5"
   },
   "capabilities": [
@@ -31,7 +31,8 @@
     "ssh:connect",
     "network:serve",
     "users:impersonate",
-    "ui:surface"
+    "ui:surface",
+    "operations:provide"
   ],
   "contributes": {
     "tabs": [
@@ -59,6 +60,161 @@
         "editorGroup": "ssh",
         "fields": []
       }
+    },
+    "operations": {
+      "actions": [
+        {
+          "id": "samba.list-shares",
+          "titleKey": "operations.list.title",
+          "scope": "host",
+          "risk": "read",
+          "permission": "use",
+          "hostAccess": "connect",
+          "when": {
+            "settings": {
+              "enableSamba": true
+            }
+          },
+          "surfaces": {
+            "assistant": true,
+            "mcp": true,
+            "palette": false
+          }
+        },
+        {
+          "id": "samba.status",
+          "titleKey": "operations.status.title",
+          "scope": "host",
+          "risk": "read",
+          "permission": "use",
+          "hostAccess": "connect",
+          "when": {
+            "settings": {
+              "enableSamba": true
+            }
+          },
+          "surfaces": {
+            "assistant": true,
+            "mcp": true,
+            "palette": false
+          }
+        },
+        {
+          "id": "samba.start",
+          "titleKey": "operations.start.title",
+          "icon": "Play",
+          "scope": "host",
+          "risk": "change",
+          "permission": "use",
+          "hostAccess": "edit",
+          "dryRun": "describe",
+          "idempotent": true,
+          "exclusive": true,
+          "when": {
+            "settings": {
+              "enableSamba": true
+            }
+          },
+          "surfaces": {
+            "assistant": true,
+            "mcp": true
+          }
+        },
+        {
+          "id": "samba.stop",
+          "titleKey": "operations.stop.title",
+          "icon": "Square",
+          "scope": "host",
+          "risk": "destructive",
+          "permission": "use",
+          "hostAccess": "edit",
+          "dryRun": "describe",
+          "idempotent": true,
+          "exclusive": true,
+          "when": {
+            "settings": {
+              "enableSamba": true
+            }
+          }
+        },
+        {
+          "id": "samba.restart",
+          "titleKey": "operations.restart.title",
+          "icon": "RotateCw",
+          "scope": "host",
+          "risk": "change",
+          "permission": "use",
+          "hostAccess": "edit",
+          "dryRun": "describe",
+          "exclusive": true,
+          "when": {
+            "settings": {
+              "enableSamba": true
+            }
+          },
+          "surfaces": {
+            "assistant": true,
+            "mcp": true
+          }
+        },
+        {
+          "id": "samba.reload",
+          "titleKey": "operations.reload.title",
+          "icon": "RefreshCw",
+          "scope": "host",
+          "risk": "change",
+          "permission": "use",
+          "hostAccess": "edit",
+          "dryRun": "describe",
+          "idempotent": true,
+          "exclusive": true,
+          "when": {
+            "settings": {
+              "enableSamba": true
+            }
+          },
+          "surfaces": {
+            "assistant": true,
+            "mcp": true
+          }
+        }
+      ],
+      "resources": [
+        {
+          "id": "samba.share",
+          "titleKey": "operations.shares.title",
+          "icon": "FolderOpen",
+          "list": "samba.list-shares",
+          "key": "name",
+          "name": "name",
+          "tab": "samba",
+          "columns": [
+            {
+              "key": "path",
+              "titleKey": "operations.shares.path"
+            },
+            {
+              "key": "access",
+              "titleKey": "operations.shares.access"
+            },
+            {
+              "key": "guests",
+              "titleKey": "operations.shares.guests"
+            }
+          ]
+        }
+      ],
+      "signals": [
+        {
+          "id": "samba.running",
+          "titleKey": "operations.status.title",
+          "read": "samba.status",
+          "scope": "host",
+          "kind": "status",
+          "refreshSec": 300,
+          "fix": "samba.start"
+        }
+      ]
     }
   },
   "locales": "locales",

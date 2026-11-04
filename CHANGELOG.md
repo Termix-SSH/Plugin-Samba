@@ -2,10 +2,18 @@
 
 ## 1.0.1
 
+### Added
+
+- Start, stop, restart and reload Samba through Termix actions, list shares across hosts and see whether Samba runs as a status tile
+
 ### Fixed
 
 - Notes at the top of the tab no longer squeeze their text to one word per line
 - Every view in the tab shows a loading message instead of a blank screen while it loads
+
+### Changed
+
+- Needs Termix 26.11.1 or newer
 
 ## 1.0.0
 

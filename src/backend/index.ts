@@ -1,6 +1,7 @@
 import type { Router } from "express";
 import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import { createRemote } from "./remote.js";
+import { registerOperations } from "./operations.js";
 import { registerRoutes } from "./routes.js";
 import { createService } from "./service.js";
 import { createSessions } from "./sessions.js";
@@ -10,9 +11,11 @@ import { createUsers } from "./users.js";
 export async function activate(ctx: PluginContext) {
   const remote = createRemote(ctx);
   const service = createService(remote);
+  const shares = createShares(remote, service);
+  registerOperations(ctx, service, shares);
   registerRoutes(ctx.http.router<Router>(), ctx, {
     service,
-    shares: createShares(remote, service),
+    shares,
     users: createUsers(remote),
     sessions: createSessions(remote),
   });

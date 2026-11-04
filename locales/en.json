@@ -182,5 +182,31 @@
     "notIncluded": "smb.conf does not include the managed file yet. It is added the first time you save a share.",
     "firewall": "Open the firewall for Samba:",
     "selinux": "SELinux is on. To let Samba share any folder:"
+  },
+  "operations": {
+    "list": {
+      "title": "List Samba shares"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Start Samba"
+    },
+    "stop": {
+      "title": "Stop Samba"
+    },
+    "restart": {
+      "title": "Restart Samba"
+    },
+    "reload": {
+      "title": "Reload Samba"
+    },
+    "shares": {
+      "title": "Samba shares",
+      "path": "Folder",
+      "access": "Access",
+      "guests": "Guests"
+    }
   }
 }
