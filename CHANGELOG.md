@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Fixed
+
+- Notes at the top of the tab no longer squeeze their text to one word per line
+
 ## 1.0.0
 
 ### Added

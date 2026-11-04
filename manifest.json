@@ -1,7 +1,7 @@
 {
   "id": "samba",
   "name": "Samba Shares",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create and manage Samba (SMB) file shares, users and permissions on your hosts from one tab.",
   "author": {
     "name": "Termix"
