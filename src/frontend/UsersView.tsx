@@ -25,6 +25,7 @@ import {
   setUserDisabled,
   setUserPassword,
 } from "./api";
+import { Loading } from "./Loading";
 
 type Mode =
   | { kind: "list" }
@@ -82,7 +83,7 @@ export function UsersView({ hostId }: { hostId: number }) {
   };
 
   if (failed) return <p className="p-2 text-sm text-destructive">{failed}</p>;
-  if (!data) return null;
+  if (!data) return <Loading />;
 
   if (mode.kind === "addUser") {
     const known = data.system.includes(text.trim());

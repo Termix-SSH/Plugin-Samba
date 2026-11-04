@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { Button, Segmented } from "@termix-ssh/plugin-sdk/ui";
 import { errorMessage, getLogs } from "./api";
+import { Loading } from "./Loading";
 
 type Lines = "100" | "300" | "1000";
 
@@ -42,9 +43,11 @@ export function LogsView({ hostId }: { hostId: number }) {
       </div>
       {failed ? (
         <p className="text-sm text-destructive">{failed}</p>
+      ) : text === null ? (
+        <Loading />
       ) : (
         <pre className="max-h-[60vh] overflow-auto whitespace-pre-wrap border border-border p-2 font-mono text-xs">
-          {text === null ? "" : text.trim() || t("logs.empty")}
+          {text.trim() || t("logs.empty")}
         </pre>
       )}
     </div>

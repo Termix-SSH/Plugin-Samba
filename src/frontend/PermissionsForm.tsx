@@ -10,6 +10,7 @@ import {
 } from "@termix-ssh/plugin-sdk/ui";
 import type { AclEntry, PermissionsView } from "../shared/types";
 import { errorMessage, getPermissions, savePermissions } from "./api";
+import { Loading } from "./Loading";
 
 const PERMS = ["r--", "r-x", "rw-", "rwx", "---"] as const;
 
@@ -61,7 +62,7 @@ export function PermissionsForm({
   }, [load]);
 
   if (failed) return <p className="text-xs text-destructive">{failed}</p>;
-  if (!view) return null;
+  if (!view) return <Loading />;
   if (!view.exists) {
     return (
       <p className="text-xs text-muted-foreground">

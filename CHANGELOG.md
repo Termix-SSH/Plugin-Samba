@@ -5,6 +5,7 @@
 ### Fixed
 
 - Notes at the top of the tab no longer squeeze their text to one word per line
+- Every view in the tab shows a loading message instead of a blank screen while it loads
 
 ## 1.0.0
 

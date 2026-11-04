@@ -3,6 +3,7 @@ import { useToast, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { Button, FormFooter, TextAreaField } from "@termix-ssh/plugin-sdk/ui";
 import type { ConfigView as Data, TestResult } from "../shared/types";
 import { errorMessage, getConfig, saveConfig, testConfig } from "./api";
+import { Loading } from "./Loading";
 
 export function ConfigView({ hostId }: { hostId: number }) {
   const { t } = useTranslation();
@@ -30,7 +31,7 @@ export function ConfigView({ hostId }: { hostId: number }) {
   }, [load]);
 
   if (failed) return <p className="p-2 text-sm text-destructive">{failed}</p>;
-  if (!data) return null;
+  if (!data) return <Loading />;
 
   const save = async () => {
     setSaving(true);

@@ -9,6 +9,7 @@ import {
 } from "@termix-ssh/plugin-sdk/ui";
 import type { SessionsView as Data } from "../shared/types";
 import { disconnectSession, errorMessage, getSessions } from "./api";
+import { Loading } from "./Loading";
 
 export function SessionsView({
   hostId,
@@ -40,7 +41,7 @@ export function SessionsView({
   }, [isVisible, load]);
 
   if (failed) return <p className="p-2 text-sm text-destructive">{failed}</p>;
-  if (!data) return null;
+  if (!data) return <Loading />;
 
   const disconnect = async (pid: number, user: string) => {
     const ok = await confirm({

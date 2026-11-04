@@ -10,6 +10,7 @@ import {
 } from "@termix-ssh/plugin-sdk/ui";
 import type { ShareView } from "../shared/types";
 import { errorMessage, listShares, updateShare } from "./api";
+import { Loading } from "./Loading";
 
 export function SharesView({
   hostId,
@@ -51,7 +52,7 @@ export function SharesView({
   };
 
   if (failed) return <p className="p-2 text-sm text-destructive">{failed}</p>;
-  if (!shares) return null;
+  if (!shares) return <Loading />;
 
   const needle = search.trim().toLowerCase();
   const visible = shares.filter(
