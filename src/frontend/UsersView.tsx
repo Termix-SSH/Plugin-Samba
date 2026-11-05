@@ -82,7 +82,8 @@ export function UsersView({ hostId }: { hostId: number }) {
     }
   };
 
-  if (failed) return <p className="p-2 text-sm text-destructive">{failed}</p>;
+  if (failed)
+    return <p className="px-3 py-2 text-xs text-destructive">{failed}</p>;
   if (!data) return <Loading />;
 
   if (mode.kind === "addUser") {
@@ -186,8 +187,10 @@ export function UsersView({ hostId }: { hostId: number }) {
     const group = data.groups.find((g) => g.name === mode.name);
     const free = data.system.filter((u) => !group?.members.includes(u));
     return (
-      <div className="flex flex-col gap-3 p-3">
-        <p className="text-sm font-medium">{mode.name}</p>
+      <div className="flex flex-col">
+        <p className="px-3 pb-1.5 pt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+          {mode.name}
+        </p>
         {group?.members.length ? (
           <PanelList>
             {group.members.map((member, index) => (
@@ -214,12 +217,12 @@ export function UsersView({ hostId }: { hostId: number }) {
             ))}
           </PanelList>
         ) : (
-          <p className="text-xs text-muted-foreground">
+          <p className="px-3 py-4 text-center text-xs text-muted-foreground/60">
             {t("users.noMembers")}
           </p>
         )}
         {free.length > 0 && (
-          <div className="grid grid-cols-1 items-end gap-2 sm:grid-cols-2">
+          <div className="grid grid-cols-1 items-end gap-2 border-b border-border p-3 sm:grid-cols-2">
             <SelectField<string>
               label={t("users.addMember")}
               value={pick}
@@ -241,10 +244,12 @@ export function UsersView({ hostId }: { hostId: number }) {
             </Button>
           </div>
         )}
-        <FormFooter
-          onCancel={() => go({ kind: "list" })}
-          cancelLabel={t("common.back")}
-        />
+        <div className="p-3">
+          <FormFooter
+            onCancel={() => go({ kind: "list" })}
+            cancelLabel={t("common.back")}
+          />
+        </div>
       </div>
     );
   }
@@ -270,8 +275,8 @@ export function UsersView({ hostId }: { hostId: number }) {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center gap-2">
+    <div className="flex flex-col">
+      <div className="flex flex-wrap items-center gap-2 border-b border-border px-3 py-2">
         <Button variant="outline" onClick={() => go({ kind: "addUser" })}>
           {t("users.add")}
         </Button>
@@ -279,10 +284,12 @@ export function UsersView({ hostId }: { hostId: number }) {
           {t("users.addGroup")}
         </Button>
       </div>
-      <div className="flex flex-col gap-1">
-        <p className="text-xs font-medium">{t("users.title")}</p>
+      <div className="flex flex-col">
+        <p className="px-3 pb-1.5 pt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+          {t("users.title")}
+        </p>
         {data.samba.length === 0 ? (
-          <p className="px-1 py-4 text-center text-xs text-muted-foreground/60">
+          <p className="px-3 py-4 text-center text-xs text-muted-foreground/60">
             {t("users.empty")}
           </p>
         ) : (
@@ -330,10 +337,12 @@ export function UsersView({ hostId }: { hostId: number }) {
           </PanelList>
         )}
       </div>
-      <div className="flex flex-col gap-1">
-        <p className="text-xs font-medium">{t("users.groups")}</p>
+      <div className="flex flex-col">
+        <p className="px-3 pb-1.5 pt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+          {t("users.groups")}
+        </p>
         {data.groups.length === 0 ? (
-          <p className="px-1 py-4 text-center text-xs text-muted-foreground/60">
+          <p className="px-3 py-4 text-center text-xs text-muted-foreground/60">
             {t("users.noGroups")}
           </p>
         ) : (

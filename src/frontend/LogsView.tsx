@@ -26,8 +26,8 @@ export function LogsView({ hostId }: { hostId: number }) {
   }, [load]);
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-wrap items-center gap-2 border-b border-border px-3 py-2">
+    <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border px-3 py-2">
         <Segmented<Lines>
           value={lines}
           onChange={setLines}
@@ -42,11 +42,11 @@ export function LogsView({ hostId }: { hostId: number }) {
         </Button>
       </div>
       {failed ? (
-        <p className="text-sm text-destructive">{failed}</p>
+        <p className="px-3 py-2 text-xs text-destructive">{failed}</p>
       ) : text === null ? (
         <Loading />
       ) : (
-        <pre className="max-h-[60vh] overflow-auto whitespace-pre-wrap p-3 font-mono text-xs">
+        <pre className="min-h-0 flex-1 overflow-auto whitespace-pre-wrap p-3 font-mono text-xs thin-scrollbar">
           {text.trim() || t("logs.empty")}
         </pre>
       )}

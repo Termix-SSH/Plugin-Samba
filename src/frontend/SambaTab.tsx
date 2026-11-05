@@ -103,7 +103,7 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
       <PanelFrame>
         <PanelShell icon={<Share2 className="size-4" />} title={title}>
           {error ? (
-            <p className="p-2 text-sm text-destructive">{error}</p>
+            <p className="px-3 py-2 text-xs text-destructive">{error}</p>
           ) : (
             <Loading />
           )}
@@ -173,8 +173,11 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
             />
           ) : undefined
         }
+        scroll={view !== "logs"}
       >
-        <div className="flex shrink-0 flex-col">
+        <div
+          className={`flex flex-col ${view === "logs" ? "min-h-0 flex-1" : "shrink-0"}`}
+        >
           {!status.root && (
             <Alert className="border-x-0 border-t-0">
               <AlertDescription className="text-xs">
