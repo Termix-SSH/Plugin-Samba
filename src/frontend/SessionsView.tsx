@@ -60,18 +60,20 @@ export function SessionsView({
 
   if (!data.json) {
     return (
-      <pre className="overflow-auto border border-border p-2 font-mono text-xs">
+      <pre className="overflow-auto p-3 font-mono text-xs">
         {data.raw || t("sessions.none")}
       </pre>
     );
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-1">
-        <p className="text-xs font-medium">{t("sessions.users")}</p>
+    <div className="flex flex-col">
+      <div className="flex flex-col">
+        <p className="px-3 pb-1.5 pt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+          {t("sessions.users")}
+        </p>
         {data.sessions.length === 0 ? (
-          <p className="px-1 py-4 text-center text-xs text-muted-foreground/60">
+          <p className="px-3 py-4 text-center text-xs text-muted-foreground/60">
             {t("sessions.none")}
           </p>
         ) : (
@@ -100,8 +102,10 @@ export function SessionsView({
         )}
       </div>
       {data.connections.length > 0 && (
-        <div className="flex flex-col gap-1">
-          <p className="text-xs font-medium">{t("sessions.shares")}</p>
+        <div className="flex flex-col">
+          <p className="px-3 pb-1.5 pt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+            {t("sessions.shares")}
+          </p>
           <PanelList>
             {data.connections.map((c, index) => (
               <ListRow
@@ -114,10 +118,12 @@ export function SessionsView({
           </PanelList>
         </div>
       )}
-      <div className="flex flex-col gap-1">
-        <p className="text-xs font-medium">{t("sessions.files")}</p>
+      <div className="flex flex-col">
+        <p className="px-3 pb-1.5 pt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+          {t("sessions.files")}
+        </p>
         {data.files.length === 0 ? (
-          <p className="px-1 py-4 text-center text-xs text-muted-foreground/60">
+          <p className="px-3 py-4 text-center text-xs text-muted-foreground/60">
             {t("sessions.noFiles")}
           </p>
         ) : (

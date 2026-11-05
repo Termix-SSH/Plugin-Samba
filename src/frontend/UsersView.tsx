@@ -88,7 +88,7 @@ export function UsersView({ hostId }: { hostId: number }) {
   if (mode.kind === "addUser") {
     const known = data.system.includes(text.trim());
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 p-3">
         <TextField
           label={t("users.name")}
           value={text}
@@ -131,7 +131,7 @@ export function UsersView({ hostId }: { hostId: number }) {
 
   if (mode.kind === "password") {
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 p-3">
         <p className="text-xs text-muted-foreground">
           {t("users.passwordFor", { name: mode.name })}
         </p>
@@ -159,7 +159,7 @@ export function UsersView({ hostId }: { hostId: number }) {
 
   if (mode.kind === "addGroup") {
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 p-3">
         <TextField
           label={t("users.groupName")}
           value={text}
@@ -186,7 +186,7 @@ export function UsersView({ hostId }: { hostId: number }) {
     const group = data.groups.find((g) => g.name === mode.name);
     const free = data.system.filter((u) => !group?.members.includes(u));
     return (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 p-3">
         <p className="text-sm font-medium">{mode.name}</p>
         {group?.members.length ? (
           <PanelList>

@@ -153,9 +153,8 @@ export function ShareEditor({
       leading={<BackButton onClick={onClose} />}
       title={share ? share.name : t("shares.addTitle")}
       status={share?.path}
-      className="gap-2 p-2.5"
     >
-      <div className="flex shrink-0 flex-col gap-3">
+      <div className="flex shrink-0 flex-col gap-3 p-3">
         {external && (
           <div className="flex flex-col gap-1 border border-border p-3 text-xs">
             <p>{t("shares.externalNote")}</p>

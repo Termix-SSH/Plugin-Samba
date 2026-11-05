@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { RefreshCw, Share2 } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import { Share2 } from "lucide-react";
 import {
   useToast,
   useTranslation,
@@ -11,8 +11,12 @@ import {
   AlertDescription,
   Button,
   PanelShell,
-  Segmented,
   useConfirm,
+  EmptyState,
+  PanelFrame,
+  RefreshButton,
+  TabStrip,
+  NoticePanel,
 } from "@termix-ssh/plugin-sdk/ui";
 import type { SambaStatus, ShareView } from "../shared/types";
 import { errorCode, errorMessage, getStatus, installSamba } from "./api";
@@ -28,16 +32,6 @@ import { UsersView } from "./UsersView";
 type View = "shares" | "users" | "sessions" | "config" | "logs" | "service";
 
 // A fixed height box, so the panel body inside it can scroll.
-function Frame({ children }: { children: ReactNode }) {
-  return (
-    <div className="h-full w-full overflow-hidden">
-      <div className="flex h-full w-full min-h-0 flex-1 flex-col overflow-hidden">
-        {children}
-      </div>
-    </div>
-  );
-}
-
 /** Samba for one host: shares, users, sessions, config, logs and service. */
 export function SambaTab({ isVisible, host, label }: TabProps) {
   const { t } = useTranslation();
@@ -99,34 +93,28 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
   };
 
   if (!host) {
-    return (
-      <p className="p-4 text-sm text-muted-foreground">{t("tab.noHost")}</p>
-    );
+    return <EmptyState title={t("tab.noHost")} />;
   }
 
   const title = label || host.name || t("tab.title");
 
   if (!status) {
     return (
-      <Frame>
-        <PanelShell
-          icon={<Share2 className="size-4" />}
-          title={title}
-          className="gap-2 p-2.5"
-        >
+      <PanelFrame>
+        <PanelShell icon={<Share2 className="size-4" />} title={title}>
           {error ? (
             <p className="p-2 text-sm text-destructive">{error}</p>
           ) : (
             <Loading />
           )}
         </PanelShell>
-      </Frame>
+      </PanelFrame>
     );
   }
 
   if (editing) {
     return (
-      <Frame>
+      <PanelFrame>
         <ShareEditor
           // A fresh editor per share so old form state never carries over.
           key={editing === "new" ? "new" : editing.name}
@@ -136,14 +124,14 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
           onClose={() => setEditing(null)}
           reload={refresh}
         />
-      </Frame>
+      </PanelFrame>
     );
   }
 
   const running = status.installed && status.active;
 
   return (
-    <Frame>
+    <PanelFrame>
       <PanelShell
         icon={<Share2 className="size-4" />}
         title={title}
@@ -156,18 +144,11 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
         }
         actions={
           <>
-            <Button
-              variant="ghost"
-              size="icon"
+            <RefreshButton
               onClick={refresh}
-              disabled={loading}
-              title={t("tab.refresh")}
-              className="text-accent-brand"
-            >
-              <RefreshCw
-                className={`size-4 ${loading ? "animate-spin" : ""}`}
-              />
-            </Button>
+              loading={loading}
+              label={t("tab.refresh")}
+            />
             {status.installed && view === "shares" && (
               <AddButton
                 label={t("shares.add")}
@@ -176,52 +157,54 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
             )}
           </>
         }
-        toolbar={
+        tabs={
           status.installed ? (
-            <Segmented<View>
-              value={view}
-              onChange={setView}
-              options={[
-                { value: "shares", label: t("tab.viewShares") },
-                { value: "users", label: t("tab.viewUsers") },
-                { value: "sessions", label: t("tab.viewSessions") },
-                { value: "config", label: t("tab.viewConfig") },
-                { value: "logs", label: t("tab.viewLogs") },
-                { value: "service", label: t("tab.viewService") },
+            <TabStrip
+              tabs={[
+                { id: "shares", label: t("tab.viewShares") },
+                { id: "users", label: t("tab.viewUsers") },
+                { id: "sessions", label: t("tab.viewSessions") },
+                { id: "config", label: t("tab.viewConfig") },
+                { id: "logs", label: t("tab.viewLogs") },
+                { id: "service", label: t("tab.viewService") },
               ]}
+              activeTab={view}
+              onTabChange={(id) => setView(id as View)}
             />
           ) : undefined
         }
-        className="gap-2 p-2.5"
       >
-        <div className="flex shrink-0 flex-col gap-2">
+        <div className="flex shrink-0 flex-col">
           {!status.root && (
-            <Alert className="rounded-none">
+            <Alert className="border-x-0 border-t-0">
               <AlertDescription className="text-xs">
                 {t("tab.sudo")}
               </AlertDescription>
             </Alert>
           )}
           {!status.installed ? (
-            <div className="flex flex-col items-start gap-3 border border-border p-4">
-              <Share2 className="size-5 text-muted-foreground" />
-              <p className="text-sm font-medium">{t("install.empty")}</p>
-              <p className="text-xs text-muted-foreground">
-                {status.packageManager === "none"
-                  ? t("install.noManager")
-                  : t("install.hint", {
-                      os: status.os || t("install.thisHost"),
-                    })}
-              </p>
-              <Button
-                onClick={() => void install()}
-                disabled={
-                  installing || !status.root || status.packageManager === "none"
-                }
-              >
-                {installing ? t("install.working") : t("install.button")}
-              </Button>
-            </div>
+            <NoticePanel
+              icon={Share2}
+              title={t("install.empty")}
+              action={
+                <Button
+                  onClick={() => void install()}
+                  disabled={
+                    installing ||
+                    !status.root ||
+                    status.packageManager === "none"
+                  }
+                >
+                  {installing ? t("install.working") : t("install.button")}
+                </Button>
+              }
+            >
+              {status.packageManager === "none"
+                ? t("install.noManager")
+                : t("install.hint", {
+                    os: status.os || t("install.thisHost"),
+                  })}
+            </NoticePanel>
           ) : view === "shares" ? (
             <SharesView
               key={tick}
@@ -242,6 +225,6 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
           )}
         </div>
       </PanelShell>
-    </Frame>
+    </PanelFrame>
   );
 }

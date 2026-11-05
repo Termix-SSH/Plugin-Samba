@@ -56,7 +56,7 @@ export function ConfigView({ hostId }: { hostId: number }) {
   };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 p-3">
       <TextAreaField
         label={t("config.managed")}
         hint={t("config.managedHint")}

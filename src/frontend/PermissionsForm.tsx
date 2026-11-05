@@ -103,7 +103,7 @@ export function PermissionsForm({
   };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 p-3">
       <p className="font-mono text-xs text-muted-foreground">{view.path}</p>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         <TextField

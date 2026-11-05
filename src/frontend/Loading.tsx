@@ -1,8 +1,5 @@
-import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
+import { LoadingState } from "@termix-ssh/plugin-sdk/ui";
 
 export function Loading() {
-  const { t } = useTranslation();
-  return (
-    <p className="p-2 text-xs text-muted-foreground">{t("common.loading")}</p>
-  );
+  return <LoadingState compact />;
 }
