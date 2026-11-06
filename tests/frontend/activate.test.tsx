@@ -88,6 +88,44 @@ function api(current: unknown) {
 const host = { id: 1, name: "files", enableSsh: true };
 
 describe(`${manifest.id} activate`, () => {
+  it("registers a dashboard card that shows shares and sessions per host", async () => {
+    rendered = await renderWithApp(plugin, {
+      manifest,
+      locales,
+      permissions: ["samba.use"],
+      hosts: [{ id: "7", name: "files", ip: "10.0.0.7", port: 22 }],
+      api: {
+        get: vi.fn(async () => ({
+          data: [
+            {
+              hostId: 7,
+              installed: true,
+              active: true,
+              shares: 3,
+              sessions: 2,
+              checkedAt: "",
+            },
+          ],
+        })),
+      } as never,
+    });
+    expect(rendered.registered.dashboardCards()).toEqual(["samba-hosts"]);
+    const declared = (
+      manifest.contributes as { dashboardCards: Array<{ id: string }> }
+    ).dashboardCards.map((c) => c.id);
+    expect(declared).toContain("samba-hosts");
+    const fields = (
+      manifest.contributes.settings as {
+        host: { fields: Array<{ key: string }> };
+      }
+    ).host.fields.map((f) => f.key);
+    expect(fields).toContain("showPanel");
+    rendered.renderDashboardCard("samba-hosts");
+    expect(await screen.findByText("files")).toBeTruthy();
+    expect(screen.getByText("3 shares")).toBeTruthy();
+    expect(screen.getByText("2 sessions")).toBeTruthy();
+  });
+
   it("registers the host tab", async () => {
     rendered = await renderWithApp(plugin, { manifest, locales });
     expect(rendered.registered.tabs()).toEqual(["samba"]);

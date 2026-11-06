@@ -1,16 +1,12 @@
 import { Share2 } from "lucide-react";
 import type { TermixApp } from "@termix-ssh/plugin-sdk/frontend";
 import { initApi } from "./api";
+import { sambaEnabled, sambaPanelEnabled } from "./enabled";
+import { SambaHostsCard } from "./SambaHostsCard";
 import { SambaTab } from "./SambaTab";
+import { SambaCompanion, useSambaCompanionDefaults } from "./SambaCompanion";
 
 const TAB_ID = "samba";
-
-function sambaEnabled(host: object | null | undefined): boolean {
-  const all = (host as { pluginSettings?: unknown } | null | undefined)
-    ?.pluginSettings as
-    Record<string, Record<string, unknown> | undefined> | undefined;
-  return all?.[TAB_ID]?.enableSamba === true;
-}
 
 export function activate(app: TermixApp): void {
   initApi(app.api);
@@ -36,4 +32,36 @@ export function activate(app: TermixApp): void {
     tabType: TAB_ID,
     when: (host) => canUse && !!host.enableSsh && sambaEnabled(host),
   });
+
+  app.registerDashboardCard({
+    id: "samba-hosts",
+    titleKey: "card.title",
+    defaultPanel: "side",
+    defaultHeight: 220,
+    frame: "framed",
+    component: SambaHostsCard,
+  });
+
+  if (typeof app.registerCompanion === "function") {
+    app.registerCompanion(TAB_ID, SambaCompanion, {
+      icon: Share2,
+      titleKey: "tab.title",
+      order: 46,
+      tabTypes: ["terminal"],
+      when: (_tab, host) =>
+        canUse && !!host?.enableSsh && sambaPanelEnabled(host),
+      useDefaults: useSambaCompanionDefaults,
+    });
+    app.registerAction("samba.togglePanel", ((_handle: unknown, tab: unknown) =>
+      app.toggleCompanion(tab as never, TAB_ID)) as never);
+    app.registerSlotContribution("tab.menu", {
+      actionId: "samba.togglePanel",
+      titleKey: "nav.togglePanel",
+      icon: Share2,
+      kind: "button",
+      order: 46,
+      when: (context) =>
+        (context.tab as { type?: string } | null)?.type === "terminal",
+    });
+  }
 }

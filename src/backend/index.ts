@@ -6,6 +6,7 @@ import { registerRoutes } from "./routes.js";
 import { createService } from "./service.js";
 import { createSessions } from "./sessions.js";
 import { createShares } from "./shares.js";
+import { createSummaryCache, registerSummary } from "./summary.js";
 import { createUsers } from "./users.js";
 
 export async function activate(ctx: PluginContext) {
@@ -13,12 +14,19 @@ export async function activate(ctx: PluginContext) {
   const service = createService(remote);
   const shares = createShares(remote, service);
   registerOperations(ctx, service, shares);
-  registerRoutes(ctx.http.router<Router>(), ctx, {
+  const sessions = createSessions(remote);
+  const router = ctx.http.router<Router>();
+  registerRoutes(router, ctx, {
     service,
     shares,
     users: createUsers(remote),
-    sessions: createSessions(remote),
+    sessions,
   });
+  registerSummary(
+    router,
+    ctx,
+    createSummaryCache(ctx, { service, shares, sessions }),
+  );
   ctx.log.info("Samba routes mounted at /plugin-api/samba");
 }
 

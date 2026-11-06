@@ -15,6 +15,31 @@
       "enable": {
         "label": "Samba shares",
         "description": "Show the Samba Shares tab for this host in its menu."
+      },
+      "showPanel": {
+        "label": "Show shares panel in terminals",
+        "description": "Let the shares panel open beside this host's SSH terminal."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Open the shares panel with new terminals",
+        "description": "Show the shares panel beside every SSH terminal that has Samba on. You can still open and close it from the button on the right edge."
+      },
+      "companionSide": {
+        "label": "Shares panel side",
+        "description": "Where the shares panel sits next to a terminal.",
+        "right": "Right",
+        "left": "Left",
+        "bottom": "Bottom"
+      },
+      "companionSize": {
+        "label": "Shares panel size",
+        "description": "Width in pixels, or height when it is at the bottom. You can also drag its edge."
+      },
+      "companionEdgeButton": {
+        "label": "Show the panel button",
+        "description": "Show a small button on the right edge of a terminal that opens the shares panel."
       }
     }
   },
@@ -208,5 +233,22 @@
       "access": "Access",
       "guests": "Guests"
     }
+  },
+  "nav": {
+    "togglePanel": "Toggle shares panel"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Checking hosts...",
+    "summary_one": "{{count}} share on {{hosts}} hosts",
+    "summary_other": "{{count}} shares on {{hosts}} hosts",
+    "refresh": "Check again",
+    "empty": "Turn on Samba for a host to see it here.",
+    "stopped": "Not running",
+    "missing": "Not installed",
+    "shares_one": "{{count}} share",
+    "shares_other": "{{count}} shares",
+    "sessions_one": "{{count}} session",
+    "sessions_other": "{{count}} sessions"
   }
 }

@@ -119,3 +119,14 @@ export interface TestResult {
   ok: boolean;
   output: string;
 }
+
+/** One host in the Samba dashboard card. */
+export interface SambaHostSummary {
+  hostId: number;
+  checkedAt: string;
+  installed: boolean;
+  active: boolean;
+  shares: number;
+  sessions: number;
+  error?: string;
+}

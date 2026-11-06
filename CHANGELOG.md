@@ -5,6 +5,8 @@
 ### Added
 
 - Start, stop, restart and reload Samba through Termix actions, list shares across hosts and see whether Samba runs as a status tile
+- Dashboard card with Samba state, shares and sessions on every host
+- Shares panel beside SSH terminals
 
 ### Fixed
 
