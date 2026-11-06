@@ -17,11 +17,11 @@ import {
   RefreshButton,
   TabStrip,
   NoticePanel,
+  LoadingState,
 } from "@termix-ssh/plugin-sdk/ui";
 import type { SambaStatus, ShareView } from "../shared/types";
 import { errorCode, errorMessage, getStatus, installSamba } from "./api";
 import { ConfigView } from "./ConfigView";
-import { Loading } from "./Loading";
 import { LogsView } from "./LogsView";
 import { ServiceView } from "./ServiceView";
 import { SessionsView } from "./SessionsView";
@@ -105,7 +105,7 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
           {error ? (
             <p className="px-3 py-2 text-xs text-destructive">{error}</p>
           ) : (
-            <Loading />
+            <LoadingState />
           )}
         </PanelShell>
       </PanelFrame>

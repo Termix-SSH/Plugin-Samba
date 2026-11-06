@@ -1,8 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Button, Segmented } from "@termix-ssh/plugin-sdk/ui";
+import {
+  Button,
+  Segmented,
+  ToolbarBand,
+  LoadingState,
+} from "@termix-ssh/plugin-sdk/ui";
 import { errorMessage, getLogs } from "./api";
-import { Loading } from "./Loading";
 
 type Lines = "100" | "300" | "1000";
 
@@ -27,7 +31,7 @@ export function LogsView({ hostId }: { hostId: number }) {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-border px-3 py-2">
+      <ToolbarBand>
         <Segmented<Lines>
           value={lines}
           onChange={setLines}
@@ -40,11 +44,11 @@ export function LogsView({ hostId }: { hostId: number }) {
         <Button variant="outline" onClick={() => void load()}>
           {t("tab.refresh")}
         </Button>
-      </div>
+      </ToolbarBand>
       {failed ? (
         <p className="px-3 py-2 text-xs text-destructive">{failed}</p>
       ) : text === null ? (
-        <Loading />
+        <LoadingState />
       ) : (
         <pre className="min-h-0 flex-1 overflow-auto whitespace-pre-wrap p-3 font-mono text-xs thin-scrollbar">
           {text.trim() || t("logs.empty")}

@@ -13,6 +13,9 @@ import {
   SwitchRow,
   TextField,
   useConfirm,
+  ToolbarBand,
+  LoadingState,
+  PanelShell,
 } from "@termix-ssh/plugin-sdk/ui";
 import type { SambaGroup, SambaUser, UsersView as Data } from "../shared/types";
 import {
@@ -25,7 +28,6 @@ import {
   setUserDisabled,
   setUserPassword,
 } from "./api";
-import { Loading } from "./Loading";
 
 type Mode =
   | { kind: "list" }
@@ -84,102 +86,120 @@ export function UsersView({ hostId }: { hostId: number }) {
 
   if (failed)
     return <p className="px-3 py-2 text-xs text-destructive">{failed}</p>;
-  if (!data) return <Loading />;
+  if (!data) return <LoadingState />;
 
   if (mode.kind === "addUser") {
     const known = data.system.includes(text.trim());
     return (
-      <div className="flex flex-col gap-3 p-3">
-        <TextField
-          label={t("users.name")}
-          value={text}
-          onChange={setText}
-          hint={known ? t("users.existsHint") : undefined}
-        />
-        <SecretField
-          label={t("users.password")}
-          value={pass}
-          onChange={setPass}
-        />
-        <SwitchRow
-          label={t("users.createSystem")}
-          description={t("users.createSystemDesc")}
-          checked={createSystem || !known}
-          onChange={setCreateSystem}
-          disabled={!known}
-        />
-        <FormFooter
-          onCancel={() => go({ kind: "list" })}
-          onSave={() =>
-            void run(
-              () =>
-                addUser(hostId, {
-                  name: text.trim(),
-                  password: pass,
-                  createSystem: createSystem || !known,
-                }),
-              t("users.saveFailed"),
-            ).then((ok) => ok && go({ kind: "list" }))
-          }
-          saving={saving}
-          disabled={!text.trim() || !pass}
-          saveLabel={t("common.save")}
-          cancelLabel={t("common.cancel")}
-        />
-      </div>
+      <PanelShell
+        chrome={false}
+        footer={
+          <FormFooter
+            onCancel={() => go({ kind: "list" })}
+            onSave={() =>
+              void run(
+                () =>
+                  addUser(hostId, {
+                    name: text.trim(),
+                    password: pass,
+                    createSystem: createSystem || !known,
+                  }),
+                t("users.saveFailed"),
+              ).then((ok) => ok && go({ kind: "list" }))
+            }
+            saving={saving}
+            disabled={!text.trim() || !pass}
+            saveLabel={t("common.save")}
+            cancelLabel={t("common.cancel")}
+          />
+        }
+      >
+        <div className="flex flex-col gap-3 p-3">
+          <TextField
+            label={t("users.name")}
+            value={text}
+            onChange={setText}
+            hint={known ? t("users.existsHint") : undefined}
+          />
+          <SecretField
+            label={t("users.password")}
+            value={pass}
+            onChange={setPass}
+          />
+          <SwitchRow
+            label={t("users.createSystem")}
+            description={t("users.createSystemDesc")}
+            checked={createSystem || !known}
+            onChange={setCreateSystem}
+            disabled={!known}
+          />
+        </div>
+      </PanelShell>
     );
   }
 
   if (mode.kind === "password") {
     return (
-      <div className="flex flex-col gap-3 p-3">
-        <p className="text-xs text-muted-foreground">
-          {t("users.passwordFor", { name: mode.name })}
-        </p>
-        <SecretField
-          label={t("users.password")}
-          value={pass}
-          onChange={setPass}
-        />
-        <FormFooter
-          onCancel={() => go({ kind: "list" })}
-          onSave={() =>
-            void run(
-              () => setUserPassword(hostId, mode.name, pass),
-              t("users.saveFailed"),
-            ).then((ok) => ok && go({ kind: "list" }))
-          }
-          saving={saving}
-          disabled={!pass}
-          saveLabel={t("common.save")}
-          cancelLabel={t("common.cancel")}
-        />
-      </div>
+      <PanelShell
+        chrome={false}
+        footer={
+          <FormFooter
+            onCancel={() => go({ kind: "list" })}
+            onSave={() =>
+              void run(
+                () => setUserPassword(hostId, mode.name, pass),
+                t("users.saveFailed"),
+              ).then((ok) => ok && go({ kind: "list" }))
+            }
+            saving={saving}
+            disabled={!pass}
+            saveLabel={t("common.save")}
+            cancelLabel={t("common.cancel")}
+          />
+        }
+      >
+        <div className="flex flex-col gap-3 p-3">
+          <p className="text-xs text-muted-foreground">
+            {t("users.passwordFor", { name: mode.name })}
+          </p>
+          <SecretField
+            label={t("users.password")}
+            value={pass}
+            onChange={setPass}
+          />
+        </div>
+      </PanelShell>
     );
   }
 
   if (mode.kind === "addGroup") {
     return (
-      <div className="flex flex-col gap-3 p-3">
-        <TextField
-          label={t("users.groupName")}
-          value={text}
-          onChange={setText}
-        />
-        <FormFooter
-          onCancel={() => go({ kind: "list" })}
-          onSave={() =>
-            void run(
-              () => addGroup(hostId, text.trim()),
-              t("users.saveFailed"),
-            ).then((ok) => ok && go({ kind: "list" }))
-          }
-          saving={saving}
-          disabled={!text.trim()}
-          saveLabel={t("common.save")}
-          cancelLabel={t("common.cancel")}
-        />
-      </div>
+      <PanelShell
+        chrome={false}
+        footer={
+          <FormFooter
+            onCancel={() => go({ kind: "list" })}
+            onSave={() =>
+              void run(
+                () => addGroup(hostId, text.trim()),
+                t("users.saveFailed"),
+              ).then((ok) => ok && go({ kind: "list" }))
+            }
+            saving={saving}
+            disabled={!text.trim()}
+            saveLabel={t("common.save")}
+            cancelLabel={t("common.cancel")}
+          />
+        }
+      >
+        <div className="flex flex-col gap-3 p-3">
+          <TextField
+            label={t("users.groupName")}
+            value={text}
+            onChange={setText}
+          />
+        </div>
+      </PanelShell>
     );
   }
 
@@ -276,14 +296,14 @@ export function UsersView({ hostId }: { hostId: number }) {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-wrap items-center gap-2 border-b border-border px-3 py-2">
+      <ToolbarBand>
         <Button variant="outline" onClick={() => go({ kind: "addUser" })}>
           {t("users.add")}
         </Button>
         <Button variant="outline" onClick={() => go({ kind: "addGroup" })}>
           {t("users.addGroup")}
         </Button>
-      </div>
+      </ToolbarBand>
       <div className="flex flex-col">
         <p className="px-3 pb-1.5 pt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
           {t("users.title")}

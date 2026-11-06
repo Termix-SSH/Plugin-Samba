@@ -1,9 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { useToast, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Button, FormFooter, TextAreaField } from "@termix-ssh/plugin-sdk/ui";
+import {
+  Button,
+  FormFooter,
+  TextAreaField,
+  LoadingState,
+  PanelShell,
+} from "@termix-ssh/plugin-sdk/ui";
 import type { ConfigView as Data, TestResult } from "../shared/types";
 import { errorMessage, getConfig, saveConfig, testConfig } from "./api";
-import { Loading } from "./Loading";
 
 export function ConfigView({ hostId }: { hostId: number }) {
   const { t } = useTranslation();
@@ -32,7 +37,7 @@ export function ConfigView({ hostId }: { hostId: number }) {
 
   if (failed)
     return <p className="px-3 py-2 text-xs text-destructive">{failed}</p>;
-  if (!data) return <Loading />;
+  if (!data) return <LoadingState />;
 
   const save = async () => {
     setSaving(true);
@@ -57,54 +62,60 @@ export function ConfigView({ hostId }: { hostId: number }) {
   };
 
   return (
-    <div className="flex flex-col gap-3 p-3">
-      <TextAreaField
-        label={t("config.managed")}
-        hint={t("config.managedHint")}
-        value={text}
-        onChange={setText}
-        rows={14}
-        mono
-      />
-      {error && (
-        <pre className="whitespace-pre-wrap border border-border p-2 font-mono text-xs text-destructive">
-          {error}
-        </pre>
-      )}
-      <FormFooter
-        onSave={() => void save()}
-        saving={saving}
-        dirty={text !== data.managed}
-        saveLabel={t("common.save")}
-        extra={
-          <Button variant="outline" onClick={() => void test()}>
-            {t("config.test")}
-          </Button>
-        }
-      />
-      {result && (
-        <div className="flex flex-col gap-1">
-          <p
-            className={`text-xs ${result.ok ? "text-accent-brand" : "text-destructive"}`}
-          >
-            {result.ok ? t("config.testOk") : t("config.testBad")}
-          </p>
-          {result.output && (
-            <pre className="overflow-auto whitespace-pre-wrap border border-border p-2 font-mono text-xs">
-              {result.output}
-            </pre>
-          )}
-        </div>
-      )}
-      <TextAreaField
-        label={t("config.main")}
-        hint={t("config.mainHint")}
-        value={data.main}
-        onChange={() => undefined}
-        rows={10}
-        mono
-        disabled
-      />
-    </div>
+    <PanelShell
+      chrome={false}
+      footer={
+        <FormFooter
+          onSave={() => void save()}
+          saving={saving}
+          dirty={text !== data.managed}
+          saveLabel={t("common.save")}
+          extra={
+            <Button variant="outline" onClick={() => void test()}>
+              {t("config.test")}
+            </Button>
+          }
+        />
+      }
+    >
+      <div className="flex min-h-0 flex-1 flex-col gap-3 p-3">
+        <TextAreaField
+          label={t("config.managed")}
+          hint={t("config.managedHint")}
+          value={text}
+          onChange={setText}
+          fill
+          mono
+        />
+        {error && (
+          <pre className="whitespace-pre-wrap border border-border p-2 font-mono text-xs text-destructive">
+            {error}
+          </pre>
+        )}
+        {result && (
+          <div className="flex flex-col gap-1">
+            <p
+              className={`text-xs ${result.ok ? "text-accent-brand" : "text-destructive"}`}
+            >
+              {result.ok ? t("config.testOk") : t("config.testBad")}
+            </p>
+            {result.output && (
+              <pre className="overflow-auto whitespace-pre-wrap border border-border p-2 font-mono text-xs">
+                {result.output}
+              </pre>
+            )}
+          </div>
+        )}
+        <TextAreaField
+          label={t("config.main")}
+          hint={t("config.mainHint")}
+          value={data.main}
+          onChange={() => undefined}
+          rows={10}
+          mono
+          disabled
+        />
+      </div>
+    </PanelShell>
   );
 }

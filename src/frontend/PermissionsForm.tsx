@@ -7,10 +7,11 @@ import {
   SelectField,
   SwitchRow,
   TextField,
+  LoadingState,
+  PanelShell,
 } from "@termix-ssh/plugin-sdk/ui";
 import type { AclEntry, PermissionsView } from "../shared/types";
 import { errorMessage, getPermissions, savePermissions } from "./api";
-import { Loading } from "./Loading";
 
 const PERMS = ["r--", "r-x", "rw-", "rwx", "---"] as const;
 
@@ -62,7 +63,7 @@ export function PermissionsForm({
   }, [load]);
 
   if (failed) return <p className="text-xs text-destructive">{failed}</p>;
-  if (!view) return <Loading />;
+  if (!view) return <LoadingState />;
   if (!view.exists) {
     return (
       <p className="text-xs text-muted-foreground">
@@ -103,97 +104,105 @@ export function PermissionsForm({
   };
 
   return (
-    <div className="flex flex-col gap-3 p-3">
-      <p className="font-mono text-xs text-muted-foreground">{view.path}</p>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-        <TextField
-          label={t("shares.owner")}
-          value={owner}
-          onChange={setOwner}
+    <PanelShell
+      chrome={false}
+      footer={
+        <FormFooter
+          onSave={() => void save()}
+          saving={saving}
+          saveLabel={t("common.save")}
         />
-        <TextField
-          label={t("shares.group")}
-          value={group}
-          onChange={setGroup}
+      }
+    >
+      <div className="flex flex-col gap-3 p-3">
+        <p className="font-mono text-xs text-muted-foreground">{view.path}</p>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <TextField
+            label={t("shares.owner")}
+            value={owner}
+            onChange={setOwner}
+          />
+          <TextField
+            label={t("shares.group")}
+            value={group}
+            onChange={setGroup}
+          />
+          <TextField
+            label={t("shares.mode")}
+            value={mode}
+            onChange={setMode}
+            mono
+          />
+        </div>
+        <SwitchRow
+          label={t("permissions.recursive")}
+          description={t("permissions.recursiveDesc")}
+          checked={recursive}
+          onChange={setRecursive}
         />
-        <TextField
-          label={t("shares.mode")}
-          value={mode}
-          onChange={setMode}
-          mono
-        />
-      </div>
-      <SwitchRow
-        label={t("permissions.recursive")}
-        description={t("permissions.recursiveDesc")}
-        checked={recursive}
-        onChange={setRecursive}
-      />
-      <div className="flex flex-col gap-2">
-        <p className="text-xs font-medium">{t("permissions.acl")}</p>
-        {!aclReady && (
-          <p className="text-xs text-muted-foreground">
-            {t("permissions.noAcl")}
-          </p>
-        )}
-        {entries.length === 0 && aclReady && (
-          <p className="text-xs text-muted-foreground">
-            {t("permissions.noEntries")}
-          </p>
-        )}
-        {entries.map((entry) => (
-          <div
-            key={`${entry.type}:${entry.name}`}
-            className="flex items-center justify-between border border-border px-2 py-1 text-xs"
-          >
-            <span className="font-mono">
-              {entry.type === "user" ? "u" : "g"}:{entry.name}:{entry.perms}
-            </span>
-            <Button
-              variant="ghost"
-              size="icon"
-              title={t("common.delete")}
-              onClick={() =>
-                setEntries((list) => list.filter((e) => !same(e, entry)))
-              }
+        <div className="flex flex-col gap-2">
+          <p className="text-xs font-medium">{t("permissions.acl")}</p>
+          {!aclReady && (
+            <p className="text-xs text-muted-foreground">
+              {t("permissions.noAcl")}
+            </p>
+          )}
+          {entries.length === 0 && aclReady && (
+            <p className="text-xs text-muted-foreground">
+              {t("permissions.noEntries")}
+            </p>
+          )}
+          {entries.map((entry) => (
+            <div
+              key={`${entry.type}:${entry.name}`}
+              className="flex items-center justify-between border border-border px-2 py-1 text-xs"
             >
-              <X className="size-4" />
-            </Button>
-          </div>
-        ))}
-        {aclReady && (
-          <div className="grid grid-cols-1 items-end gap-2 sm:grid-cols-4">
-            <SelectField<"user" | "group">
-              label={t("permissions.type")}
-              value={draft.type}
-              onChange={(type) => setDraft({ ...draft, type })}
-              options={[
-                { value: "user", label: t("permissions.user") },
-                { value: "group", label: t("permissions.group") },
-              ]}
-            />
-            <TextField
-              label={t("permissions.name")}
-              value={draft.name}
-              onChange={(entryName) => setDraft({ ...draft, name: entryName })}
-            />
-            <SelectField<string>
-              label={t("permissions.access")}
-              value={draft.perms}
-              onChange={(perms) => setDraft({ ...draft, perms })}
-              options={PERMS.map((p) => ({ value: p, label: p }))}
-            />
-            <Button variant="outline" onClick={addEntry}>
-              {t("permissions.addEntry")}
-            </Button>
-          </div>
-        )}
+              <span className="font-mono">
+                {entry.type === "user" ? "u" : "g"}:{entry.name}:{entry.perms}
+              </span>
+              <Button
+                variant="ghost"
+                size="icon"
+                title={t("common.delete")}
+                onClick={() =>
+                  setEntries((list) => list.filter((e) => !same(e, entry)))
+                }
+              >
+                <X className="size-4" />
+              </Button>
+            </div>
+          ))}
+          {aclReady && (
+            <div className="grid grid-cols-1 items-end gap-2 sm:grid-cols-4">
+              <SelectField<"user" | "group">
+                label={t("permissions.type")}
+                value={draft.type}
+                onChange={(type) => setDraft({ ...draft, type })}
+                options={[
+                  { value: "user", label: t("permissions.user") },
+                  { value: "group", label: t("permissions.group") },
+                ]}
+              />
+              <TextField
+                label={t("permissions.name")}
+                value={draft.name}
+                onChange={(entryName) =>
+                  setDraft({ ...draft, name: entryName })
+                }
+              />
+              <SelectField<string>
+                label={t("permissions.access")}
+                value={draft.perms}
+                onChange={(perms) => setDraft({ ...draft, perms })}
+                options={PERMS.map((p) => ({ value: p, label: p }))}
+              />
+              <Button variant="outline" onClick={addEntry}>
+                {t("permissions.addEntry")}
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
-      <FormFooter
-        onSave={() => void save()}
-        saving={saving}
-        saveLabel={t("common.save")}
-      />
-    </div>
+    </PanelShell>
   );
 }

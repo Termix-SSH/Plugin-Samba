@@ -6,10 +6,10 @@ import {
   ListRowAction,
   PanelList,
   useConfirm,
+  LoadingState,
 } from "@termix-ssh/plugin-sdk/ui";
 import type { SessionsView as Data } from "../shared/types";
 import { disconnectSession, errorMessage, getSessions } from "./api";
-import { Loading } from "./Loading";
 
 export function SessionsView({
   hostId,
@@ -42,7 +42,7 @@ export function SessionsView({
 
   if (failed)
     return <p className="px-3 py-2 text-xs text-destructive">{failed}</p>;
-  if (!data) return <Loading />;
+  if (!data) return <LoadingState />;
 
   const disconnect = async (pid: number, user: string) => {
     const ok = await confirm({

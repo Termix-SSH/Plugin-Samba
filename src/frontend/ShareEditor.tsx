@@ -153,6 +153,20 @@ export function ShareEditor({
       leading={<BackButton onClick={onClose} />}
       title={share ? share.name : t("shares.addTitle")}
       status={share?.path}
+      footer={
+        !external && section !== "permissions" ? (
+          <FormFooter
+            onCancel={onClose}
+            onSave={() => void save()}
+            saving={saving}
+            saveLabel={t("common.save")}
+            cancelLabel={t("common.cancel")}
+            onDelete={share ? () => void remove() : undefined}
+            deleteLabel={t("common.delete")}
+            disabled={!form.name.trim() || !form.path.trim()}
+          />
+        ) : undefined
+      }
     >
       <div className="flex shrink-0 flex-col gap-3 p-3">
         {external && (
@@ -332,18 +346,6 @@ export function ShareEditor({
               />
             )}
             {error && <p className="text-xs text-destructive">{error}</p>}
-            {section !== "permissions" && (
-              <FormFooter
-                onCancel={onClose}
-                onSave={() => void save()}
-                saving={saving}
-                saveLabel={t("common.save")}
-                cancelLabel={t("common.cancel")}
-                onDelete={share ? () => void remove() : undefined}
-                deleteLabel={t("common.delete")}
-                disabled={!form.name.trim() || !form.path.trim()}
-              />
-            )}
           </>
         )}
       </div>

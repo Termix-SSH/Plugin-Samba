@@ -7,10 +7,11 @@ import {
   PanelList,
   PanelSearch,
   Switch,
+  LoadingState,
+  TOOLBAR_FIT,
 } from "@termix-ssh/plugin-sdk/ui";
 import type { ShareView } from "../shared/types";
 import { errorMessage, listShares, updateShare } from "./api";
-import { Loading } from "./Loading";
 
 export function SharesView({
   hostId,
@@ -53,7 +54,7 @@ export function SharesView({
 
   if (failed)
     return <p className="px-3 py-2 text-xs text-destructive">{failed}</p>;
-  if (!shares) return <Loading />;
+  if (!shares) return <LoadingState />;
 
   const needle = search.trim().toLowerCase();
   const visible = shares.filter(
@@ -65,7 +66,7 @@ export function SharesView({
 
   return (
     <div className="flex flex-col">
-      <div className="border-b border-border px-3 py-2">
+      <div className={`border-b border-border px-3 py-2 ${TOOLBAR_FIT}`}>
         <PanelSearch
           value={search}
           onChange={setSearch}
