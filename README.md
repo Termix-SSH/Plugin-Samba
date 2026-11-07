@@ -33,6 +33,8 @@ Read the [docs](https://docs.termix.site/plugins/samba) to set it up and use it.
 - Connected users, open files and disconnect
 - Config check with testparm and a log viewer
 - Your own smb.conf is never rewritten, shares live in one included file
+- A dashboard card and a shares panel beside SSH terminals
+- Start, stop and restart Samba through Termix actions
 
 <br />
 
