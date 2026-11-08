@@ -7,13 +7,39 @@
     "save": "Salvesta",
     "cancel": "Tühista",
     "back": "Tagasi",
-    "delete": "Kustuta"
+    "delete": "Kustuta",
+    "loading": "Laadimine..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba jagamised",
         "description": "Kuva selle hosti menüüs Samba jagamiste vaheleht."
+      },
+      "showPanel": {
+        "label": "Kuva jagamiste paneel terminaalides",
+        "description": "Luba jagamiste paneeli avamine selle hosti SSH-terminali kõrval."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Ava jagamiste paneel koos uute terminaalidega",
+        "description": "Kuva jagamiste paneel kõigi SSH-terminaalide kõrval, kus Samba on sisse lülitatud. Paneeli saab ikka avada ja sulgeda nupuga paremal serval."
+      },
+      "companionSide": {
+        "label": "Jagamiste paneeli asukoht",
+        "description": "Kus jagamiste paneel terminali kõrval asub.",
+        "right": "Parem",
+        "left": "Vasak",
+        "bottom": "Alumine"
+      },
+      "companionSize": {
+        "label": "Jagamiste paneeli suurus",
+        "description": "Laius pikslites või kõrgus, kui paneel on all. Saad selle serva ka lohistada."
+      },
+      "companionEdgeButton": {
+        "label": "Kuva paneeli nupp",
+        "description": "Kuva terminali paremal serval väike nupp, mis avab jagamiste paneeli."
       }
     }
   },
@@ -167,6 +193,7 @@
   },
   "logs": {
     "loadFailed": "Logide lugemine ebaõnnestus.",
+    "lines": "{{count}} rida",
     "empty": "Ühtegi logirida pole."
   },
   "service": {
@@ -180,5 +207,48 @@
     "notIncluded": "smb.conf ei sisalda veel hallatavat faili. See lisatakse esimest korda, kui salvestad jagamise.",
     "firewall": "Ava tulemüür Samba jaoks:",
     "selinux": "SELinux on sisse lülitatud. Samba lubamiseks jagada suvalist kausta:"
+  },
+  "operations": {
+    "list": {
+      "title": "Loetle Samba jagamised"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Käivita Samba"
+    },
+    "stop": {
+      "title": "Peata Samba"
+    },
+    "restart": {
+      "title": "Taaskäivita Samba"
+    },
+    "reload": {
+      "title": "Laadi Samba uuesti"
+    },
+    "shares": {
+      "title": "Samba jagamised",
+      "path": "Kaust",
+      "access": "Juurdepääs",
+      "guests": "Külalised"
+    }
+  },
+  "nav": {
+    "togglePanel": "Lülita jagamiste paneel"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Hostide kontrollimine...",
+    "summary_one": "{{count}} jagamine {{hosts}} hostil",
+    "summary_other": "{{count}} jagamist {{hosts}} hostil",
+    "refresh": "Kontrolli uuesti",
+    "empty": "Lülita hostil Samba sisse, et näha seda siin.",
+    "stopped": "Ei tööta",
+    "missing": "Pole paigaldatud",
+    "shares_one": "{{count}} jagamine",
+    "shares_other": "{{count}} jagamist",
+    "sessions_one": "{{count}} sessioon",
+    "sessions_other": "{{count}} sessiooni"
   }
 }

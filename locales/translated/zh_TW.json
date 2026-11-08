@@ -7,13 +7,39 @@
     "save": "儲存",
     "cancel": "取消",
     "back": "返回",
-    "delete": "刪除"
+    "delete": "刪除",
+    "loading": "載入中..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba 共享",
         "description": "在此主機的選單中顯示 Samba 共享標籤頁。"
+      },
+      "showPanel": {
+        "label": "在終端機中顯示共用面板",
+        "description": "讓共用面板在此主機的 SSH 終端機旁開啟。"
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "在新終端機中開啟共用面板",
+        "description": "在每個啟用 Samba 的 SSH 終端機旁顯示共用面板。您仍可以從右側邊緣的按鈕開啟或關閉它。"
+      },
+      "companionSide": {
+        "label": "共用面板位置",
+        "description": "共用面板相對於終端機的位置。",
+        "right": "右側",
+        "left": "左側",
+        "bottom": "底部"
+      },
+      "companionSize": {
+        "label": "共用面板大小",
+        "description": "以像素為單位的寬度，或在底部時為高度。您也可以拖曳其邊緣來調整。"
+      },
+      "companionEdgeButton": {
+        "label": "顯示面板按鈕",
+        "description": "在終端機的右側邊緣顯示一個小按鈕，用於開啟共用面板。"
       }
     }
   },
@@ -181,5 +207,45 @@
     "notIncluded": "smb.conf 尚未包含受管理的檔案。在您首次儲存共用項目時會自動加入。",
     "firewall": "為 Samba 開啟防火牆：",
     "selinux": "SELinux 已啟用。若要讓 Samba 共用任何資料夾："
+  },
+  "operations": {
+    "list": {
+      "title": "列出 Samba 共用"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "啟動 Samba"
+    },
+    "stop": {
+      "title": "停止 Samba"
+    },
+    "restart": {
+      "title": "重新啟動 Samba"
+    },
+    "reload": {
+      "title": "重新載入 Samba"
+    },
+    "shares": {
+      "title": "Samba 共用",
+      "path": "資料夾",
+      "access": "存取",
+      "guests": "訪客"
+    }
+  },
+  "nav": {
+    "togglePanel": "切換共用面板"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "正在檢查主機...",
+    "summary_other": "{{hosts}} 個主機上有 {{count}} 個共用",
+    "refresh": "再次檢查",
+    "empty": "為主機啟用 Samba 即可在此處看到它。",
+    "stopped": "未執行",
+    "missing": "未安裝",
+    "shares_other": "{{count}} 個共用",
+    "sessions_other": "{{count}} 個工作階段"
   }
 }

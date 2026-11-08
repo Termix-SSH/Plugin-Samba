@@ -7,13 +7,39 @@
     "save": "Opslaan",
     "cancel": "Annuleren",
     "back": "Terug",
-    "delete": "Verwijderen"
+    "delete": "Verwijderen",
+    "loading": "Laden..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba-delen",
         "description": "Toon het tabblad Samba-delen voor deze host in het menu."
+      },
+      "showPanel": {
+        "label": "Deelvenster tonen in terminals",
+        "description": "Laat het deelvenster open naast de SSH-terminal van deze host."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Deelvenster openen bij nieuwe terminals",
+        "description": "Toon het deelvenster naast elke SSH-terminal met Samba ingeschakeld. Je kunt het nog steeds openen en sluiten via de knop aan de rechterkant."
+      },
+      "companionSide": {
+        "label": "Positie deelvenster",
+        "description": "Waar het deelvenster naast een terminal staat.",
+        "right": "Rechts",
+        "left": "Links",
+        "bottom": "Onder"
+      },
+      "companionSize": {
+        "label": "Grootte deelvenster",
+        "description": "Breedte in pixels, of hoogte als het onderaan staat. Je kunt ook de rand verslepen."
+      },
+      "companionEdgeButton": {
+        "label": "Knop voor venster tonen",
+        "description": "Toon een kleine knop aan de rechterkant van een terminal die het deelvenster opent."
       }
     }
   },
@@ -181,5 +207,48 @@
     "notIncluded": "smb.conf bevat het beheerde bestand nog niet. Het wordt toegevoegd de eerste keer dat je een share opslaat.",
     "firewall": "De firewall openen voor Samba:",
     "selinux": "SELinux is ingeschakeld. Om Samba elke map te laten delen:"
+  },
+  "operations": {
+    "list": {
+      "title": "Samba-mappen weergeven"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Samba starten"
+    },
+    "stop": {
+      "title": "Samba stoppen"
+    },
+    "restart": {
+      "title": "Samba herstarten"
+    },
+    "reload": {
+      "title": "Samba herladen"
+    },
+    "shares": {
+      "title": "Samba-mappen",
+      "path": "Map",
+      "access": "Toegang",
+      "guests": "Gasten"
+    }
+  },
+  "nav": {
+    "togglePanel": "Deelvenster in-/uitschakelen"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Hosts controleren...",
+    "summary_one": "{{count}} map op {{hosts}} hosts",
+    "summary_other": "{{count}} mappen op {{hosts}} hosts",
+    "refresh": "Opnieuw controleren",
+    "empty": "Schakel Samba in voor een host om deze hier te zien.",
+    "stopped": "Niet actief",
+    "missing": "Niet geïnstalleerd",
+    "shares_one": "{{count}} map",
+    "shares_other": "{{count}} mappen",
+    "sessions_one": "{{count}} sessie",
+    "sessions_other": "{{count}} sessies"
   }
 }

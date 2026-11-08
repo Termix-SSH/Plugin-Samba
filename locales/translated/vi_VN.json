@@ -7,13 +7,39 @@
     "save": "Lưu",
     "cancel": "Hủy",
     "back": "Quay lại",
-    "delete": "Xóa"
+    "delete": "Xóa",
+    "loading": "Đang tải..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba shares",
         "description": "Hiển thị tab Samba Shares cho host này trong menu của nó."
+      },
+      "showPanel": {
+        "label": "Hiển thị bảng chia sẻ trong terminal",
+        "description": "Cho phép bảng chia sẻ mở bên cạnh terminal SSH của máy chủ này."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Mở bảng chia sẻ cùng với terminal mới",
+        "description": "Hiển thị bảng chia sẻ bên cạnh mọi terminal SSH có bật Samba. Bạn vẫn có thể mở và đóng nó từ nút ở cạnh phải."
+      },
+      "companionSide": {
+        "label": "Vị trí bảng chia sẻ",
+        "description": "Nơi bảng chia sẻ nằm cạnh terminal.",
+        "right": "Phải",
+        "left": "Trái",
+        "bottom": "Dưới"
+      },
+      "companionSize": {
+        "label": "Kích thước bảng chia sẻ",
+        "description": "Chiều rộng tính bằng pixel, hoặc chiều cao khi nó ở phía dưới. Bạn cũng có thể kéo cạnh của nó."
+      },
+      "companionEdgeButton": {
+        "label": "Hiển thị nút bảng",
+        "description": "Hiển thị một nút nhỏ ở cạnh phải của terminal để mở bảng chia sẻ."
       }
     }
   },
@@ -181,5 +207,45 @@
     "notIncluded": "smb.conf chưa bao gồm tập tin được quản lý. Nó sẽ được thêm vào lần đầu tiên bạn lưu một chia sẻ.",
     "firewall": "Mở tường lửa cho Samba:",
     "selinux": "SELinux đang bật. Để cho phép Samba chia sẻ bất kỳ thư mục nào:"
+  },
+  "operations": {
+    "list": {
+      "title": "Liệt kê các thư mục chia sẻ Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Khởi động Samba"
+    },
+    "stop": {
+      "title": "Dừng Samba"
+    },
+    "restart": {
+      "title": "Khởi động lại Samba"
+    },
+    "reload": {
+      "title": "Tải lại Samba"
+    },
+    "shares": {
+      "title": "Thư mục chia sẻ Samba",
+      "path": "Thư mục",
+      "access": "Quyền truy cập",
+      "guests": "Khách"
+    }
+  },
+  "nav": {
+    "togglePanel": "Bật/tắt bảng chia sẻ"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Đang kiểm tra máy chủ...",
+    "summary_other": "{{count}} thư mục chia sẻ trên {{hosts}} máy chủ",
+    "refresh": "Kiểm tra lại",
+    "empty": "Bật Samba cho một máy chủ để xem nó ở đây.",
+    "stopped": "Không chạy",
+    "missing": "Chưa cài đặt",
+    "shares_other": "{{count}} thư mục chia sẻ",
+    "sessions_other": "{{count}} phiên làm việc"
   }
 }

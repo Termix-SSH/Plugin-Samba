@@ -7,13 +7,39 @@
     "save": "Simpan",
     "cancel": "Batal",
     "back": "Kembali",
-    "delete": "Padam"
+    "delete": "Padam",
+    "loading": "Memuatkan..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Kongsi Samba",
         "description": "Papar tab Kongsi Samba untuk hos ini dalam menunya."
+      },
+      "showPanel": {
+        "label": "Paparkan panel perkongsian dalam terminal",
+        "description": "Biarkan panel perkongsian terbuka di sebelah terminal SSH hos ini."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Buka panel perkongsian bersama terminal baharu",
+        "description": "Paparkan panel perkongsian di sebelah setiap terminal SSH yang mempunyai Samba dihidupkan. Anda masih boleh membukanya dan menutupnya daripada butang di tepi kanan."
+      },
+      "companionSide": {
+        "label": "Sisi panel perkongsian",
+        "description": "Di mana panel perkongsian diletakkan di sebelah terminal.",
+        "right": "Kanan",
+        "left": "Kiri",
+        "bottom": "Bawah"
+      },
+      "companionSize": {
+        "label": "Saiz panel perkongsian",
+        "description": "Lebar dalam piksel, atau tinggi apabila ia berada di bahagian bawah. Anda juga boleh menyeret tepinya."
+      },
+      "companionEdgeButton": {
+        "label": "Paparkan butang panel",
+        "description": "Paparkan butang kecil di tepi kanan terminal yang membuka panel perkongsian."
       }
     }
   },
@@ -181,5 +207,45 @@
     "notIncluded": "smb.conf belum termasuk fail yang diuruskan. Ia akan ditambah pada kali pertama anda menyimpan perkongsian.",
     "firewall": "Buka firewall untuk Samba:",
     "selinux": "SELinux dihidupkan. Untuk membolehkan Samba berkongsi mana-mana folder:"
+  },
+  "operations": {
+    "list": {
+      "title": "Senaraikan perkongsian Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Mula Samba"
+    },
+    "stop": {
+      "title": "Henti Samba"
+    },
+    "restart": {
+      "title": "Mula semula Samba"
+    },
+    "reload": {
+      "title": "Muat semula Samba"
+    },
+    "shares": {
+      "title": "Perkongsian Samba",
+      "path": "Folder",
+      "access": "Akses",
+      "guests": "Tetamu"
+    }
+  },
+  "nav": {
+    "togglePanel": "Togol panel perkongsian"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Menyemak hos...",
+    "summary_other": "{{count}} perkongsian pada {{hosts}} hos",
+    "refresh": "Semak semula",
+    "empty": "Hidupkan Samba untuk hos untuk melihatnya di sini.",
+    "stopped": "Tidak berjalan",
+    "missing": "Tidak dipasang",
+    "shares_other": "{{count}} perkongsian",
+    "sessions_other": "{{count}} sesi"
   }
 }

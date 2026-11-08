@@ -7,13 +7,39 @@
     "save": "Lagre",
     "cancel": "Avbryt",
     "back": "Tilbake",
-    "delete": "Slett"
+    "delete": "Slett",
+    "loading": "Laster..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba-delinger",
         "description": "Vis fanen Samba-delinger for denne verten i menyen."
+      },
+      "showPanel": {
+        "label": "Vis delingspanel i terminaler",
+        "description": "La delingspanelet åpne ved siden av SSH-terminalen for denne verten."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Åpne delingspanelet med nye terminaler",
+        "description": "Vis delingspanelet ved siden av hver SSH-terminal som har Samba på. Du kan fortsatt åpne og lukke det fra knappen på høyre kant."
+      },
+      "companionSide": {
+        "label": "Plassering av delingspanel",
+        "description": "Hvor delingspanelet vises ved siden av en terminal.",
+        "right": "Høyre",
+        "left": "Venstre",
+        "bottom": "Bunn"
+      },
+      "companionSize": {
+        "label": "Størrelse på delingspanel",
+        "description": "Bredde i piksler, eller høyde når det er på bunnen. Du kan også dra i kanten."
+      },
+      "companionEdgeButton": {
+        "label": "Vis panelknapp",
+        "description": "Vis en liten knapp på høyre kant av en terminal som åpner delingspanelet."
       }
     }
   },
@@ -167,6 +193,7 @@
   },
   "logs": {
     "loadFailed": "Kunne ikke lese loggene.",
+    "lines": "{{count}} linjer",
     "empty": "Ingen logglinjer."
   },
   "service": {
@@ -180,5 +207,48 @@
     "notIncluded": "smb.conf inneholder ikke den administrerte filen ennå. Den legges til første gang du lagrer en deling.",
     "firewall": "Åpne brannmuren for Samba:",
     "selinux": "SELinux er på. For å la Samba dele en hvilken som helst mappe:"
+  },
+  "operations": {
+    "list": {
+      "title": "Liste over Samba-delinger"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Start Samba"
+    },
+    "stop": {
+      "title": "Stopp Samba"
+    },
+    "restart": {
+      "title": "Start Samba på nytt"
+    },
+    "reload": {
+      "title": "Last Samba på nytt"
+    },
+    "shares": {
+      "title": "Samba-delinger",
+      "path": "Mappe",
+      "access": "Tilgang",
+      "guests": "Gjester"
+    }
+  },
+  "nav": {
+    "togglePanel": "Veksle delingspanel"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Sjekker verter...",
+    "summary_one": "{{count}} deling på {{hosts}} verter",
+    "summary_other": "{{count}} delinger på {{hosts}} verter",
+    "refresh": "Sjekk igjen",
+    "empty": "Skru på Samba for en vert for å se den her.",
+    "stopped": "Ikke kjørende",
+    "missing": "Ikke installert",
+    "shares_one": "{{count}} deling",
+    "shares_other": "{{count}} delinger",
+    "sessions_one": "{{count}} økt",
+    "sessions_other": "{{count}} økter"
   }
 }

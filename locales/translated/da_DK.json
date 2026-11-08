@@ -7,13 +7,39 @@
     "save": "Gem",
     "cancel": "Annuller",
     "back": "Tilbage",
-    "delete": "Slet"
+    "delete": "Slet",
+    "loading": "Indlæser..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba-delinger",
         "description": "Vis fanen Samba-delinger for denne vært i dens menu."
+      },
+      "showPanel": {
+        "label": "Vis delingspanel i terminaler",
+        "description": "Lad delingspanelet åbne ved siden af SSH-terminalen for denne vært."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Åbn delingspanelet med nye terminaler",
+        "description": "Vis delingspanelet ved siden af hver SSH-terminal, der har Samba aktiveret. Du kan stadig åbne og lukke det via knappen på højre kant."
+      },
+      "companionSide": {
+        "label": "Placering af delingspanel",
+        "description": "Hvor delingspanelet sidder i forhold til en terminal.",
+        "right": "Højre",
+        "left": "Venstre",
+        "bottom": "Nederst"
+      },
+      "companionSize": {
+        "label": "Størrelse på delingspanel",
+        "description": "Bredde i pixels, eller højde når det er nederst. Du kan også trække i kanten."
+      },
+      "companionEdgeButton": {
+        "label": "Vis panelknappen",
+        "description": "Vis en lille knap på højre kant af en terminal, der åbner delingspanelet."
       }
     }
   },
@@ -167,6 +193,7 @@
   },
   "logs": {
     "loadFailed": "Kunne ikke læse logfilerne.",
+    "lines": "{{count}} linjer",
     "empty": "Ingen loglinjer."
   },
   "service": {
@@ -180,5 +207,48 @@
     "notIncluded": "smb.conf inkluderer ikke den håndterede fil endnu. Den tilføjes første gang, du gemmer en deling.",
     "firewall": "Åbn brandmuren for Samba:",
     "selinux": "SELinux er slået til. For at lade Samba dele enhver mappe:"
+  },
+  "operations": {
+    "list": {
+      "title": "List Samba-delinger"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Start Samba"
+    },
+    "stop": {
+      "title": "Stop Samba"
+    },
+    "restart": {
+      "title": "Genstart Samba"
+    },
+    "reload": {
+      "title": "Genindlæs Samba"
+    },
+    "shares": {
+      "title": "Samba-delinger",
+      "path": "Mappe",
+      "access": "Adgang",
+      "guests": "Gæster"
+    }
+  },
+  "nav": {
+    "togglePanel": "Skift delingspanel"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Tjekker værter...",
+    "summary_one": "{{count}} deling på {{hosts}} værter",
+    "summary_other": "{{count}} delinger på {{hosts}} værter",
+    "refresh": "Tjek igen",
+    "empty": "Aktivér Samba for en vært for at se den her.",
+    "stopped": "Kører ikke",
+    "missing": "Ikke installeret",
+    "shares_one": "{{count}} deling",
+    "shares_other": "{{count}} delinger",
+    "sessions_one": "{{count}} session",
+    "sessions_other": "{{count}} sessioner"
   }
 }

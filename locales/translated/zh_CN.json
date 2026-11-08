@@ -7,13 +7,39 @@
     "save": "保存",
     "cancel": "取消",
     "back": "返回",
-    "delete": "删除"
+    "delete": "删除",
+    "loading": "加载中..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba 共享",
         "description": "在此主机的菜单中显示 Samba 共享标签页。"
+      },
+      "showPanel": {
+        "label": "在终端中显示共享面板",
+        "description": "允许共享面板在此主机的 SSH 终端旁打开。"
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "在新终端中打开共享面板",
+        "description": "在每个启用了 Samba 的 SSH 终端旁显示共享面板。您仍然可以通过右侧边缘的按钮打开和关闭它。"
+      },
+      "companionSide": {
+        "label": "共享面板位置",
+        "description": "共享面板相对于终端的位置。",
+        "right": "右侧",
+        "left": "左侧",
+        "bottom": "底部"
+      },
+      "companionSize": {
+        "label": "共享面板大小",
+        "description": "宽度（像素），或位于底部时的高度。您也可以拖动其边缘进行调整。"
+      },
+      "companionEdgeButton": {
+        "label": "显示面板按钮",
+        "description": "在终端右侧边缘显示一个小按钮，用于打开共享面板。"
       }
     }
   },
@@ -181,5 +207,45 @@
     "notIncluded": "smb.conf 尚未包含托管文件。首次保存共享时会自动添加。",
     "firewall": "为 Samba 开放防火墙：",
     "selinux": "SELinux 已启用。若要允许 Samba 共享任意文件夹："
+  },
+  "operations": {
+    "list": {
+      "title": "列出 Samba 共享"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "启动 Samba"
+    },
+    "stop": {
+      "title": "停止 Samba"
+    },
+    "restart": {
+      "title": "重启 Samba"
+    },
+    "reload": {
+      "title": "重载 Samba"
+    },
+    "shares": {
+      "title": "Samba 共享",
+      "path": "文件夹",
+      "access": "访问权限",
+      "guests": "访客"
+    }
+  },
+  "nav": {
+    "togglePanel": "切换共享面板"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "正在检查主机...",
+    "summary_other": "{{hosts}} 个主机上的 {{count}} 个共享",
+    "refresh": "再次检查",
+    "empty": "为主机启用 Samba 以在此处查看。",
+    "stopped": "未运行",
+    "missing": "未安装",
+    "shares_other": "{{count}} 个共享",
+    "sessions_other": "{{count}} 个会话"
   }
 }

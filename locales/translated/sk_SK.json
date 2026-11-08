@@ -7,13 +7,39 @@
     "save": "Uložiť",
     "cancel": "Zrušiť",
     "back": "Späť",
-    "delete": "Odstrániť"
+    "delete": "Odstrániť",
+    "loading": "Načítava sa..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Zdieľané adresáre Samba",
         "description": "Zobraziť kartu Zdieľané adresáre Samba pre tento hostiteľ v jeho ponuke."
+      },
+      "showPanel": {
+        "label": "Zobraziť panel zdieľaní v termináloch",
+        "description": "Nechajte panel zdieľaní otvorený vedľa SSH terminálu tohto hostiteľa."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Otvoriť panel zdieľaní s novými terminálmi",
+        "description": "Zobraziť panel zdieľaní vedľa každého SSH terminálu, ktorý má zapnutý Samba. Stále ho môžete otvárať a zatvárať pomocou tlačidla na pravom okraji."
+      },
+      "companionSide": {
+        "label": "Poloha panela zdieľaní",
+        "description": "Kde sa nachádza panel zdieľaní vedľa terminálu.",
+        "right": "Vpravo",
+        "left": "Vľavo",
+        "bottom": "Dole"
+      },
+      "companionSize": {
+        "label": "Veľkosť panela zdieľaní",
+        "description": "Šírka v pixeloch, alebo výška, keď je umiestnený dole. Môžete tiež pretiahnuť jeho okraj."
+      },
+      "companionEdgeButton": {
+        "label": "Zobraziť tlačidlo panela",
+        "description": "Zobraziť malé tlačidlo na pravom okraji terminálu, ktoré otvorí panel zdieľaní."
       }
     }
   },
@@ -167,6 +193,7 @@
   },
   "logs": {
     "loadFailed": "Nepodarilo sa načítať denníky.",
+    "lines": "{{count}} riadkov",
     "empty": "Žiadne riadky denníka."
   },
   "service": {
@@ -180,5 +207,54 @@
     "notIncluded": "smb.conf zatiaľ neobsahuje spravovaný súbor. Pridá sa prvýkrát, keď uložíte zdieľanú položku.",
     "firewall": "Otvorte firewall pre Samba:",
     "selinux": "SELinux je zapnutý. Aby mohol Samba zdieľať ľubovoľný priečinok:"
+  },
+  "operations": {
+    "list": {
+      "title": "Zoznam zdieľaní Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Spustiť Samba"
+    },
+    "stop": {
+      "title": "Zastaviť Samba"
+    },
+    "restart": {
+      "title": "Reštartovať Samba"
+    },
+    "reload": {
+      "title": "Obnoviť Samba"
+    },
+    "shares": {
+      "title": "Zdieľania Samba",
+      "path": "Priečinok",
+      "access": "Prístup",
+      "guests": "Hostia"
+    }
+  },
+  "nav": {
+    "togglePanel": "Prepnúť panel zdieľaní"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Kontrola hostiteľov...",
+    "summary_one": "{{count}} zdieľanie na {{hosts}} hostiteľoch",
+    "summary_few": "{{count}} zdieľania na {{hosts}} hostiteľoch",
+    "summary_many": "{{count}} zdieľaní na {{hosts}} hostiteľoch",
+    "summary_other": "{{count}} zdieľaní na {{hosts}} hostiteľoch",
+    "refresh": "Skontrolovať znova",
+    "empty": "Zapnite Samba pre hostiteľa, aby sa zobrazil tu.",
+    "stopped": "Nespustený",
+    "missing": "Neinštalovaný",
+    "shares_one": "{{count}} zdieľanie",
+    "shares_few": "{{count}} zdieľania",
+    "shares_many": "{{count}} zdieľaní",
+    "shares_other": "{{count}} zdieľaní",
+    "sessions_one": "{{count}} relácia",
+    "sessions_few": "{{count}} relácie",
+    "sessions_many": "{{count}} relácií",
+    "sessions_other": "{{count}} relácií"
   }
 }

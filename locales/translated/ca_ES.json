@@ -7,13 +7,39 @@
     "save": "Desa",
     "cancel": "Cancel·la",
     "back": "Enrere",
-    "delete": "Suprimeix"
+    "delete": "Suprimeix",
+    "loading": "Carregant..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Comparticions Samba",
         "description": "Mostra la pestanya de comparticions Samba per a aquest amfitrió al seu menú."
+      },
+      "showPanel": {
+        "label": "Mostra el panell de comparticions als terminals",
+        "description": "Permet que el panell de comparticions s'obri al costat del terminal SSH d'aquest amfitrió."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Obre el panell de comparticions amb els nous terminals",
+        "description": "Mostra el panell de comparticions al costat de cada terminal SSH que tingui Samba activat. Encara pots obrir-lo i tancar-lo des del botó del costat dret."
+      },
+      "companionSide": {
+        "label": "Posició del panell de comparticions",
+        "description": "On es troba el panell de comparticions al costat d'un terminal.",
+        "right": "Dreta",
+        "left": "Esquerra",
+        "bottom": "Inferior"
+      },
+      "companionSize": {
+        "label": "Mida del panell de comparticions",
+        "description": "Amplada en píxels, o alçada quan està a la part inferior. També pots arrossegar la vora."
+      },
+      "companionEdgeButton": {
+        "label": "Mostra el botó del panell",
+        "description": "Mostra un petit botó al costat dret d'un terminal que obre el panell de comparticions."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "smb.conf encara no inclou el fitxer gestionat. S'afegeix la primera vegada que deseu una carpeta compartida.",
     "firewall": "Obriu el tallafocs per a Samba:",
     "selinux": "SELinux està activat. Per permetre que Samba comparteixi qualsevol carpeta:"
+  },
+  "operations": {
+    "list": {
+      "title": "Llista les comparticions de Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Inicia Samba"
+    },
+    "stop": {
+      "title": "Atura Samba"
+    },
+    "restart": {
+      "title": "Reinicia Samba"
+    },
+    "reload": {
+      "title": "Recarrega Samba"
+    },
+    "shares": {
+      "title": "Comparticions de Samba",
+      "path": "Carpeta",
+      "access": "Accés",
+      "guests": "Convidats"
+    }
+  },
+  "nav": {
+    "togglePanel": "Alterna el panell de comparticions"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Comprovant amfitrions...",
+    "summary_one": "{{count}} compartició a {{hosts}} amfitrions",
+    "summary_many": "{{count}} comparticions a {{hosts}} amfitrions",
+    "summary_other": "{{count}} comparticions a {{hosts}} amfitrions",
+    "refresh": "Comprova de nou",
+    "empty": "Activa Samba per a un amfitrió per veure'l aquí.",
+    "stopped": "No s'està executant",
+    "missing": "No instal·lat",
+    "shares_one": "{{count}} compartició",
+    "shares_many": "{{count}} comparticions",
+    "shares_other": "{{count}} comparticions",
+    "sessions_one": "{{count}} sessió",
+    "sessions_many": "{{count}} sessions",
+    "sessions_other": "{{count}} sessions"
   }
 }

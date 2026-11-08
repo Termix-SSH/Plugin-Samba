@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Button, Segmented } from "@termix-ssh/plugin-sdk/ui";
+import {
+  Button,
+  Segmented,
+  ToolbarBand,
+  LoadingState,
+} from "@termix-ssh/plugin-sdk/ui";
 import { errorMessage, getLogs } from "./api";
 
 type Lines = "100" | "300" | "1000";
@@ -25,8 +30,8 @@ export function LogsView({ hostId }: { hostId: number }) {
   }, [load]);
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex flex-wrap items-center gap-2">
+    <div className="flex min-h-0 flex-1 flex-col">
+      <ToolbarBand>
         <Segmented<Lines>
           value={lines}
           onChange={setLines}
@@ -39,12 +44,14 @@ export function LogsView({ hostId }: { hostId: number }) {
         <Button variant="outline" onClick={() => void load()}>
           {t("tab.refresh")}
         </Button>
-      </div>
+      </ToolbarBand>
       {failed ? (
-        <p className="text-sm text-destructive">{failed}</p>
+        <p className="px-3 py-2 text-xs text-destructive">{failed}</p>
+      ) : text === null ? (
+        <LoadingState />
       ) : (
-        <pre className="max-h-[60vh] overflow-auto whitespace-pre-wrap border border-border p-2 font-mono text-xs">
-          {text === null ? "" : text.trim() || t("logs.empty")}
+        <pre className="min-h-0 flex-1 overflow-auto whitespace-pre-wrap p-3 font-mono text-xs thin-scrollbar">
+          {text.trim() || t("logs.empty")}
         </pre>
       )}
     </div>

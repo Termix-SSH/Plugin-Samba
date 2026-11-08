@@ -7,13 +7,39 @@
     "save": "保存",
     "cancel": "キャンセル",
     "back": "戻る",
-    "delete": "削除"
+    "delete": "削除",
+    "loading": "読み込み中..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba シェア",
         "description": "このホストのメニューに Samba シェア タブを表示します。"
+      },
+      "showPanel": {
+        "label": "ターミナルに共有パネルを表示",
+        "description": "このホストの SSH ターミナルの横に共有パネルを開きます。"
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "新しいターミナルで共有パネルを開く",
+        "description": "Samba が有効なすべての SSH ターミナルの横に共有パネルを表示します。右端のボタンからいつでも開閉できます。"
+      },
+      "companionSide": {
+        "label": "共有パネルの位置",
+        "description": "ターミナルの横に共有パネルを表示する位置です。",
+        "right": "右",
+        "left": "左",
+        "bottom": "下"
+      },
+      "companionSize": {
+        "label": "共有パネルのサイズ",
+        "description": "ピクセル単位の幅、または下部に配置する場合の高さです。端をドラッグして調整することもできます。"
+      },
+      "companionEdgeButton": {
+        "label": "パネルボタンを表示",
+        "description": "ターミナルの右端に、共有パネルを開く小さなボタンを表示します。"
       }
     }
   },
@@ -181,5 +207,45 @@
     "notIncluded": "smb.conf はまだ管理対象ファイルをインクルードしていません。共有を初めて保存したときに追加されます。",
     "firewall": "Samba 用にファイアウォールを開く：",
     "selinux": "SELinux が有効です。Samba で任意のフォルダを共有するには："
+  },
+  "operations": {
+    "list": {
+      "title": "Samba 共有の一覧を表示"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Samba を起動"
+    },
+    "stop": {
+      "title": "Samba を停止"
+    },
+    "restart": {
+      "title": "Samba を再起動"
+    },
+    "reload": {
+      "title": "Samba をリロード"
+    },
+    "shares": {
+      "title": "Samba 共有",
+      "path": "フォルダ",
+      "access": "アクセス",
+      "guests": "ゲスト"
+    }
+  },
+  "nav": {
+    "togglePanel": "共有パネルの表示/非表示を切り替え"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "ホストを確認中...",
+    "summary_other": "{{hosts}} 台のホストに {{count}} 件の共有",
+    "refresh": "再確認",
+    "empty": "ここに表示するには、ホストで Samba を有効にしてください。",
+    "stopped": "実行中ではありません",
+    "missing": "インストールされていません",
+    "shares_other": "{{count}} 件の共有",
+    "sessions_other": "{{count}} 件のセッション"
   }
 }

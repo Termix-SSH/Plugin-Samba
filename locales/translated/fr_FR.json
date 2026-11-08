@@ -7,13 +7,39 @@
     "save": "Enregistrer",
     "cancel": "Annuler",
     "back": "Retour",
-    "delete": "Supprimer"
+    "delete": "Supprimer",
+    "loading": "Chargement..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Partages Samba",
         "description": "Afficher l'onglet Partages Samba pour cet hôte dans son menu."
+      },
+      "showPanel": {
+        "label": "Afficher le panneau des partages dans les terminaux",
+        "description": "Permettre au panneau des partages de s'ouvrir à côté du terminal SSH de cet hôte."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Ouvrir le panneau des partages avec les nouveaux terminaux",
+        "description": "Afficher le panneau des partages à côté de chaque terminal SSH ayant Samba activé. Vous pouvez toujours l'ouvrir et le fermer via le bouton sur le bord droit."
+      },
+      "companionSide": {
+        "label": "Position du panneau des partages",
+        "description": "Emplacement du panneau des partages par rapport au terminal.",
+        "right": "Droite",
+        "left": "Gauche",
+        "bottom": "Bas"
+      },
+      "companionSize": {
+        "label": "Taille du panneau des partages",
+        "description": "Largeur en pixels, ou hauteur lorsqu'il est en bas. Vous pouvez également redimensionner en glissant son bord."
+      },
+      "companionEdgeButton": {
+        "label": "Afficher le bouton du panneau",
+        "description": "Afficher un petit bouton sur le bord droit d'un terminal pour ouvrir le panneau des partages."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "smb.conf n'inclut pas encore le fichier géré. Il sera ajouté lors du premier enregistrement d'un partage.",
     "firewall": "Ouvrir le pare-feu pour Samba :",
     "selinux": "SELinux est activé. Pour permettre à Samba de partager n'importe quel dossier :"
+  },
+  "operations": {
+    "list": {
+      "title": "Lister les partages Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Démarrer Samba"
+    },
+    "stop": {
+      "title": "Arrêter Samba"
+    },
+    "restart": {
+      "title": "Redémarrer Samba"
+    },
+    "reload": {
+      "title": "Recharger Samba"
+    },
+    "shares": {
+      "title": "Partages Samba",
+      "path": "Dossier",
+      "access": "Accès",
+      "guests": "Invités"
+    }
+  },
+  "nav": {
+    "togglePanel": "Basculer le panneau des partages"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Vérification des hôtes...",
+    "summary_one": "{{count}} partage sur {{hosts}} hôtes",
+    "summary_many": "{{count}} partages sur {{hosts}} hôtes",
+    "summary_other": "{{count}} partages sur {{hosts}} hôtes",
+    "refresh": "Vérifier à nouveau",
+    "empty": "Activez Samba pour un hôte afin de le voir ici.",
+    "stopped": "Non démarré",
+    "missing": "Non installé",
+    "shares_one": "{{count}} partage",
+    "shares_many": "{{count}} partages",
+    "shares_other": "{{count}} partages",
+    "sessions_one": "{{count}} session",
+    "sessions_many": "{{count}} sessions",
+    "sessions_other": "{{count}} sessions"
   }
 }

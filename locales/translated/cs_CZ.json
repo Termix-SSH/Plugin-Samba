@@ -7,13 +7,39 @@
     "save": "Uložit",
     "cancel": "Zrušit",
     "back": "Zpět",
-    "delete": "Smazat"
+    "delete": "Smazat",
+    "loading": "Načítání..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Sdílené složky Samba",
         "description": "Zobrazit panel Sdílené složky Samba pro tohoto hostitele v jeho nabídce."
+      },
+      "showPanel": {
+        "label": "Zobrazit panel sdílení v terminálech",
+        "description": "Umožní otevření panelu sdílení vedle SSH terminálu tohoto hostitele."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Otevírat panel sdílení s novými terminály",
+        "description": "Zobrazí panel sdílení vedle každého SSH terminálu, který má povolený Samba. Panel můžete stále otevírat a zavírat pomocí tlačítka na pravém okraji."
+      },
+      "companionSide": {
+        "label": "Poloha panelu sdílení",
+        "description": "Umístění panelu sdílení vedle terminálu.",
+        "right": "Vpravo",
+        "left": "Vlevo",
+        "bottom": "Dole"
+      },
+      "companionSize": {
+        "label": "Velikost panelu sdílení",
+        "description": "Šířka v pixelech, nebo výška, když je panel dole. Okraj můžete také přetahovat."
+      },
+      "companionEdgeButton": {
+        "label": "Zobrazit tlačítko panelu",
+        "description": "Zobrazí malé tlačítko na pravém okraji terminálu, které otevře panel sdílení."
       }
     }
   },
@@ -181,5 +207,54 @@
     "notIncluded": "smb.conf zatím nezahrnuje spravovaný soubor. Přidá se při prvním uložení sdílení.",
     "firewall": "Otevřít firewall pro Samba:",
     "selinux": "SELinux je zapnutý. Aby mohl Samba sdílet libovolnou složku:"
+  },
+  "operations": {
+    "list": {
+      "title": "Seznam sdílení Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Spustit Samba"
+    },
+    "stop": {
+      "title": "Zastavit Samba"
+    },
+    "restart": {
+      "title": "Restartovat Samba"
+    },
+    "reload": {
+      "title": "Obnovit Samba"
+    },
+    "shares": {
+      "title": "Sdílení Samba",
+      "path": "Složka",
+      "access": "Přístup",
+      "guests": "Hosté"
+    }
+  },
+  "nav": {
+    "togglePanel": "Přepnout panel sdílení"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Kontrola hostitelů...",
+    "summary_one": "{{count}} sdílení na {{hosts}} hostiteli",
+    "summary_few": "{{count}} sdílení na {{hosts}} hostitelích",
+    "summary_many": "{{count}} sdílení na {{hosts}} hostitelích",
+    "summary_other": "{{count}} sdílení na {{hosts}} hostitelích",
+    "refresh": "Zkontrolovat znovu",
+    "empty": "Povolte Samba pro hostitele, aby se zobrazil zde.",
+    "stopped": "Neběží",
+    "missing": "Není nainstalováno",
+    "shares_one": "{{count}} sdílení",
+    "shares_few": "{{count}} sdílení",
+    "shares_many": "{{count}} sdílení",
+    "shares_other": "{{count}} sdílení",
+    "sessions_one": "{{count}} relace",
+    "sessions_few": "{{count}} relace",
+    "sessions_many": "{{count}} relací",
+    "sessions_other": "{{count}} relací"
   }
 }

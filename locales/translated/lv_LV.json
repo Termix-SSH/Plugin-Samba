@@ -7,13 +7,39 @@
     "save": "Saglabāt",
     "cancel": "Atcelt",
     "back": "Atpakaļ",
-    "delete": "Dzēst"
+    "delete": "Dzēst",
+    "loading": "Ielādē..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba koplietošanas resursi",
         "description": "Rādīt šī mezgla izvēlnē cilni Samba koplietošanas resursi."
+      },
+      "showPanel": {
+        "label": "Rādīt koplietošanas paneli termināļos",
+        "description": "Ļauj koplietošanas panelim atvērties blakus šī hosta SSH terminālim."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Atvērt koplietošanas paneli kopā ar jauniem termināļiem",
+        "description": "Rādīt koplietošanas paneli blakus katram SSH terminālim, kurā ir ieslēgts Samba. To joprojām varat atvērt un aizvērt, izmantojot pogu labajā malā."
+      },
+      "companionSide": {
+        "label": "Koplietošanas panela puse",
+        "description": "Kur atrodas koplietošanas panels blakus terminālim.",
+        "right": "Labajā pusē",
+        "left": "Kreisajā pusē",
+        "bottom": "Apakšā"
+      },
+      "companionSize": {
+        "label": "Koplietošanas panela izmērs",
+        "description": "Platums pikseļos vai augstums, ja tas atrodas apakšā. Varat arī vilkt tā malu."
+      },
+      "companionEdgeButton": {
+        "label": "Rādīt panela pogu",
+        "description": "Rādīt mazu pogu termināļa labajā malā, kas atver koplietošanas paneli."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "smb.conf vēl neietver pārvaldāmo failu. Tas tiks pievienots pirmo reizi, kad saglabāsiet koplietošanas resursu.",
     "firewall": "Atvērt ugunsmūri Samba:",
     "selinux": "SELinux ir ieslēgts. Lai ļautu Samba koplietot jebkuru mapi:"
+  },
+  "operations": {
+    "list": {
+      "title": "Sarakstīt Samba koplietojumus"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Palaidt Samba"
+    },
+    "stop": {
+      "title": "Apturēt Samba"
+    },
+    "restart": {
+      "title": "Restartēt Samba"
+    },
+    "reload": {
+      "title": "Pārlādēt Samba"
+    },
+    "shares": {
+      "title": "Samba koplietojumi",
+      "path": "Mapes",
+      "access": "Piekļuve",
+      "guests": "Viesi"
+    }
+  },
+  "nav": {
+    "togglePanel": "Pārslēgt koplietošanas paneli"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Pārbauda hostus...",
+    "summary_zero": "0 koplietojumi {{hosts}} hostos",
+    "summary_one": "{{count}} koplietojums {{hosts}} hostos",
+    "summary_other": "{{count}} koplietojumi {{hosts}} hostos",
+    "refresh": "Pārbaudīt vēlreiz",
+    "empty": "Ieslēdziet Samba hostam, lai to redzētu šeit.",
+    "stopped": "Nedarbojas",
+    "missing": "Nav instalēts",
+    "shares_zero": "0 koplietojumi",
+    "shares_one": "{{count}} koplietojums",
+    "shares_other": "{{count}} koplietojumi",
+    "sessions_zero": "0 sesijas",
+    "sessions_one": "{{count}} sesija",
+    "sessions_other": "{{count}} sesijas"
   }
 }

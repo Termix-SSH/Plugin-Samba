@@ -7,13 +7,39 @@
     "save": "Speichern",
     "cancel": "Abbrechen",
     "back": "Zurück",
-    "delete": "Löschen"
+    "delete": "Löschen",
+    "loading": "Wird geladen..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba-Freigaben",
         "description": "Zeigt die Registerkarte „Samba-Freigaben“ für diesen Host in seinem Menü an."
+      },
+      "showPanel": {
+        "label": "Freigaben-Panel in Terminals anzeigen",
+        "description": "Lässt das Freigaben-Panel neben dem SSH-Terminal dieses Hosts öffnen."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Freigaben-Panel mit neuen Terminals öffnen",
+        "description": "Zeigt das Freigaben-Panel neben jedem SSH-Terminal an, bei dem Samba aktiviert ist. Du kannst es weiterhin über die Schaltfläche am rechten Rand öffnen und schließen."
+      },
+      "companionSide": {
+        "label": "Position des Freigaben-Panels",
+        "description": "Wo das Freigaben-Panel neben einem Terminal angezeigt wird.",
+        "right": "Rechts",
+        "left": "Links",
+        "bottom": "Unten"
+      },
+      "companionSize": {
+        "label": "Größe des Freigaben-Panels",
+        "description": "Breite in Pixeln, oder Höhe, wenn es unten angezeigt wird. Du kannst auch den Rand ziehen."
+      },
+      "companionEdgeButton": {
+        "label": "Panel-Schaltfläche anzeigen",
+        "description": "Zeigt eine kleine Schaltfläche am rechten Rand eines Terminals an, die das Freigaben-Panel öffnet."
       }
     }
   },
@@ -181,5 +207,48 @@
     "notIncluded": "smb.conf bindet die verwaltete Datei noch nicht ein. Sie wird beim ersten Speichern einer Freigabe hinzugefügt.",
     "firewall": "Firewall für Samba öffnen:",
     "selinux": "SELinux ist aktiviert. Damit Samba beliebige Ordner freigeben kann:"
+  },
+  "operations": {
+    "list": {
+      "title": "Samba-Freigaben auflisten"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Samba starten"
+    },
+    "stop": {
+      "title": "Samba stoppen"
+    },
+    "restart": {
+      "title": "Samba neu starten"
+    },
+    "reload": {
+      "title": "Samba neu laden"
+    },
+    "shares": {
+      "title": "Samba-Freigaben",
+      "path": "Ordner",
+      "access": "Zugriff",
+      "guests": "Gäste"
+    }
+  },
+  "nav": {
+    "togglePanel": "Freigaben-Panel umschalten"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Hosts werden überprüft...",
+    "summary_one": "{{count}} Freigabe auf {{hosts}} Hosts",
+    "summary_other": "{{count}} Freigaben auf {{hosts}} Hosts",
+    "refresh": "Erneut überprüfen",
+    "empty": "Aktiviere Samba für einen Host, um ihn hier zu sehen.",
+    "stopped": "Nicht ausgeführt",
+    "missing": "Nicht installiert",
+    "shares_one": "{{count}} Freigabe",
+    "shares_other": "{{count}} Freigaben",
+    "sessions_one": "{{count}} Sitzung",
+    "sessions_other": "{{count}} Sitzungen"
   }
 }

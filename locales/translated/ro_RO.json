@@ -7,13 +7,39 @@
     "save": "Salvează",
     "cancel": "Anulează",
     "back": "Înapoi",
-    "delete": "Șterge"
+    "delete": "Șterge",
+    "loading": "Se încarcă..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Partajări Samba",
         "description": "Afișează fila Partajări Samba pentru această gazdă în meniul său."
+      },
+      "showPanel": {
+        "label": "Afișează panoul de partajări în terminale",
+        "description": "Permite deschiderea panoului de partajări lângă terminalul SSH al acestui gazdă."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Deschide panoul de partajări cu terminalele noi",
+        "description": "Afișează panoul de partajări lângă fiecare terminal SSH care are Samba activat. Îl poți deschide și închide oricând din butonul de pe marginea dreaptă."
+      },
+      "companionSide": {
+        "label": "Poziția panoului de partajări",
+        "description": "Unde se află panoul de partajări lângă un terminal.",
+        "right": "Dreapta",
+        "left": "Stânga",
+        "bottom": "Jos"
+      },
+      "companionSize": {
+        "label": "Dimensiunea panoului de partajări",
+        "description": "Lățimea în pixeli, sau înălțimea când este poziționat jos. Poți ajusta și trăgând de marginea sa."
+      },
+      "companionEdgeButton": {
+        "label": "Afișează butonul panoului",
+        "description": "Afișează un buton mic pe marginea dreaptă a unui terminal care deschide panoul de partajări."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "smb.conf nu include încă fișierul gestionat. Este adăugat prima dată când salvezi un partajare.",
     "firewall": "Deschide firewall-ul pentru Samba:",
     "selinux": "SELinux este activat. Pentru a permite Samba să partajeze orice dosar:"
+  },
+  "operations": {
+    "list": {
+      "title": "Listează partajările Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Pornește Samba"
+    },
+    "stop": {
+      "title": "Oprește Samba"
+    },
+    "restart": {
+      "title": "Repornire Samba"
+    },
+    "reload": {
+      "title": "Reîncarcă Samba"
+    },
+    "shares": {
+      "title": "Partajări Samba",
+      "path": "Dosar",
+      "access": "Acces",
+      "guests": "Oaspeți"
+    }
+  },
+  "nav": {
+    "togglePanel": "Comută panoul de partajări"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Se verifică gazdele...",
+    "summary_one": "{{count}} partajare pe {{hosts}} gazde",
+    "summary_few": "{{count}} partajări pe {{hosts}} gazde",
+    "summary_other": "{{count}} partajări pe {{hosts}} gazde",
+    "refresh": "Verifică din nou",
+    "empty": "Activează Samba pentru o gazdă pentru a o vedea aici.",
+    "stopped": "Nu rulează",
+    "missing": "Nu este instalat",
+    "shares_one": "{{count}} partajare",
+    "shares_few": "{{count}} partajări",
+    "shares_other": "{{count}} partajări",
+    "sessions_one": "{{count}} sesiune",
+    "sessions_few": "{{count}} sesiuni",
+    "sessions_other": "{{count}} sesiuni"
   }
 }

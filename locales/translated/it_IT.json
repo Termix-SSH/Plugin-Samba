@@ -7,13 +7,39 @@
     "save": "Salva",
     "cancel": "Annulla",
     "back": "Indietro",
-    "delete": "Elimina"
+    "delete": "Elimina",
+    "loading": "Caricamento..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Condivisioni Samba",
         "description": "Mostra la scheda Condivisioni Samba per questo host nel suo menu."
+      },
+      "showPanel": {
+        "label": "Mostra il pannello delle condivisioni nei terminali",
+        "description": "Consenti al pannello delle condivisioni di aprirsi accanto al terminale SSH di questo host."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Apri il pannello delle condivisioni con i nuovi terminali",
+        "description": "Mostra il pannello delle condivisioni accanto a ogni terminale SSH con Samba attivo. Puoi comunque aprirlo e chiuderlo dal pulsante sul bordo destro."
+      },
+      "companionSide": {
+        "label": "Posizione del pannello delle condivisioni",
+        "description": "Dove si trova il pannello delle condivisioni accanto a un terminale.",
+        "right": "Destra",
+        "left": "Sinistra",
+        "bottom": "In basso"
+      },
+      "companionSize": {
+        "label": "Dimensione del pannello delle condivisioni",
+        "description": "Larghezza in pixel, o altezza quando è in basso. Puoi anche trascinare il suo bordo."
+      },
+      "companionEdgeButton": {
+        "label": "Mostra il pulsante del pannello",
+        "description": "Mostra un piccolo pulsante sul bordo destro di un terminale che apre il pannello delle condivisioni."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "smb.conf non include ancora il file gestito. Viene aggiunto la prima volta che salvi una condivisione.",
     "firewall": "Apri il firewall per Samba:",
     "selinux": "SELinux è attivo. Per consentire a Samba di condividere qualsiasi cartella:"
+  },
+  "operations": {
+    "list": {
+      "title": "Elenca le condivisioni Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Avvia Samba"
+    },
+    "stop": {
+      "title": "Ferma Samba"
+    },
+    "restart": {
+      "title": "Riavvia Samba"
+    },
+    "reload": {
+      "title": "Ricarica Samba"
+    },
+    "shares": {
+      "title": "Condivisioni Samba",
+      "path": "Cartella",
+      "access": "Accesso",
+      "guests": "Ospiti"
+    }
+  },
+  "nav": {
+    "togglePanel": "Attiva/disattiva il pannello delle condivisioni"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Verifica degli host...",
+    "summary_one": "{{count}} condivisione su {{hosts}} host",
+    "summary_many": "{{count}} condivisioni su {{hosts}} host",
+    "summary_other": "{{count}} condivisioni su {{hosts}} host",
+    "refresh": "Verifica di nuovo",
+    "empty": "Attiva Samba per un host per visualizzarlo qui.",
+    "stopped": "Non in esecuzione",
+    "missing": "Non installato",
+    "shares_one": "{{count}} condivisione",
+    "shares_many": "{{count}} condivisioni",
+    "shares_other": "{{count}} condivisioni",
+    "sessions_one": "{{count}} sessione",
+    "sessions_many": "{{count}} sessioni",
+    "sessions_other": "{{count}} sessioni"
   }
 }

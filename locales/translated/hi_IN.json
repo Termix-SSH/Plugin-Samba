@@ -7,13 +7,39 @@
     "save": "सहेजें",
     "cancel": "रद्द करें",
     "back": "वापस",
-    "delete": "हटाएँ"
+    "delete": "हटाएँ",
+    "loading": "लोड हो रहा है..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba शेयर",
         "description": "इस होस्ट के मेनू में Samba Shares टैब दिखाएँ।"
+      },
+      "showPanel": {
+        "label": "टर्मिनल में शेयर पैनल दिखाएं",
+        "description": "इस होस्ट के SSH टर्मिनल के बगल में शेयर पैनल खुलने दें।"
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "नए टर्मिनल के साथ शेयर पैनल खोलें",
+        "description": "हर SSH टर्मिनल के बगल में शेयर पैनल दिखाएं जिसमें Samba चालू हो। आप इसे दाईं किनारे पर बटन से भी खोल और बंद कर सकते हैं।"
+      },
+      "companionSide": {
+        "label": "शेयर पैनल की स्थिति",
+        "description": "टर्मिनल के बगल में शेयर पैनल कहाँ दिखे।",
+        "right": "दाईं ओर",
+        "left": "बाईं ओर",
+        "bottom": "नीचे"
+      },
+      "companionSize": {
+        "label": "शेयर पैनल का आकार",
+        "description": "पिक्सेल में चौड़ाई, या नीचे होने पर ऊँचाई। आप इसके किनारे को खींचकर भी बदल सकते हैं।"
+      },
+      "companionEdgeButton": {
+        "label": "पैनल बटन दिखाएं",
+        "description": "टर्मिनल के दाईं किनारे पर एक छोटा बटन दिखाएं जो शेयर पैनल खोलता है।"
       }
     }
   },
@@ -181,5 +207,48 @@
     "notIncluded": "smb.conf में अभी प्रबंधित फ़ाइल शामिल नहीं है। यह पहली बार शेयर सेव करने पर जोड़ी जाएगी।",
     "firewall": "Samba के लिए फ़ायरवॉल खोलें:",
     "selinux": "SELinux चालू है। Samba को किसी भी फ़ोल्डर को साझा करने की अनुमति देने के लिए:"
+  },
+  "operations": {
+    "list": {
+      "title": "Samba शेयर सूची"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Samba शुरू करें"
+    },
+    "stop": {
+      "title": "Samba रोकें"
+    },
+    "restart": {
+      "title": "Samba पुनः आरंभ करें"
+    },
+    "reload": {
+      "title": "Samba रीलोड करें"
+    },
+    "shares": {
+      "title": "Samba शेयर",
+      "path": "फ़ोल्डर",
+      "access": "पहुंच",
+      "guests": "अतिथि"
+    }
+  },
+  "nav": {
+    "togglePanel": "शेयर पैनल टॉगल करें"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "होस्ट जाँच रहे हैं...",
+    "summary_one": "{{hosts}} होस्ट पर {{count}} शेयर",
+    "summary_other": "{{hosts}} होस्ट पर {{count}} शेयर",
+    "refresh": "फिर से जाँचें",
+    "empty": "यहाँ दिखाने के लिए किसी होस्ट के लिए Samba चालू करें।",
+    "stopped": "चल नहीं रहा",
+    "missing": "इंस्टॉल नहीं है",
+    "shares_one": "{{count}} शेयर",
+    "shares_other": "{{count}} शेयर",
+    "sessions_one": "{{count}} सत्र",
+    "sessions_other": "{{count}} सत्र"
   }
 }

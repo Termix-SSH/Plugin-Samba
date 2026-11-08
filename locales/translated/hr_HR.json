@@ -7,13 +7,39 @@
     "save": "Spremi",
     "cancel": "Otkaži",
     "back": "Natrag",
-    "delete": "Obriši"
+    "delete": "Obriši",
+    "loading": "Učitavanje..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba dijeljenja",
         "description": "Prikaži karticu Samba dijeljenja za ovaj host u njegovom izborniku."
+      },
+      "showPanel": {
+        "label": "Prikaži panel dijeljenja u terminalima",
+        "description": "Otvori panel dijeljenja uz SSH terminal ovog hosta."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Otvori panel dijeljenja s novim terminalima",
+        "description": "Prikaži panel dijeljenja uz svaki SSH terminal koji ima uključen Samba. I dalje ga možete otvoriti i zatvoriti pomoću gumba na desnoj rubnoj liniji."
+      },
+      "companionSide": {
+        "label": "Položaj panela dijeljenja",
+        "description": "Gdje se panel dijeljenja nalazi uz terminal.",
+        "right": "Desno",
+        "left": "Lijevo",
+        "bottom": "Dolje"
+      },
+      "companionSize": {
+        "label": "Veličina panela dijeljenja",
+        "description": "Širina u pikselima, ili visina kada je na dnu. Također možete povući njegov rub."
+      },
+      "companionEdgeButton": {
+        "label": "Prikaži gumb za panel",
+        "description": "Prikaži mali gumb na desnom rubu terminala koji otvara panel dijeljenja."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "smb.conf još ne uključuje upravljanu datoteku. Dodaje se prvi put kada spremiti dijeljenje.",
     "firewall": "Otvori zid za Samba:",
     "selinux": "SELinux je uključen. Da biste omogućili Sambi da dijeli bilo koju mapu:"
+  },
+  "operations": {
+    "list": {
+      "title": "Popis Samba dijeljenja"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Pokreni Samba"
+    },
+    "stop": {
+      "title": "Zaustavi Samba"
+    },
+    "restart": {
+      "title": "Ponovno pokreni Samba"
+    },
+    "reload": {
+      "title": "Osveži Samba"
+    },
+    "shares": {
+      "title": "Samba dijeljenja",
+      "path": "Mapa",
+      "access": "Pristup",
+      "guests": "Gosti"
+    }
+  },
+  "nav": {
+    "togglePanel": "Uključi/isključi panel dijeljenja"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Provjera hostova...",
+    "summary_one": "{{count}} dijeljenje na {{hosts}} hostova",
+    "summary_few": "{{count}} dijeljenja na {{hosts}} hostova",
+    "summary_other": "{{count}} dijeljenja na {{hosts}} hostova",
+    "refresh": "Provjeri ponovno",
+    "empty": "Uključite Samba za host da biste ga vidjeli ovdje.",
+    "stopped": "Nije pokrenuto",
+    "missing": "Nije instalirano",
+    "shares_one": "{{count}} dijeljenje",
+    "shares_few": "{{count}} dijeljenja",
+    "shares_other": "{{count}} dijeljenja",
+    "sessions_one": "{{count}} sesija",
+    "sessions_few": "{{count}} sesije",
+    "sessions_other": "{{count}} sesija"
   }
 }

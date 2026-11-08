@@ -7,13 +7,39 @@
     "save": "บันทึก",
     "cancel": "ยกเลิก",
     "back": "ย้อนกลับ",
-    "delete": "ลบ"
+    "delete": "ลบ",
+    "loading": "กำลังโหลด..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "แชร์ Samba",
         "description": "แสดงแท็บแชร์ Samba สำหรับโฮสต์นี้ในเมนู"
+      },
+      "showPanel": {
+        "label": "แสดงแผงแชร์ในเทอร์มินัล",
+        "description": "เปิดแผงแชร์ไว้ข้างเทอร์มินัล SSH ของโฮสต์นี้"
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "เปิดแผงแชร์พร้อมเทอร์มินัลใหม่",
+        "description": "แสดงแผงแชร์ข้างเทอร์มินัล SSH ทุกตัวที่เปิดใช้งาน Samba คุณสามารถเปิดและปิดได้จากปุ่มที่ขอบด้านขวา"
+      },
+      "companionSide": {
+        "label": "ตำแหน่งแผงแชร์",
+        "description": "ตำแหน่งของแผงแชร์เมื่ออยู่ข้างเทอร์มินัล",
+        "right": "ขวา",
+        "left": "ซ้าย",
+        "bottom": "ล่าง"
+      },
+      "companionSize": {
+        "label": "ขนาดแผงแชร์",
+        "description": "ความกว้างเป็นพิกเซล หรือความสูงเมื่ออยู่ด้านล่าง คุณสามารถลากขอบเพื่อปรับขนาดได้"
+      },
+      "companionEdgeButton": {
+        "label": "แสดงปุ่มแผง",
+        "description": "แสดงปุ่มขนาดเล็กที่ขอบด้านขวาของเทอร์มินัลเพื่อเปิดแผงแชร์"
       }
     }
   },
@@ -181,5 +207,45 @@
     "notIncluded": "smb.conf ยังไม่รวมไฟล์ที่จัดการ จะถูกเพิ่มเมื่อคุณบันทึกแชร์ครั้งแรก",
     "firewall": "เปิดไฟร์วอลล์สำหรับ Samba:",
     "selinux": "SELinux เปิดอยู่ เพื่อให้ Samba แชร์โฟลเดอร์ใดๆ ได้:"
+  },
+  "operations": {
+    "list": {
+      "title": "แสดงรายการแชร์ Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "เริ่ม Samba"
+    },
+    "stop": {
+      "title": "หยุด Samba"
+    },
+    "restart": {
+      "title": "เริ่ม Samba ใหม่"
+    },
+    "reload": {
+      "title": "โหลด Samba ใหม่"
+    },
+    "shares": {
+      "title": "แชร์ Samba",
+      "path": "โฟลเดอร์",
+      "access": "การเข้าถึง",
+      "guests": "ผู้เยี่ยมชม"
+    }
+  },
+  "nav": {
+    "togglePanel": "สลับแผงแชร์"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "กำลังตรวจสอบโฮสต์...",
+    "summary_other": "{{count}} แชร์บน {{hosts}} โฮสต์",
+    "refresh": "ตรวจสอบอีกครั้ง",
+    "empty": "เปิดใช้งาน Samba บนโฮสต์เพื่อดูที่นี่",
+    "stopped": "ไม่ได้ทำงาน",
+    "missing": "ไม่ได้ติดตั้ง",
+    "shares_other": "{{count}} แชร์",
+    "sessions_other": "{{count}} เซสชัน"
   }
 }

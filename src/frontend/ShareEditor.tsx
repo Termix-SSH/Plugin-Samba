@@ -153,9 +153,22 @@ export function ShareEditor({
       leading={<BackButton onClick={onClose} />}
       title={share ? share.name : t("shares.addTitle")}
       status={share?.path}
-      className="gap-2 p-2.5"
+      footer={
+        !external && section !== "permissions" ? (
+          <FormFooter
+            onCancel={onClose}
+            onSave={() => void save()}
+            saving={saving}
+            saveLabel={t("common.save")}
+            cancelLabel={t("common.cancel")}
+            onDelete={share ? () => void remove() : undefined}
+            deleteLabel={t("common.delete")}
+            disabled={!form.name.trim() || !form.path.trim()}
+          />
+        ) : undefined
+      }
     >
-      <div className="flex shrink-0 flex-col gap-3">
+      <div className="flex shrink-0 flex-col gap-3 p-3">
         {external && (
           <div className="flex flex-col gap-1 border border-border p-3 text-xs">
             <p>{t("shares.externalNote")}</p>
@@ -333,18 +346,6 @@ export function ShareEditor({
               />
             )}
             {error && <p className="text-xs text-destructive">{error}</p>}
-            {section !== "permissions" && (
-              <FormFooter
-                onCancel={onClose}
-                onSave={() => void save()}
-                saving={saving}
-                saveLabel={t("common.save")}
-                cancelLabel={t("common.cancel")}
-                onDelete={share ? () => void remove() : undefined}
-                deleteLabel={t("common.delete")}
-                disabled={!form.name.trim() || !form.path.trim()}
-              />
-            )}
           </>
         )}
       </div>

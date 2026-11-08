@@ -7,13 +7,39 @@
     "save": "Сачувај",
     "cancel": "Откажи",
     "back": "Назад",
-    "delete": "Обриши"
+    "delete": "Обриши",
+    "loading": "Учитавање..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba shares",
         "description": "Прикажи таб Samba Shares за овог хоста у његовом менију."
+      },
+      "showPanel": {
+        "label": "Прикажи панел за дељење у терминалима",
+        "description": "Омогући отварање панела за дељење поред SSH терминала овог хоста."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Отвори панел за дељење са новим терминалима",
+        "description": "Прикажи панел за дељење поред сваког SSH терминала који има укључен Samba. И даље га можете отворити и затворити преко дугмета на десној ивици."
+      },
+      "companionSide": {
+        "label": "Позиција панела за дељење",
+        "description": "Где се панел за дељење налази поред терминала.",
+        "right": "Десно",
+        "left": "Лево",
+        "bottom": "Доле"
+      },
+      "companionSize": {
+        "label": "Величина панела за дељење",
+        "description": "Ширина у пикселима, или висина када је на дну. Можете такође да га проширите превлачењем ивице."
+      },
+      "companionEdgeButton": {
+        "label": "Прикажи дугме за панел",
+        "description": "Прикажи мало дугме на десној ивици терминала које отвара панел за дељење."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "smb.conf još uvek ne uključuje upravljani fajl. On se dodaje prvi put kada sačuvate share.",
     "firewall": "Otvorite firewall za Samba:",
     "selinux": "SELinux je uključen. Da biste omogućili Samba da deli bilo koju mapu:"
+  },
+  "operations": {
+    "list": {
+      "title": "Листа Samba дељених фолдера"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Покрени Samba"
+    },
+    "stop": {
+      "title": "Заустави Samba"
+    },
+    "restart": {
+      "title": "Рестартуј Samba"
+    },
+    "reload": {
+      "title": "Освежи Samba"
+    },
+    "shares": {
+      "title": "Samba дељени фолдери",
+      "path": "Фолдер",
+      "access": "Приступ",
+      "guests": "Гости"
+    }
+  },
+  "nav": {
+    "togglePanel": "Укључи/искључи панел за дељење"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Провера хостова...",
+    "summary_one": "{{count}} дељени фолдер на {{hosts}} хостовима",
+    "summary_few": "{{count}} дељена фолдера на {{hosts}} хостовима",
+    "summary_other": "{{count}} дељених фолдера на {{hosts}} хостовима",
+    "refresh": "Провери поново",
+    "empty": "Укључите Samba за хост да бисте га видели овде.",
+    "stopped": "Није покренут",
+    "missing": "Није инсталиран",
+    "shares_one": "{{count}} дељени фолдер",
+    "shares_few": "{{count}} дељена фолдера",
+    "shares_other": "{{count}} дељених фолдера",
+    "sessions_one": "{{count}} сесија",
+    "sessions_few": "{{count}} сесије",
+    "sessions_other": "{{count}} сесија"
   }
 }

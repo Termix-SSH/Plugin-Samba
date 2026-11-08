@@ -7,13 +7,39 @@
     "save": "Kaydet",
     "cancel": "İptal",
     "back": "Geri",
-    "delete": "Sil"
+    "delete": "Sil",
+    "loading": "Yükleniyor..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba paylaşımları",
         "description": "Bu sunucunun menüsünde Samba Paylaşımları sekmesini göster."
+      },
+      "showPanel": {
+        "label": "Paylaşımlar panelini terminallerde göster",
+        "description": "Paylaşımlar panelinin bu sunucunun SSH terminalinin yanında açılmasına izin ver."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Paylaşımlar panelini yeni terminallerle birlikte aç",
+        "description": "Samba etkin olan her SSH terminalinin yanında paylaşımlar panelini göster. Sağ kenardaki düğmeden açıp kapatabilirsiniz."
+      },
+      "companionSide": {
+        "label": "Paylaşımlar paneli konumu",
+        "description": "Paylaşımlar panelinin terminalin yanında nerede yer alacağı.",
+        "right": "Sağ",
+        "left": "Sol",
+        "bottom": "Alt"
+      },
+      "companionSize": {
+        "label": "Paylaşımlar paneli boyutu",
+        "description": "Piksel cinsinden genişlik veya altta olduğunda yükseklik. Kenarını sürükleyerek de ayarlayabilirsiniz."
+      },
+      "companionEdgeButton": {
+        "label": "Panel düğmesini göster",
+        "description": "Paylaşımlar panelini açan küçük bir düğmeyi terminalin sağ kenarında göster."
       }
     }
   },
@@ -181,5 +207,48 @@
     "notIncluded": "smb.conf henüz yönetilen dosyayı içermiyor. Bir paylaşım kaydettiğinizde ilk kez eklenir.",
     "firewall": "Samba için güvenlik duvarını açın:",
     "selinux": "SELinux açık. Samba'nın herhangi bir klasörü paylaşmasına izin vermek için:"
+  },
+  "operations": {
+    "list": {
+      "title": "Samba paylaşımlarını listele"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Samba'yı başlat"
+    },
+    "stop": {
+      "title": "Samba'yı durdur"
+    },
+    "restart": {
+      "title": "Samba'yı yeniden başlat"
+    },
+    "reload": {
+      "title": "Samba'yı yeniden yükle"
+    },
+    "shares": {
+      "title": "Samba paylaşımları",
+      "path": "Klasör",
+      "access": "Erişim",
+      "guests": "Misafirler"
+    }
+  },
+  "nav": {
+    "togglePanel": "Paylaşımlar panelini aç/kapat"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Sunucular kontrol ediliyor...",
+    "summary_one": "{{hosts}} sunucuda {{count}} paylaşım",
+    "summary_other": "{{hosts}} sunucuda {{count}} paylaşım",
+    "refresh": "Tekrar kontrol et",
+    "empty": "Burada görmek için bir sunucuda Samba'yı etkinleştirin.",
+    "stopped": "Çalışmıyor",
+    "missing": "Yüklü değil",
+    "shares_one": "{{count}} paylaşım",
+    "shares_other": "{{count}} paylaşım",
+    "sessions_one": "{{count}} oturum",
+    "sessions_other": "{{count}} oturum"
   }
 }

@@ -7,13 +7,39 @@
     "save": "Spara",
     "cancel": "Avbryt",
     "back": "Tillbaka",
-    "delete": "Ta bort"
+    "delete": "Ta bort",
+    "loading": "Laddar..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba-delningar",
         "description": "Visa fliken Samba-delningar för denna värd i dess meny."
+      },
+      "showPanel": {
+        "label": "Visa delningspanelen i terminaler",
+        "description": "Låt delningspanelen öppnas bredvid SSH-terminalen för denna värd."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Öppna delningspanelen med nya terminaler",
+        "description": "Visa delningspanelen bredvid varje SSH-terminal som har Samba aktiverat. Du kan fortfarande öppna och stänga den från knappen på höger kant."
+      },
+      "companionSide": {
+        "label": "Placering för delningspanelen",
+        "description": "Var delningspanelen visas bredvid en terminal.",
+        "right": "Höger",
+        "left": "Vänster",
+        "bottom": "Botten"
+      },
+      "companionSize": {
+        "label": "Storlek på delningspanelen",
+        "description": "Bredd i pixlar, eller höjd när den är längst ner. Du kan också dra i kanten."
+      },
+      "companionEdgeButton": {
+        "label": "Visa panelknappen",
+        "description": "Visa en liten knapp på höger kant av en terminal som öppnar delningspanelen."
       }
     }
   },
@@ -167,6 +193,7 @@
   },
   "logs": {
     "loadFailed": "Kunde inte läsa loggarna.",
+    "lines": "{{count}} rader",
     "empty": "Inga loggrader."
   },
   "service": {
@@ -180,5 +207,48 @@
     "notIncluded": "smb.conf inkluderar inte den hanterade filen ännu. Den läggs till första gången du sparar en delning.",
     "firewall": "Öppna brandväggen för Samba:",
     "selinux": "SELinux är påslaget. För att låta Samba dela vilken mapp som helst:"
+  },
+  "operations": {
+    "list": {
+      "title": "Lista Samba-delningar"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Starta Samba"
+    },
+    "stop": {
+      "title": "Stoppa Samba"
+    },
+    "restart": {
+      "title": "Starta om Samba"
+    },
+    "reload": {
+      "title": "Ladda om Samba"
+    },
+    "shares": {
+      "title": "Samba-delningar",
+      "path": "Mapp",
+      "access": "Åtkomst",
+      "guests": "Gäster"
+    }
+  },
+  "nav": {
+    "togglePanel": "Växla delningspanelen"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Kontrollerar värdar...",
+    "summary_one": "{{count}} delning på {{hosts}} värdar",
+    "summary_other": "{{count}} delningar på {{hosts}} värdar",
+    "refresh": "Kontrollera igen",
+    "empty": "Aktivera Samba för en värd för att se den här.",
+    "stopped": "Kör inte",
+    "missing": "Inte installerad",
+    "shares_one": "{{count}} delning",
+    "shares_other": "{{count}} delningar",
+    "sessions_one": "{{count}} session",
+    "sessions_other": "{{count}} sessioner"
   }
 }

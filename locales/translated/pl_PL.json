@@ -7,13 +7,39 @@
     "save": "Zapisz",
     "cancel": "Anuluj",
     "back": "Wstecz",
-    "delete": "Usuń"
+    "delete": "Usuń",
+    "loading": "Ładowanie..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Udostępnienia Samba",
         "description": "Pokaż kartę Udostępnienia Samba dla tego hosta w jego menu."
+      },
+      "showPanel": {
+        "label": "Pokaż panel udostępnień w terminalach",
+        "description": "Otwórz panel udostępnień obok terminala SSH tego hosta."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Otwieraj panel udostępnień z nowymi terminalami",
+        "description": "Pokazuj panel udostępnień obok każdego terminala SSH, który ma włączonego Samba. Możesz go nadal otwierać i zamykać za pomocą przycisku na prawej krawędzi."
+      },
+      "companionSide": {
+        "label": "Położenie panelu udostępnień",
+        "description": "Gdzie panel udostępnień znajduje się obok terminala.",
+        "right": "Prawa",
+        "left": "Lewa",
+        "bottom": "Dolna"
+      },
+      "companionSize": {
+        "label": "Rozmiar panelu udostępnień",
+        "description": "Szerokość w pikselach lub wysokość, gdy panel jest u dołu. Możesz też przeciągnąć jego krawędź."
+      },
+      "companionEdgeButton": {
+        "label": "Pokaż przycisk panelu",
+        "description": "Pokazuj mały przycisk na prawej krawędzi terminala, który otwiera panel udostępnień."
       }
     }
   },
@@ -181,5 +207,54 @@
     "notIncluded": "Plik smb.conf nie zawiera jeszcze zarządzanego pliku. Zostanie dodany przy pierwszym zapisaniu udostępnienia.",
     "firewall": "Otwórz zaporę sieciową dla Samba:",
     "selinux": "SELinux jest włączony. Aby Samba mogła udostępniać dowolny folder:"
+  },
+  "operations": {
+    "list": {
+      "title": "Lista udostępnień Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Uruchom Samba"
+    },
+    "stop": {
+      "title": "Zatrzymaj Samba"
+    },
+    "restart": {
+      "title": "Uruchom ponownie Samba"
+    },
+    "reload": {
+      "title": "Przeładuj Samba"
+    },
+    "shares": {
+      "title": "Udostępnienia Samba",
+      "path": "Katalog",
+      "access": "Dostęp",
+      "guests": "Goście"
+    }
+  },
+  "nav": {
+    "togglePanel": "Przełącz panel udostępnień"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Sprawdzanie hostów...",
+    "summary_one": "{{count}} udostępnienie na {{hosts}} hostach",
+    "summary_few": "{{count}} udostępnienia na {{hosts}} hostach",
+    "summary_many": "{{count}} udostępnień na {{hosts}} hostach",
+    "summary_other": "{{count}} udostępnienia na {{hosts}} hostach",
+    "refresh": "Sprawdź ponownie",
+    "empty": "Włącz Samba dla hosta, aby zobaczyć go tutaj.",
+    "stopped": "Nieaktywny",
+    "missing": "Nie zainstalowany",
+    "shares_one": "{{count}} udostępnienie",
+    "shares_few": "{{count}} udostępnienia",
+    "shares_many": "{{count}} udostępnień",
+    "shares_other": "{{count}} udostępnienia",
+    "sessions_one": "{{count}} sesja",
+    "sessions_few": "{{count}} sesje",
+    "sessions_many": "{{count}} sesji",
+    "sessions_other": "{{count}} sesje"
   }
 }

@@ -7,13 +7,39 @@
     "save": "Išsaugoti",
     "cancel": "Atšaukti",
     "back": "Atgal",
-    "delete": "Pašalinti"
+    "delete": "Pašalinti",
+    "loading": "Kraunama..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba bendriniai failai",
         "description": "Rodyti „Samba bendrinių failų“ skirtuką šio serverio meniu."
+      },
+      "showPanel": {
+        "label": "Rodyti bendrinimo skydelį terminaluose",
+        "description": "Leisti bendrinimo skydeliui atsiverti šio hosto SSH terminalo šone."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Atidaryti bendrinimo skydelį su naujais terminalais",
+        "description": "Rodyti bendrinimo skydelį šalia kiekvieno SSH terminalo, kuriame įjungtas „Samba“. Jį visada galite atidaryti ir uždaryti mygtuku dešiniajame krašte."
+      },
+      "companionSide": {
+        "label": "Bendrinimo skydelio pusė",
+        "description": "Kur bendrinimo skydelis yra šalia terminalo.",
+        "right": "Dešinė",
+        "left": "Kairė",
+        "bottom": "Apačia"
+      },
+      "companionSize": {
+        "label": "Bendrinimo skydelio dydis",
+        "description": "Plotis pikseliais arba aukštis, kai jis yra apačioje. Taip pat galite vilkti jo kraštą."
+      },
+      "companionEdgeButton": {
+        "label": "Rodyti skydelio mygtuką",
+        "description": "Rodyti mažą mygtuką terminalo dešiniajame krašte, kuris atidaro bendrinimo skydelį."
       }
     }
   },
@@ -181,5 +207,54 @@
     "notIncluded": "smb.conf dar neįtraukia valdomo failo. Jis bus pridėtas pirmą kartą išsaugojus bendrinamąjį katalogą.",
     "firewall": "Atidarykite ugniasienę Samba:",
     "selinux": "SELinux įjungtas. Norėdami leisti Samba bendrinti bet kurį katalogą:"
+  },
+  "operations": {
+    "list": {
+      "title": "Išvardinti „Samba“ bendrinius išteklius"
+    },
+    "status": {
+      "title": "„Samba“"
+    },
+    "start": {
+      "title": "Paleisti „Samba“"
+    },
+    "stop": {
+      "title": "Sustabdyti „Samba“"
+    },
+    "restart": {
+      "title": "Perkrauti „Samba“"
+    },
+    "reload": {
+      "title": "Perkrauti „Samba“ konfigūraciją"
+    },
+    "shares": {
+      "title": "„Samba“ bendriniai ištekliai",
+      "path": "Aplankas",
+      "access": "Prieiga",
+      "guests": "Svečiai"
+    }
+  },
+  "nav": {
+    "togglePanel": "Perjungti bendrinimo skydelį"
+  },
+  "card": {
+    "title": "„Samba“",
+    "loading": "Tikrinami hostai...",
+    "summary_one": "{{count}} bendrinis išteklius {{hosts}} hostuose",
+    "summary_few": "{{count}} bendriniai ištekliai {{hosts}} hostuose",
+    "summary_many": "{{count}} bendrinių išteklių {{hosts}} hostuose",
+    "summary_other": "{{count}} bendriniai ištekliai {{hosts}} hostuose",
+    "refresh": "Patikrinti dar kartą",
+    "empty": "Įjunkite „Samba“ hostui, kad jį matytumėte čia.",
+    "stopped": "Nevykdoma",
+    "missing": "Neįdiegta",
+    "shares_one": "{{count}} bendrinis išteklius",
+    "shares_few": "{{count}} bendriniai ištekliai",
+    "shares_many": "{{count}} bendrinių išteklių",
+    "shares_other": "{{count}} bendriniai ištekliai",
+    "sessions_one": "{{count}} sesija",
+    "sessions_few": "{{count}} sesijos",
+    "sessions_many": "{{count}} sesijų",
+    "sessions_other": "{{count}} sesijos"
   }
 }

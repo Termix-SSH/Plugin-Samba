@@ -7,13 +7,39 @@
     "save": "Stoor",
     "cancel": "Kanselleer",
     "back": "Terug",
-    "delete": "Vee uit"
+    "delete": "Vee uit",
+    "loading": "Laai tans..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba-dele",
         "description": "Wys die Samba-dele-oortjie vir hierdie gasheerbediener in sy spyskaart."
+      },
+      "showPanel": {
+        "label": "Wys deelpaneel in terminale",
+        "description": "Laat die deelpaneel oopmaak langs hierdie gasheer se SSH-terminal."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Maak die deelpaneel oop met nuwe terminale",
+        "description": "Wys die deelpaneel langs elke SSH-terminal wat Samba het. Jy kan dit steeds oopmaak en toemaak vanaf die knoppie aan die regterkant."
+      },
+      "companionSide": {
+        "label": "Deelpaneel se kant",
+        "description": "Waar die deelpaneel langs 'n terminal sit.",
+        "right": "Regs",
+        "left": "Links",
+        "bottom": "Onder"
+      },
+      "companionSize": {
+        "label": "Deelpaneel se grootte",
+        "description": "Wydte in pixels, of hoogte wanneer dit onder is. Jy kan ook die rand sleep."
+      },
+      "companionEdgeButton": {
+        "label": "Wys die paneel-knoppie",
+        "description": "Wys 'n klein knoppie aan die regterrand van 'n terminal wat die deelpaneel oopmaak."
       }
     }
   },
@@ -181,5 +207,48 @@
     "notIncluded": "smb.conf sluit die bestuurde lêer nog nie in nie. Dit word die eerste keer bygevoeg wanneer u 'n deel stoor.",
     "firewall": "Maak die brandmuur oop vir Samba:",
     "selinux": "SELinux is aan. Om Samba toe te laat om enige gids te deel:"
+  },
+  "operations": {
+    "list": {
+      "title": "Lys Samba-deelings"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Begin Samba"
+    },
+    "stop": {
+      "title": "Stop Samba"
+    },
+    "restart": {
+      "title": "Herbegin Samba"
+    },
+    "reload": {
+      "title": "Herlaai Samba"
+    },
+    "shares": {
+      "title": "Samba-deelings",
+      "path": "Map",
+      "access": "Toegang",
+      "guests": "Gaste"
+    }
+  },
+  "nav": {
+    "togglePanel": "Wissel deelpaneel"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Kontroleer gasheer tans...",
+    "summary_one": "{{count}} deel op {{hosts}} gasheer",
+    "summary_other": "{{count}} deelings op {{hosts}} gasheer",
+    "refresh": "Kontroleer weer",
+    "empty": "Skakel Samba vir 'n gasheer aan om dit hier te sien.",
+    "stopped": "Nie aan die loop nie",
+    "missing": "Nie geïnstalleer nie",
+    "shares_one": "{{count}} deel",
+    "shares_other": "{{count}} deelings",
+    "sessions_one": "{{count}} sessie",
+    "sessions_other": "{{count}} sessies"
   }
 }

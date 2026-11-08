@@ -7,13 +7,39 @@
     "save": "Guardar",
     "cancel": "Cancelar",
     "back": "Atrás",
-    "delete": "Eliminar"
+    "delete": "Eliminar",
+    "loading": "Cargando..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Comparticiones Samba",
         "description": "Muestra la pestaña de Comparticiones Samba para este host en su menú."
+      },
+      "showPanel": {
+        "label": "Mostrar el panel de compartidos en los terminales",
+        "description": "Permitir que el panel de compartidos se abra junto al terminal SSH de este host."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Abrir el panel de compartidos con los nuevos terminales",
+        "description": "Mostrar el panel de compartidos junto a cada terminal SSH que tenga Samba activado. Siempre puedes abrirlo y cerrarlo desde el botón en el borde derecho."
+      },
+      "companionSide": {
+        "label": "Posición del panel de compartidos",
+        "description": "Dónde se sitúa el panel de compartidos junto a un terminal.",
+        "right": "Derecha",
+        "left": "Izquierda",
+        "bottom": "Abajo"
+      },
+      "companionSize": {
+        "label": "Tamaño del panel de compartidos",
+        "description": "Ancho en píxeles, o altura cuando está abajo. También puedes arrastrar su borde."
+      },
+      "companionEdgeButton": {
+        "label": "Mostrar el botón del panel",
+        "description": "Mostrar un pequeño botón en el borde derecho de un terminal que abre el panel de compartidos."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "smb.conf aún no incluye el archivo gestionado. Se añadirá la primera vez que guardes un recurso compartido.",
     "firewall": "Abrir el firewall para Samba:",
     "selinux": "SELinux está activado. Para permitir que Samba comparta cualquier carpeta:"
+  },
+  "operations": {
+    "list": {
+      "title": "Listar recursos compartidos de Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Iniciar Samba"
+    },
+    "stop": {
+      "title": "Detener Samba"
+    },
+    "restart": {
+      "title": "Reiniciar Samba"
+    },
+    "reload": {
+      "title": "Recargar Samba"
+    },
+    "shares": {
+      "title": "Recursos compartidos de Samba",
+      "path": "Carpeta",
+      "access": "Acceso",
+      "guests": "Invitados"
+    }
+  },
+  "nav": {
+    "togglePanel": "Alternar panel de compartidos"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Comprobando hosts...",
+    "summary_one": "{{count}} recurso compartido en {{hosts}} hosts",
+    "summary_many": "{{count}} recursos compartidos en {{hosts}} hosts",
+    "summary_other": "{{count}} recursos compartidos en {{hosts}} hosts",
+    "refresh": "Comprobar de nuevo",
+    "empty": "Activa Samba en un host para verlo aquí.",
+    "stopped": "No se está ejecutando",
+    "missing": "No está instalado",
+    "shares_one": "{{count}} recurso compartido",
+    "shares_many": "{{count}} recursos compartidos",
+    "shares_other": "{{count}} recursos compartidos",
+    "sessions_one": "{{count}} sesión",
+    "sessions_many": "{{count}} sesiones",
+    "sessions_other": "{{count}} sesiones"
   }
 }

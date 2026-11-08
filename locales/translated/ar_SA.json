@@ -7,13 +7,39 @@
     "save": "حفظ",
     "cancel": "إلغاء",
     "back": "رجوع",
-    "delete": "حذف"
+    "delete": "حذف",
+    "loading": "جارٍ التحميل..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "مشاركات Samba",
         "description": "إظهار علامة تبويب مشاركات Samba لهذا المضيف في قائمته."
+      },
+      "showPanel": {
+        "label": "إظهار لوحة المشاركة في الطرفيات",
+        "description": "اسمح للوحة المشاركة بالفتح بجانب طرفية SSH الخاصة بهذا المضيف."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "فتح لوحة المشاركة مع الطرفيات الجديدة",
+        "description": "إظهار لوحة المشاركة بجانب كل طرفية SSH تم فيها تشغيل Samba. يمكنك دائماً فتحها وإغلاقها من الزر الموجود على الحافة اليمنى."
+      },
+      "companionSide": {
+        "label": "موقع لوحة المشاركة",
+        "description": "المكان الذي تظهر فيه لوحة المشاركة بجانب الطرفية.",
+        "right": "يمين",
+        "left": "يسار",
+        "bottom": "أسفل"
+      },
+      "companionSize": {
+        "label": "حجم لوحة المشاركة",
+        "description": "العرض بالبكسل، أو الارتفاع عندما تكون في الأسفل. يمكنك أيضاً سحب حافتها لتغيير الحجم."
+      },
+      "companionEdgeButton": {
+        "label": "إظهار زر اللوحة",
+        "description": "إظهار زر صغير على الحافة اليمنى للطرفية يفتح لوحة المشاركة."
       }
     }
   },
@@ -181,5 +207,60 @@
     "notIncluded": "لا يتضمن ملف smb.conf الملف المُدار بعد. سيتم إضافته في المرة الأولى التي تحفظ فيها مشاركة.",
     "firewall": "افتح جدار الحماية لـ Samba:",
     "selinux": "SELinux مفعّل. للسماح لـ Samba بمشاركة أي مجلد:"
+  },
+  "operations": {
+    "list": {
+      "title": "قائمة مشاركات Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "تشغيل Samba"
+    },
+    "stop": {
+      "title": "إيقاف Samba"
+    },
+    "restart": {
+      "title": "إعادة تشغيل Samba"
+    },
+    "reload": {
+      "title": "إعادة تحميل Samba"
+    },
+    "shares": {
+      "title": "مشاركات Samba",
+      "path": "المجلد",
+      "access": "الوصول",
+      "guests": "الضيوف"
+    }
+  },
+  "nav": {
+    "togglePanel": "تبديل لوحة المشاركة"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "جارٍ التحقق من المضيفين...",
+    "summary_zero": "لا توجد مشاركات على {{hosts}} مضيف",
+    "summary_one": "مشاركة واحدة على {{hosts}} مضيف",
+    "summary_two": "مشاركتان على {{hosts}} مضيف",
+    "summary_few": "{{count}} مشاركات على {{hosts}} مضيف",
+    "summary_many": "{{count}} مشاركة على {{hosts}} مضيف",
+    "summary_other": "{{count}} مشاركة على {{hosts}} مضيف",
+    "refresh": "التحقق مرة أخرى",
+    "empty": "قم بتشغيل Samba على مضيف لرؤيته هنا.",
+    "stopped": "غير نشط",
+    "missing": "غير مثبت",
+    "shares_zero": "لا توجد مشاركات",
+    "shares_one": "مشاركة واحدة",
+    "shares_two": "مشاركتان",
+    "shares_few": "{{count}} مشاركات",
+    "shares_many": "{{count}} مشاركة",
+    "shares_other": "{{count}} مشاركة",
+    "sessions_zero": "لا توجد جلسات",
+    "sessions_one": "جلسة واحدة",
+    "sessions_two": "جلستان",
+    "sessions_few": "{{count}} جلسات",
+    "sessions_many": "{{count}} جلسة",
+    "sessions_other": "{{count}} جلسة"
   }
 }

@@ -7,6 +7,8 @@ import {
   PanelList,
   PanelSearch,
   Switch,
+  LoadingState,
+  TOOLBAR_FIT,
 } from "@termix-ssh/plugin-sdk/ui";
 import type { ShareView } from "../shared/types";
 import { errorMessage, listShares, updateShare } from "./api";
@@ -50,8 +52,9 @@ export function SharesView({
     }
   };
 
-  if (failed) return <p className="p-2 text-sm text-destructive">{failed}</p>;
-  if (!shares) return null;
+  if (failed)
+    return <p className="px-3 py-2 text-xs text-destructive">{failed}</p>;
+  if (!shares) return <LoadingState />;
 
   const needle = search.trim().toLowerCase();
   const visible = shares.filter(
@@ -62,14 +65,16 @@ export function SharesView({
   );
 
   return (
-    <div className="flex flex-col gap-2">
-      <PanelSearch
-        value={search}
-        onChange={setSearch}
-        placeholder={t("shares.search")}
-      />
+    <div className="flex flex-col">
+      <div className={`border-b border-border px-3 py-2 ${TOOLBAR_FIT}`}>
+        <PanelSearch
+          value={search}
+          onChange={setSearch}
+          placeholder={t("shares.search")}
+        />
+      </div>
       {visible.length === 0 ? (
-        <p className="px-1 py-6 text-center text-xs text-muted-foreground/60">
+        <p className="px-3 py-6 text-center text-xs text-muted-foreground/60">
           {t("shares.empty")}
         </p>
       ) : (

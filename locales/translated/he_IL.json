@@ -7,13 +7,39 @@
     "save": "שמירה",
     "cancel": "ביטול",
     "back": "חזרה",
-    "delete": "מחיקה"
+    "delete": "מחיקה",
+    "loading": "טוען..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "שיתופי Samba",
         "description": "הצג את לשונית שיתופי Samba עבור מארח זה בתפריט שלו."
+      },
+      "showPanel": {
+        "label": "הצג לוח שיתופים בטרמינלים",
+        "description": "אפשר לפתוח את לוח השיתופים ליד הטרמינל של SSH של מארח זה."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "פתח את לוח השיתופים עם טרמינלים חדשים",
+        "description": "הצג את לוח השיתופים ליד כל טרמינל SSH שבו Samba מופעל. ניתן עדיין לפתוח ולסגור אותו מהכפתור בקצה הימני."
+      },
+      "companionSide": {
+        "label": "צד לוח השיתופים",
+        "description": "איפה נמצא לוח השיתופים ליד הטרמינל.",
+        "right": "ימין",
+        "left": "שמאל",
+        "bottom": "תחתון"
+      },
+      "companionSize": {
+        "label": "גודל לוח השיתופים",
+        "description": "רוחב בפיקסלים, או גובה כשהוא בתחתית. ניתן גם לגרור את הקצה שלו."
+      },
+      "companionEdgeButton": {
+        "label": "הצג כפתור לוח",
+        "description": "הצג כפתור קטן בקצה הימני של הטרמינל שפותח את לוח השיתופים."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "קובץ smb.conf עדיין אינו כולל את הקובץ המנוהל. הוא יתווסף בפעם הראשונה שתשמור שיתוף.",
     "firewall": "פתח את החומה עבור Samba:",
     "selinux": "SELinux פעיל. כדי לאפשר ל-Samba לשתף תיקיה כלשהי:"
+  },
+  "operations": {
+    "list": {
+      "title": "רשימת שיתופי Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "הפעל את Samba"
+    },
+    "stop": {
+      "title": "עצור את Samba"
+    },
+    "restart": {
+      "title": "הפעל מחדש את Samba"
+    },
+    "reload": {
+      "title": "טען מחדש את Samba"
+    },
+    "shares": {
+      "title": "שיתופי Samba",
+      "path": "תיקייה",
+      "access": "גישה",
+      "guests": "אורחים"
+    }
+  },
+  "nav": {
+    "togglePanel": "החלף מצב לוח שיתופים"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "בודק מארחים...",
+    "summary_one": "{{count}} שיתוף ב-{{hosts}} מארחים",
+    "summary_two": "{{count}} שיתופים ב-{{hosts}} מארחים",
+    "summary_other": "{{count}} שיתופים ב-{{hosts}} מארחים",
+    "refresh": "בדוק שוב",
+    "empty": "הפעל את Samba עבור מארח כדי לראות אותו כאן.",
+    "stopped": "לא פועל",
+    "missing": "לא מותקן",
+    "shares_one": "{{count}} שיתוף",
+    "shares_two": "{{count}} שיתופים",
+    "shares_other": "{{count}} שיתופים",
+    "sessions_one": "{{count}} הפעלה",
+    "sessions_two": "{{count}} הפעלות",
+    "sessions_other": "{{count}} הפעלות"
   }
 }

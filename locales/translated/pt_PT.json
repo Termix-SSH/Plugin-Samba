@@ -7,13 +7,39 @@
     "save": "Guardar",
     "cancel": "Cancelar",
     "back": "Voltar",
-    "delete": "Eliminar"
+    "delete": "Eliminar",
+    "loading": "A carregar..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Partilhas Samba",
         "description": "Mostrar a aba Partilhas Samba para este host no seu menu."
+      },
+      "showPanel": {
+        "label": "Mostrar painel de partilhas nos terminais",
+        "description": "Permitir que o painel de partilhas abra ao lado do terminal SSH deste host."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Abrir o painel de partilhas com novos terminais",
+        "description": "Mostrar o painel de partilhas ao lado de cada terminal SSH que tenha o Samba ativado. Pode ainda abri-lo e fechá-lo através do botão na borda direita."
+      },
+      "companionSide": {
+        "label": "Lado do painel de partilhas",
+        "description": "Onde o painel de partilhas fica ao lado de um terminal.",
+        "right": "Direita",
+        "left": "Esquerda",
+        "bottom": "Inferior"
+      },
+      "companionSize": {
+        "label": "Tamanho do painel de partilhas",
+        "description": "Largura em pixels, ou altura quando está na parte inferior. Também pode arrastar a sua borda."
+      },
+      "companionEdgeButton": {
+        "label": "Mostrar o botão do painel",
+        "description": "Mostrar um pequeno botão na borda direita de um terminal que abre o painel de partilhas."
       }
     }
   },
@@ -181,5 +207,51 @@
     "notIncluded": "O smb.conf ainda não inclui o ficheiro gerido. Será adicionado na primeira vez que guardar uma partilha.",
     "firewall": "Abrir o firewall para o Samba:",
     "selinux": "O SELinux está ativo. Para permitir que o Samba partilhe qualquer pasta:"
+  },
+  "operations": {
+    "list": {
+      "title": "Listar partilhas Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Iniciar Samba"
+    },
+    "stop": {
+      "title": "Parar Samba"
+    },
+    "restart": {
+      "title": "Reiniciar Samba"
+    },
+    "reload": {
+      "title": "Recarregar Samba"
+    },
+    "shares": {
+      "title": "Partilhas Samba",
+      "path": "Pasta",
+      "access": "Acesso",
+      "guests": "Convidados"
+    }
+  },
+  "nav": {
+    "togglePanel": "Alternar painel de partilhas"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "A verificar hosts...",
+    "summary_one": "{{count}} partilha em {{hosts}} hosts",
+    "summary_many": "{{count}} partilhas em {{hosts}} hosts",
+    "summary_other": "{{count}} partilhas em {{hosts}} hosts",
+    "refresh": "Verificar novamente",
+    "empty": "Ative o Samba num host para o ver aqui.",
+    "stopped": "Não está a executar",
+    "missing": "Não está instalado",
+    "shares_one": "{{count}} partilha",
+    "shares_many": "{{count}} partilhas",
+    "shares_other": "{{count}} partilhas",
+    "sessions_one": "{{count}} sessão",
+    "sessions_many": "{{count}} sessões",
+    "sessions_other": "{{count}} sessões"
   }
 }

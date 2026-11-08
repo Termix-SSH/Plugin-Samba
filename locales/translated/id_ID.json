@@ -7,13 +7,39 @@
     "save": "Simpan",
     "cancel": "Batal",
     "back": "Kembali",
-    "delete": "Hapus"
+    "delete": "Hapus",
+    "loading": "Memuat..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Berbagi Samba",
         "description": "Tampilkan tab Berbagi Samba untuk host ini di menunya."
+      },
+      "showPanel": {
+        "label": "Tampilkan panel berbagi di terminal",
+        "description": "Biarkan panel berbagi terbuka di samping terminal SSH host ini."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Buka panel berbagi bersama terminal baru",
+        "description": "Tampilkan panel berbagi di samping setiap terminal SSH yang memiliki Samba aktif. Anda masih bisa membukanya dan menutupnya dari tombol di tepi kanan."
+      },
+      "companionSide": {
+        "label": "Posisi panel berbagi",
+        "description": "Di mana panel berbagi berada di samping terminal.",
+        "right": "Kanan",
+        "left": "Kiri",
+        "bottom": "Bawah"
+      },
+      "companionSize": {
+        "label": "Ukuran panel berbagi",
+        "description": "Lebar dalam piksel, atau tinggi saat berada di bawah. Anda juga bisa menyeret tepinya."
+      },
+      "companionEdgeButton": {
+        "label": "Tampilkan tombol panel",
+        "description": "Tampilkan tombol kecil di tepi kanan terminal yang membuka panel berbagi."
       }
     }
   },
@@ -181,5 +207,45 @@
     "notIncluded": "smb.conf belum menyertakan file yang dikelola. File ini akan ditambahkan saat Anda menyimpan berbagi pertama kali.",
     "firewall": "Buka firewall untuk Samba:",
     "selinux": "SELinux aktif. Untuk memungkinkan Samba berbagi folder apa pun:"
+  },
+  "operations": {
+    "list": {
+      "title": "Daftar berbagi Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Mulai Samba"
+    },
+    "stop": {
+      "title": "Hentikan Samba"
+    },
+    "restart": {
+      "title": "Mulai ulang Samba"
+    },
+    "reload": {
+      "title": "Muat ulang Samba"
+    },
+    "shares": {
+      "title": "Berbagi Samba",
+      "path": "Folder",
+      "access": "Akses",
+      "guests": "Tamu"
+    }
+  },
+  "nav": {
+    "togglePanel": "Alihkan panel berbagi"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Memeriksa host...",
+    "summary_other": "{{count}} berbagi di {{hosts}} host",
+    "refresh": "Periksa lagi",
+    "empty": "Aktifkan Samba untuk host agar muncul di sini.",
+    "stopped": "Tidak berjalan",
+    "missing": "Tidak terinstal",
+    "shares_other": "{{count}} berbagi",
+    "sessions_other": "{{count}} sesi"
   }
 }

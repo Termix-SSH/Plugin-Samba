@@ -7,13 +7,39 @@
     "save": "Tallenna",
     "cancel": "Peruuta",
     "back": "Takaisin",
-    "delete": "Poista"
+    "delete": "Poista",
+    "loading": "Ladataan..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba-jakot",
         "description": "Näytä Samba-jakot-välilehti tämän isäntälaitteen valikossa."
+      },
+      "showPanel": {
+        "label": "Näytä jakojen paneeli terminaaleissa",
+        "description": "Salli jakojen paneelin avautuminen tämän isäntäpalvelimen SSH-terminaalin viereen."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Avaa jakojen paneeli uusien terminaaleiden kanssa",
+        "description": "Näytä jakojen paneeli jokaisen Samba-palvelimen sisältävän SSH-terminaalin vieressä. Voit silti avata ja sulkea sen painikkeesta oikeasta reunasta."
+      },
+      "companionSide": {
+        "label": "Jakojen paneelin sijainti",
+        "description": "Missä jakojen paneeli sijaitsee terminaalin vieressä.",
+        "right": "Oikealla",
+        "left": "Vasemmalla",
+        "bottom": "Alareunassa"
+      },
+      "companionSize": {
+        "label": "Jakojen paneelin koko",
+        "description": "Leveys pikseleinä tai korkeus, kun se on alareunassa. Voit myös vetää sen reuna siirtääksesi kokoa."
+      },
+      "companionEdgeButton": {
+        "label": "Näytä paneelin painike",
+        "description": "Näytä pieni painike terminaalin oikeassa reunassa, joka avaa jakojen paneelin."
       }
     }
   },
@@ -181,5 +207,48 @@
     "notIncluded": "smb.conf-tiedosto ei vielä sisällä hallittua tiedostoa. Se lisätään ensimmäisen kerran, kun tallennat jakokansion.",
     "firewall": "Avaa palomuuri Sambaa varten:",
     "selinux": "SELinux on päällä. Jotta Samba voi jakaa minkä tahansa kansion:"
+  },
+  "operations": {
+    "list": {
+      "title": "Listaa Samba-jakot"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Käynnistä Samba"
+    },
+    "stop": {
+      "title": "Pysäytä Samba"
+    },
+    "restart": {
+      "title": "Käynnistä Samba uudelleen"
+    },
+    "reload": {
+      "title": "Lataa Samba uudelleen"
+    },
+    "shares": {
+      "title": "Samba-jakot",
+      "path": "Kansio",
+      "access": "Pääsy",
+      "guests": "Vieras"
+    }
+  },
+  "nav": {
+    "togglePanel": "Vaihda jakojen paneelin näkyvyys"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Tarkistetaan isäntäpalvelimia...",
+    "summary_one": "{{count}} jako {{hosts}} isäntäpalvelimella",
+    "summary_other": "{{count}} jakoa {{hosts}} isäntäpalvelimella",
+    "refresh": "Tarkista uudelleen",
+    "empty": "Ota Samba käyttöön isäntäpalvelimelle nähdäksesi sen täällä.",
+    "stopped": "Ei käynnissä",
+    "missing": "Ei asennettu",
+    "shares_one": "{{count}} jako",
+    "shares_other": "{{count}} jakoa",
+    "sessions_one": "{{count}} istunto",
+    "sessions_other": "{{count}} istuntoa"
   }
 }

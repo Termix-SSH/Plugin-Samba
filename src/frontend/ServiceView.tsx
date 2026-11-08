@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useToast, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Button, Facts, SwitchRow } from "@termix-ssh/plugin-sdk/ui";
+import { Button, Facts, SwitchRow, TileStack } from "@termix-ssh/plugin-sdk/ui";
 import type { SambaStatus } from "../shared/types";
 import { errorMessage, serviceAction } from "./api";
 
@@ -37,8 +37,8 @@ export function ServiceView({
         : "";
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex flex-col gap-1 border border-border p-3 text-xs">
+    <TileStack>
+      <div className="flex flex-col gap-1 p-3 text-xs">
         <Facts>
           <span>{status.active ? t("tab.running") : t("tab.stopped")}</span>
           {status.version && <span>{status.version}</span>}
@@ -49,7 +49,7 @@ export function ServiceView({
           {status.os && <span>{status.os}</span>}
         </Facts>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 p-3">
         <Button
           variant="outline"
           disabled={busy || status.active}
@@ -79,30 +79,32 @@ export function ServiceView({
           {t("service.reload")}
         </Button>
       </div>
-      <SwitchRow
-        label={t("service.autostart")}
-        description={t("service.autostartDesc")}
-        checked={status.enabled}
-        disabled={busy}
-        onChange={(value) => void run(value ? "enable" : "disable")}
-      />
+      <div className="px-3">
+        <SwitchRow
+          label={t("service.autostart")}
+          description={t("service.autostartDesc")}
+          checked={status.enabled}
+          disabled={busy}
+          onChange={(value) => void run(value ? "enable" : "disable")}
+        />
+      </div>
       {!status.included && (
-        <p className="border border-border p-2 text-xs text-muted-foreground">
+        <p className="p-3 text-xs text-muted-foreground">
           {t("service.notIncluded")}
         </p>
       )}
       {firewall && (
-        <div className="flex flex-col gap-1 border border-border p-3 text-xs">
+        <div className="flex flex-col gap-1 p-3 text-xs">
           <p>{t("service.firewall")}</p>
           <code className="font-mono">{firewall}</code>
         </div>
       )}
       {status.selinux === "enforcing" && (
-        <div className="flex flex-col gap-1 border border-border p-3 text-xs">
+        <div className="flex flex-col gap-1 p-3 text-xs">
           <p>{t("service.selinux")}</p>
           <code className="font-mono">setsebool -P samba_export_all_rw on</code>
         </div>
       )}
-    </div>
+    </TileStack>
   );
 }

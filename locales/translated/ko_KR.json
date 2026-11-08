@@ -7,13 +7,39 @@
     "save": "저장",
     "cancel": "취소",
     "back": "뒤로",
-    "delete": "삭제"
+    "delete": "삭제",
+    "loading": "로딩 중..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba 공유",
         "description": "이 호스트의 메뉴에 Samba 공유 탭을 표시합니다."
+      },
+      "showPanel": {
+        "label": "터미널에서 공유 패널 표시",
+        "description": "이 호스트의 SSH 터미널 옆에 공유 패널을 열 수 있습니다."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "새 터미널과 함께 공유 패널 열기",
+        "description": "Samba가 켜져 있는 모든 SSH 터미널 옆에 공유 패널을 표시합니다. 오른쪽 가장자리의 버튼에서 언제든지 열고 닫을 수 있습니다."
+      },
+      "companionSide": {
+        "label": "공유 패널 위치",
+        "description": "터미널 옆에 공유 패널이 표시되는 위치입니다.",
+        "right": "오른쪽",
+        "left": "왼쪽",
+        "bottom": "아래쪽"
+      },
+      "companionSize": {
+        "label": "공유 패널 크기",
+        "description": "너비(픽셀) 또는 아래쪽 위치일 때 높이입니다. 가장자리를 드래그하여 조정할 수도 있습니다."
+      },
+      "companionEdgeButton": {
+        "label": "패널 버튼 표시",
+        "description": "공유 패널을 여는 작은 버튼을 터미널 오른쪽 가장자리에 표시합니다."
       }
     }
   },
@@ -142,6 +168,7 @@
   },
   "sessions": {
     "loadFailed": "연결을 읽을 수 없습니다.",
+    "disconnectTitle": "{{name}} 연결을 끊으시겠습니까?",
     "disconnectDesc": "클라이언트의 연결이 끊어집니다. 다시 연결할 수 있습니다.",
     "disconnect": "연결 끊기",
     "disconnectFailed": "세션 연결을 끊지 못했습니다.",
@@ -180,5 +207,45 @@
     "notIncluded": "smb.conf 에 관리 파일이 아직 포함되어 있지 않습니다. 공유를 처음 저장할 때 추가됩니다.",
     "firewall": "Samba 를 위해 방화벽을 엽니다:",
     "selinux": "SELinux 가 활성화되어 있습니다. Samba 가 모든 폴더를 공유할 수 있도록 하려면:"
+  },
+  "operations": {
+    "list": {
+      "title": "Samba 공유 목록"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Samba 시작"
+    },
+    "stop": {
+      "title": "Samba 중지"
+    },
+    "restart": {
+      "title": "Samba 재시작"
+    },
+    "reload": {
+      "title": "Samba 다시 로드"
+    },
+    "shares": {
+      "title": "Samba 공유",
+      "path": "폴더",
+      "access": "접근 권한",
+      "guests": "게스트"
+    }
+  },
+  "nav": {
+    "togglePanel": "공유 패널 전환"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "호스트 확인 중...",
+    "summary_other": "{{hosts}}개 호스트에 {{count}}개 공유",
+    "refresh": "다시 확인",
+    "empty": "여기에 표시하려면 호스트에서 Samba를 켜세요.",
+    "stopped": "실행 중 아님",
+    "missing": "설치되지 않음",
+    "shares_other": "{{count}}개 공유",
+    "sessions_other": "{{count}}개 세션"
   }
 }

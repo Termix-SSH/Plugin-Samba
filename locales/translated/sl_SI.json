@@ -7,13 +7,39 @@
     "save": "Shrani",
     "cancel": "Prekliči",
     "back": "Nazaj",
-    "delete": "Izbriši"
+    "delete": "Izbriši",
+    "loading": "Nalaganje..."
   },
   "settings": {
     "host": {
       "enable": {
         "label": "Samba deljeni vire",
         "description": "Prikaži zavihek Samba deljeni vire za tega gostitelja v njegovem meniju."
+      },
+      "showPanel": {
+        "label": "Prikaži ploščo deljenih virov v terminalih",
+        "description": "Omogoči odpiranje plošče deljenih virov ob SSH terminalu tega gostitelja."
+      }
+    },
+    "user": {
+      "companionAutoOpen": {
+        "label": "Odpri ploščo deljenih virov z novimi terminali",
+        "description": "Prikaži ploščo deljenih virov ob vsakem SSH terminalu, ki ima vklopljen Samba. Ploščo lahko še vedno odprete in zaprete s tipko na desnem robu."
+      },
+      "companionSide": {
+        "label": "Stran plošče deljenih virov",
+        "description": "Kje se plošča deljenih virov nahaja ob terminalu.",
+        "right": "Desno",
+        "left": "Levo",
+        "bottom": "Spodaj"
+      },
+      "companionSize": {
+        "label": "Velikost plošče deljenih virov",
+        "description": "Širina v slikovnih točkah ali višina, ko je na dnu. Rob lahko tudi povlečete."
+      },
+      "companionEdgeButton": {
+        "label": "Prikaži tipko za ploščo",
+        "description": "Prikaži majhno tipko na desnem robu terminala, ki odpre ploščo deljenih virov."
       }
     }
   },
@@ -167,6 +193,7 @@
   },
   "logs": {
     "loadFailed": "Dnevnika ni bilo mogoče prebrati.",
+    "lines": "{{count}} vrstic",
     "empty": "Ni zapisov v dnevniku."
   },
   "service": {
@@ -180,5 +207,54 @@
     "notIncluded": "smb.conf še ne vključuje upravljanega datoteke. Dodana bo prvič, ko shranite skupno mapo.",
     "firewall": "Odprite požarni zid za Samba:",
     "selinux": "SELinux je vklopljen. Da bo Samba lahko delil katero koli mapo:"
+  },
+  "operations": {
+    "list": {
+      "title": "Seznam deljenih virov Samba"
+    },
+    "status": {
+      "title": "Samba"
+    },
+    "start": {
+      "title": "Zaženi Samba"
+    },
+    "stop": {
+      "title": "Ustavi Samba"
+    },
+    "restart": {
+      "title": "Ponovno zaženi Samba"
+    },
+    "reload": {
+      "title": "Osveži Samba"
+    },
+    "shares": {
+      "title": "Deljeni viri Samba",
+      "path": "Mapa",
+      "access": "Dostop",
+      "guests": "Gostje"
+    }
+  },
+  "nav": {
+    "togglePanel": "Preklopi ploščo deljenih virov"
+  },
+  "card": {
+    "title": "Samba",
+    "loading": "Preverjanje gostiteljev...",
+    "summary_one": "{{count}} deljeni vir na {{hosts}} gostiteljih",
+    "summary_two": "{{count}} deljena vira na {{hosts}} gostiteljih",
+    "summary_few": "{{count}} deljeni viri na {{hosts}} gostiteljih",
+    "summary_other": "{{count}} deljenih virov na {{hosts}} gostiteljih",
+    "refresh": "Preveri znova",
+    "empty": "Vklopite Samba za gostitelja, da ga vidite tukaj.",
+    "stopped": "Ne deluje",
+    "missing": "Ni nameščeno",
+    "shares_one": "{{count}} deljeni vir",
+    "shares_two": "{{count}} deljena vira",
+    "shares_few": "{{count}} deljeni viri",
+    "shares_other": "{{count}} deljenih virov",
+    "sessions_one": "{{count}} seja",
+    "sessions_two": "{{count}} seji",
+    "sessions_few": "{{count}} seje",
+    "sessions_other": "{{count}} sej"
   }
 }
