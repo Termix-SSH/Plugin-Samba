@@ -1,0 +1,210 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/scripts/authz/authz.schema.json",
+  "seed": [],
+  "routes": {
+    "GET /plugin-api/samba/:hostId/config": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "PUT /plugin-api/samba/:hostId/config": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/samba/:hostId/config/test": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/samba/:hostId/groups": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/samba/:hostId/groups/:name/members": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "POST /plugin-api/samba/:hostId/install": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "destructive": true
+    },
+    "GET /plugin-api/samba/:hostId/logs": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/samba/:hostId/service/:action": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a action on the host, which the test host does not have; host access is still checked"
+    },
+    "GET /plugin-api/samba/:hostId/sessions": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/samba/:hostId/sessions/:pid/disconnect": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "destructive": true,
+      "allowed": "any",
+      "note": "Names a pid on the host, which the test host does not have; host access is still checked"
+    },
+    "GET /plugin-api/samba/:hostId/shares": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/samba/:hostId/shares": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "DELETE /plugin-api/samba/:hostId/shares/:name": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "destructive": true,
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "PUT /plugin-api/samba/:hostId/shares/:name": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "GET /plugin-api/samba/:hostId/shares/:name/permissions": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "PUT /plugin-api/samba/:hostId/shares/:name/permissions": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "GET /plugin-api/samba/:hostId/status": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "GET /plugin-api/samba/:hostId/users": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "POST /plugin-api/samba/:hostId/users": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      }
+    },
+    "DELETE /plugin-api/samba/:hostId/users/:name": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "destructive": true,
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "POST /plugin-api/samba/:hostId/users/:name/password": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "POST /plugin-api/samba/:hostId/users/:name/state": {
+      "access": "user",
+      "permission": "samba.use",
+      "resource": {
+        "kind": "host",
+        "min": "connect"
+      },
+      "allowed": "any",
+      "note": "Names a name on the host, which the test host does not have; host access is still checked"
+    },
+    "GET /plugin-api/samba/summary": {
+      "access": "user",
+      "permission": "samba.use"
+    }
+  }
+}
