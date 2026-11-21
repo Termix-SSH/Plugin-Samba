@@ -211,6 +211,7 @@ export function SambaTab({ isVisible, host, label }: TabProps) {
           ) : view === "shares" ? (
             <SharesView
               key={tick}
+              host={host}
               hostId={hostId}
               onOpen={setEditing}
               isVisible={isVisible}

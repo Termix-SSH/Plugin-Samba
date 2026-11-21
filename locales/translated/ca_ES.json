@@ -114,7 +114,9 @@
     "inheritDesc": "Els fitxers nous copien els permisos de la carpeta on es troben.",
     "hideDot": "Amagar fitxers amb punt",
     "recycle": "Paperera de reciclatge",
-    "recycleDesc": "Els fitxers esborrats es mouen a una carpeta .recycle dins de la compartició."
+    "recycleDesc": "Els fitxers esborrats es mouen a una carpeta .recycle dins de la compartició.",
+    "browse": "Navega per fitxers",
+    "browseFailed": "No s'ha pogut obrir el Gestor de fitxers. Instal·leu i activeu el complement del Gestor de fitxers."
   },
   "permissions": {
     "use": {

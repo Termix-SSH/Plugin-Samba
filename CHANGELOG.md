@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+### Added
+
+- A Browse files button on each share that opens its folder in File Manager
+
 ## 1.1.0
 
 ### Changed

@@ -114,7 +114,9 @@
     "inheritDesc": "Novos arquivos copiam as permissões da pasta em que estão.",
     "hideDot": "Ocultar arquivos ocultos",
     "recycle": "Lixeira",
-    "recycleDesc": "Arquivos excluídos são movidos para uma pasta .recycle na compartilhada."
+    "recycleDesc": "Arquivos excluídos são movidos para uma pasta .recycle na compartilhada.",
+    "browse": "Navegar nos arquivos",
+    "browseFailed": "Não foi possível abrir o Gerenciador de Arquivos. Instale e ative o plugin Gerenciador de Arquivos."
   },
   "permissions": {
     "use": {

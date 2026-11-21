@@ -114,7 +114,9 @@
     "inheritDesc": "Nuwe lêers kopieer die toestemmings van die gids waarin hulle is.",
     "hideDot": "Versteek punt-lêers",
     "recycle": "Herwinningstas",
-    "recycleDesc": "Verwyderde lêers word na 'n .recycle-gids in die deel verskuif."
+    "recycleDesc": "Verwyderde lêers word na 'n .recycle-gids in die deel verskuif.",
+    "browse": "Blaaie lêers",
+    "browseFailed": "Kon nie die Lêerbestuurder oopmaak nie. Installeer en skakel die Lêerbestuurder-plug-in aan."
   },
   "permissions": {
     "use": {

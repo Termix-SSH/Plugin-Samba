@@ -114,7 +114,9 @@
     "inheritDesc": "Neue Dateien übernehmen die Berechtigungen des Ordners, in dem sie sich befinden.",
     "hideDot": "Dot-Dateien ausblenden",
     "recycle": "Papierkorb",
-    "recycleDesc": "Gelöschte Dateien werden in einen .recycle-Ordner im Share verschoben."
+    "recycleDesc": "Gelöschte Dateien werden in einen .recycle-Ordner im Share verschoben.",
+    "browse": "Dateien durchsuchen",
+    "browseFailed": "Dateimanager konnte nicht geöffnet werden. Installieren und aktivieren Sie das Dateimanager-Plugin."
   },
   "permissions": {
     "use": {

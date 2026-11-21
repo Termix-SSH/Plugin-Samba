@@ -114,7 +114,9 @@
     "inheritDesc": "Yeni dosyalar, bulundukları klasörün izinlerini kopyalar.",
     "hideDot": "Noktalı dosyaları gizle",
     "recycle": "Geri dönüşüm kutusu",
-    "recycleDesc": "Silinen dosyalar, paylaşım içindeki .recycle klasörüne taşınır."
+    "recycleDesc": "Silinen dosyalar, paylaşım içindeki .recycle klasörüne taşınır.",
+    "browse": "Dosyalara göz at",
+    "browseFailed": "Dosya Yöneticisi açılamadı. Dosya Yöneticisi eklentisini yükleyin ve etkinleştirin."
   },
   "permissions": {
     "use": {

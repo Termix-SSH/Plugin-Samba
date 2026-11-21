@@ -114,7 +114,9 @@
     "inheritDesc": "Jauniem failiem tiek kopētas to mapiju, kuros tie atrodas, atļaujas.",
     "hideDot": "Paslēpt punktā sākošos failus",
     "recycle": "Atkritumu grozs",
-    "recycleDesc": "Dzēstie faili tiek pārvietoti uz .recycle mapi koplietojumā."
+    "recycleDesc": "Dzēstie faili tiek pārvietoti uz .recycle mapi koplietojumā.",
+    "browse": "Pārlūkot failus",
+    "browseFailed": "Neizdevās atvērt Failu pārvaldnieku. Instalējiet un ieslēdziet Failu pārvaldnieka spraudni."
   },
   "permissions": {
     "use": {

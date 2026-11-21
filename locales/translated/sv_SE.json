@@ -114,7 +114,9 @@
     "inheritDesc": "Nya filer kopierar behörigheterna från den mapp de finns i.",
     "hideDot": "Dölj punktfiler",
     "recycle": "Papperskorgen",
-    "recycleDesc": "Raderade filer flyttas till en .recycle-mapp i delningen."
+    "recycleDesc": "Raderade filer flyttas till en .recycle-mapp i delningen.",
+    "browse": "Bläddra i filer",
+    "browseFailed": "Kunde inte öppna Filhanteraren. Installera och aktivera pluginet Filhanterare."
   },
   "permissions": {
     "use": {

@@ -114,7 +114,9 @@
     "inheritDesc": "Nove datoteke preuzimaju dopuštenja mape u kojoj se nalaze.",
     "hideDot": "Sakrij datoteke s točkom",
     "recycle": "Kanta za smeće",
-    "recycleDesc": "Izbrisane datoteke premještaju se u mapu .recycle unutar dijeljene mape."
+    "recycleDesc": "Izbrisane datoteke premještaju se u mapu .recycle unutar dijeljene mape.",
+    "browse": "Pregledaj datoteke",
+    "browseFailed": "Upravitelj datoteka se ne može otvoriti. Instalirajte i uključite dodatak Upravitelj datoteka."
   },
   "permissions": {
     "use": {

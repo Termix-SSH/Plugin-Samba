@@ -114,7 +114,9 @@
     "inheritDesc": "새 파일은 포함된 폴더의 권한을 복사합니다.",
     "hideDot": "숨김 파일 숨기기",
     "recycle": "휴지통",
-    "recycleDesc": "삭제된 파일은 공유 폴더의 .recycle 폴더로 이동합니다."
+    "recycleDesc": "삭제된 파일은 공유 폴더의 .recycle 폴더로 이동합니다.",
+    "browse": "파일 탐색",
+    "browseFailed": "파일 관리자를 열 수 없습니다. 파일 관리자 플러그인을 설치하고 활성화하세요."
   },
   "permissions": {
     "use": {

@@ -114,7 +114,9 @@
     "inheritDesc": "Los nuevos archivos copian los permisos de la carpeta en la que se encuentran.",
     "hideDot": "Ocultar archivos ocultos",
     "recycle": "Papelera de reciclaje",
-    "recycleDesc": "Los archivos eliminados se mueven a una carpeta .recycle dentro de la compartición."
+    "recycleDesc": "Los archivos eliminados se mueven a una carpeta .recycle dentro de la compartición.",
+    "browse": "Explorar archivos",
+    "browseFailed": "No se ha podido abrir el administrador de archivos. Instala y activa el complemento de administrador de archivos."
   },
   "permissions": {
     "use": {

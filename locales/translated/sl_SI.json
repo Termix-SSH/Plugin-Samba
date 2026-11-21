@@ -114,7 +114,9 @@
     "inheritDesc": "Nove datoteke prevzamejo dovoljenja mape, v kateri se nahajajo.",
     "hideDot": "Skrij datoteke z piko",
     "recycle": "Koš za smeti",
-    "recycleDesc": "Izbrisane datoteke se premaknejo v mapo .recycle v deljeni mapi."
+    "recycleDesc": "Izbrisane datoteke se premaknejo v mapo .recycle v deljeni mapi.",
+    "browse": "Brskaj datoteke",
+    "browseFailed": "Upravitelja datotek ni bilo mogoče odpreti. Namestite in vklopite vtičnik Upravitelj datotek."
   },
   "permissions": {
     "use": {

@@ -114,7 +114,9 @@
     "inheritDesc": "Uued failid päriavad õigused kaustast, milles asuvad.",
     "hideDot": "Peida punktiga algavad failid",
     "recycle": "Prügikast",
-    "recycleDesc": "Kustutatud failid liiguvad jagatuse .recycle kausta."
+    "recycleDesc": "Kustutatud failid liiguvad jagatuse .recycle kausta.",
+    "browse": "Sirvi faile",
+    "browseFailed": "Failihaldurit ei õnnestunud avada. Paigalda ja lülita sisse failihalduri plugin."
   },
   "permissions": {
     "use": {

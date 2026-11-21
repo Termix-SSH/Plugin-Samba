@@ -114,7 +114,9 @@
     "inheritDesc": "Nye filer arver rettighederne fra den mappe, de befinder sig i.",
     "hideDot": "Skjul punktfiler",
     "recycle": "Papirkurv",
-    "recycleDesc": "Slettede filer flyttes til en .recycle-mappe i delingen."
+    "recycleDesc": "Slettede filer flyttes til en .recycle-mappe i delingen.",
+    "browse": "Gennemse filer",
+    "browseFailed": "Kunne ikke åbne Filhåndtering. Installer og aktiver pluginet Filhåndtering."
   },
   "permissions": {
     "use": {

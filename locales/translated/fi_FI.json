@@ -114,7 +114,9 @@
     "inheritDesc": "Uudet tiedostot perivät kansion, jossa ne sijaitsevat, oikeudet.",
     "hideDot": "Piilota pisteellä alkavat tiedostot",
     "recycle": "Roskakori",
-    "recycleDesc": "Poistetut tiedostot siirtyvät jakoon luotuun .recycle-kansioon."
+    "recycleDesc": "Poistetut tiedostot siirtyvät jakoon luotuun .recycle-kansioon.",
+    "browse": "Selaa tiedostoja",
+    "browseFailed": "Tiedostonhallintaa ei voitu avata. Asenna ja ota käyttöön tiedostonhallinta-liitännäinen."
   },
   "permissions": {
     "use": {

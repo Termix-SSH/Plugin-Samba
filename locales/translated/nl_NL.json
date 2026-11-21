@@ -114,7 +114,9 @@
     "inheritDesc": "Nieuwe bestanden kopiëren de machtigingen van de map waarin ze zich bevinden.",
     "hideDot": "Dot-bestanden verbergen",
     "recycle": "Prullenbak",
-    "recycleDesc": "Verwijderde bestanden worden verplaatst naar een .recycle-map in de share."
+    "recycleDesc": "Verwijderde bestanden worden verplaatst naar een .recycle-map in de share.",
+    "browse": "Bestanden doorzoeken",
+    "browseFailed": "Kan de Bestandsbeheer niet openen. Installeer en schakel de Bestandsbeheer-plugin in."
   },
   "permissions": {
     "use": {

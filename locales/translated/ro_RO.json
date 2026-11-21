@@ -114,7 +114,9 @@
     "inheritDesc": "Fișierele noi copiază permisiunile folderului în care se află.",
     "hideDot": "Ascunde fișierele cu punct",
     "recycle": "Coș de reciclare",
-    "recycleDesc": "Fișierele șterse sunt mutate într-un folder .recycle din partajare."
+    "recycleDesc": "Fișierele șterse sunt mutate într-un folder .recycle din partajare.",
+    "browse": "Răsfoiește fișiere",
+    "browseFailed": "Nu s-a putut deschide Managerul de fișiere. Instalează și activează pluginul Manager de fișiere."
   },
   "permissions": {
     "use": {

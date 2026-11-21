@@ -114,7 +114,9 @@
     "inheritDesc": "Nové soubory přebírají oprávnění složky, ve které se nacházejí.",
     "hideDot": "Skrýt skryté soubory",
     "recycle": "Koš",
-    "recycleDesc": "Smazané soubory se přesunou do složky .recycle ve sdílení."
+    "recycleDesc": "Smazané soubory se přesunou do složky .recycle ve sdílení.",
+    "browse": "Procházet soubory",
+    "browseFailed": "Nelze otevřít Správce souborů. Nainstalujte a zapněte plugin Správce souborů."
   },
   "permissions": {
     "use": {

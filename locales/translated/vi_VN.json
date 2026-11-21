@@ -114,7 +114,9 @@
     "inheritDesc": "Các tệp mới sẽ sao chép quyền của thư mục chứa chúng.",
     "hideDot": "Ẩn tệp ẩn",
     "recycle": "Thùng rác",
-    "recycleDesc": "Các tệp bị xóa sẽ được chuyển vào thư mục .recycle trong vùng chia sẻ."
+    "recycleDesc": "Các tệp bị xóa sẽ được chuyển vào thư mục .recycle trong vùng chia sẻ.",
+    "browse": "Duyệt tệp",
+    "browseFailed": "Không thể mở Trình quản lý tệp. Hãy cài đặt và bật plugin Trình quản lý tệp."
   },
   "permissions": {
     "use": {

@@ -114,7 +114,9 @@
     "inheritDesc": "Nowe pliki kopiują uprawnienia folderu, w którym się znajdują.",
     "hideDot": "Ukryj pliki ukryte",
     "recycle": "Kosz",
-    "recycleDesc": "Usunięte pliki są przenoszone do folderu .recycle w udziale."
+    "recycleDesc": "Usunięte pliki są przenoszone do folderu .recycle w udziale.",
+    "browse": "Przeglądaj pliki",
+    "browseFailed": "Nie udało się otworzyć Menedżera plików. Zainstaluj i włącz wtyczkę Menedżera plików."
   },
   "permissions": {
     "use": {

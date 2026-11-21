@@ -114,7 +114,9 @@
     "inheritDesc": "Les nouveaux fichiers héritent des autorisations du dossier dans lequel ils se trouvent.",
     "hideDot": "Masquer les fichiers cachés",
     "recycle": "Corbeille",
-    "recycleDesc": "Les fichiers supprimés sont déplacés dans un dossier .recycle du partage."
+    "recycleDesc": "Les fichiers supprimés sont déplacés dans un dossier .recycle du partage.",
+    "browse": "Parcourir les fichiers",
+    "browseFailed": "Impossible d'ouvrir le gestionnaire de fichiers. Installez et activez le plugin Gestionnaire de fichiers."
   },
   "permissions": {
     "use": {

@@ -114,7 +114,9 @@
     "inheritDesc": "Nauji failai paveldi aplanko, kuriame jie yra, teises.",
     "hideDot": "Slėpti taško failus",
     "recycle": "Šiukšliadėžė",
-    "recycleDesc": "Ištrinti failai perkeliama į bendrinimo .recycle aplanką."
+    "recycleDesc": "Ištrinti failai perkeliama į bendrinimo .recycle aplanką.",
+    "browse": "Naršyti failus",
+    "browseFailed": "Nepavyko atidaryti failų tvarkytuvės. Įdiekite ir įjunkite failų tvarkytuvės priedą."
   },
   "permissions": {
     "use": {

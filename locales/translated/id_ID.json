@@ -114,7 +114,9 @@
     "inheritDesc": "File baru menyalin izin dari folder tempat file tersebut berada.",
     "hideDot": "Sembunyikan file titik",
     "recycle": "Tempat sampah",
-    "recycleDesc": "File yang dihapus dipindahkan ke folder .recycle di dalam share."
+    "recycleDesc": "File yang dihapus dipindahkan ke folder .recycle di dalam share.",
+    "browse": "Telusuri file",
+    "browseFailed": "Tidak dapat membuka File Manager. Instal dan aktifkan plugin File Manager."
   },
   "permissions": {
     "use": {

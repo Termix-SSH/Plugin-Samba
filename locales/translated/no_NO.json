@@ -114,7 +114,9 @@
     "inheritDesc": "Nye filer kopierer tilgangene til mappen de befinner seg i.",
     "hideDot": "Skjul punkt-filer",
     "recycle": "Papirkurv",
-    "recycleDesc": "Slettede filer flyttes til en .recycle-mappe i delingen."
+    "recycleDesc": "Slettede filer flyttes til en .recycle-mappe i delingen.",
+    "browse": "Bla gjennom filer",
+    "browseFailed": "Kunne ikke åpne filbehandleren. Installer og aktiver pluginen for filbehandler."
   },
   "permissions": {
     "use": {

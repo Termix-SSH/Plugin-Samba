@@ -114,7 +114,9 @@
     "inheritDesc": "新文件将继承其所在文件夹的权限。",
     "hideDot": "隐藏隐藏文件",
     "recycle": "回收站",
-    "recycleDesc": "删除的文件将移至共享目录中的 .recycle 文件夹。"
+    "recycleDesc": "删除的文件将移至共享目录中的 .recycle 文件夹。",
+    "browse": "浏览文件",
+    "browseFailed": "无法打开文件管理器。请安装并启用文件管理器插件。"
   },
   "permissions": {
     "use": {

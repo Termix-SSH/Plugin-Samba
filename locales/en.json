@@ -114,7 +114,9 @@
     "inheritDesc": "New files copy the permissions of the folder they are in.",
     "hideDot": "Hide dot files",
     "recycle": "Recycle bin",
-    "recycleDesc": "Deleted files move to a .recycle folder in the share."
+    "recycleDesc": "Deleted files move to a .recycle folder in the share.",
+    "browse": "Browse files",
+    "browseFailed": "Could not open File Manager. Install and turn on the File Manager plugin."
   },
   "permissions": {
     "use": {

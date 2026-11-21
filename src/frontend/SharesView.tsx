@@ -1,9 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
-import { Folder, Lock } from "lucide-react";
-import { useToast, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
+import { Folder, FolderOpen, Lock } from "lucide-react";
+import {
+  invokeAction,
+  useToast,
+  useTranslation,
+  type PluginHostRecord,
+} from "@termix-ssh/plugin-sdk/frontend";
 import {
   ListBadge,
   ListRow,
+  ListRowAction,
   PanelList,
   PanelSearch,
   Switch,
@@ -14,10 +20,13 @@ import type { ShareView } from "../shared/types";
 import { errorMessage, listShares, updateShare } from "./api";
 
 export function SharesView({
+  host,
   hostId,
   onOpen,
   isVisible,
 }: {
+  /** Lets a share open in File Manager. */
+  host?: PluginHostRecord;
   hostId: number;
   onOpen: (share: ShareView) => void;
   isVisible: boolean;
@@ -111,6 +120,21 @@ export function SharesView({
                   {share.path}
                   {share.comment ? ` | ${share.comment}` : ""}
                 </span>
+              }
+              actions={
+                host && share.path ? (
+                  <ListRowAction
+                    label={t("shares.browse")}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      invokeAction("files.openHost", host, share.path).catch(
+                        () => toast.error(t("shares.browseFailed")),
+                      );
+                    }}
+                  >
+                    <FolderOpen />
+                  </ListRowAction>
+                ) : undefined
               }
               trailing={
                 share.managed ? (

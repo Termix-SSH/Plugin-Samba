@@ -114,7 +114,9 @@
     "inheritDesc": "Az új fájlok átvesszik a mappájuk engedélyeit.",
     "hideDot": "Pontos fájlok elrejtése",
     "recycle": "Kuka",
-    "recycleDesc": "A törölt fájlok a megosztás .recycle mappájába kerülnek."
+    "recycleDesc": "A törölt fájlok a megosztás .recycle mappájába kerülnek.",
+    "browse": "Fájlböngészés",
+    "browseFailed": "A Fájlkezelő nem nyitható meg. Telepítse és engedélyezze a Fájlkezelő bővítményt."
   },
   "permissions": {
     "use": {

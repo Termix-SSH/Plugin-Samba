@@ -114,7 +114,9 @@
     "inheritDesc": "I nuovi file ereditano i permessi della cartella in cui si trovano.",
     "hideDot": "Nascondi file nascosti",
     "recycle": "Cestino",
-    "recycleDesc": "I file eliminati vengono spostati nella cartella .recycle all'interno della condivisione."
+    "recycleDesc": "I file eliminati vengono spostati nella cartella .recycle all'interno della condivisione.",
+    "browse": "Sfoglia file",
+    "browseFailed": "Impossibile aprire il File Manager. Installa e attiva il plugin File Manager."
   },
   "permissions": {
     "use": {

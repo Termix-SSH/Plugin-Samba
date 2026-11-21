@@ -114,7 +114,9 @@
     "inheritDesc": "Fail baru menyalin kebenaran daripada folder tempat ia berada.",
     "hideDot": "Sembunyikan fail titik",
     "recycle": "Tong kitar semula",
-    "recycleDesc": "Fail yang dipadam akan dipindahkan ke folder .recycle dalam perkongsian."
+    "recycleDesc": "Fail yang dipadam akan dipindahkan ke folder .recycle dalam perkongsian.",
+    "browse": "Semak fail",
+    "browseFailed": "Tidak dapat membuka Pengurus Fail. Pasang dan hidupkan plugin Pengurus Fail."
   },
   "permissions": {
     "use": {

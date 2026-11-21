@@ -114,7 +114,9 @@
     "inheritDesc": "Nové súbory zdedia oprávnenia priečinka, v ktorom sa nachádzajú.",
     "hideDot": "Skryť skryté súbory",
     "recycle": "Kôš",
-    "recycleDesc": "Vymazané súbory sa presunú do priečinka .recycle v zdieľanom adresári."
+    "recycleDesc": "Vymazané súbory sa presunú do priečinka .recycle v zdieľanom adresári.",
+    "browse": "Prehľadať súbory",
+    "browseFailed": "Nepodarilo sa otvoriť Správcu súborov. Nainštalujte a aktivujte plugin Správca súborov."
   },
   "permissions": {
     "use": {

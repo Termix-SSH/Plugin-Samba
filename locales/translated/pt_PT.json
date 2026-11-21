@@ -114,7 +114,9 @@
     "inheritDesc": "Os novos ficheiros copiam as permissões da pasta em que se encontram.",
     "hideDot": "Ocultar ficheiros ocultos",
     "recycle": "Lixo",
-    "recycleDesc": "Os ficheiros eliminados são movidos para uma pasta .recycle na partilha."
+    "recycleDesc": "Os ficheiros eliminados são movidos para uma pasta .recycle na partilha.",
+    "browse": "Explorar ficheiros",
+    "browseFailed": "Não foi possível abrir o Gestor de Ficheiros. Instale e ative o plugin do Gestor de Ficheiros."
   },
   "permissions": {
     "use": {

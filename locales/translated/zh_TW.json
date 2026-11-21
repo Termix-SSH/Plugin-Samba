@@ -114,7 +114,9 @@
     "inheritDesc": "新檔案會複製其所處資料夾的權限。",
     "hideDot": "隱藏隱藏檔案",
     "recycle": "資源回收筒",
-    "recycleDesc": "刪除的檔案會移至共用中的 .recycle 資料夾。"
+    "recycleDesc": "刪除的檔案會移至共用中的 .recycle 資料夾。",
+    "browse": "瀏覽檔案",
+    "browseFailed": "無法開啟檔案管理器。請安裝並啟用檔案管理器外掛。"
   },
   "permissions": {
     "use": {
